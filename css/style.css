@@ -1,0 +1,36 @@
+/* *************************** */
+/* Hero section */
+/* *************************** */
+.hero-section {
+  padding: 9.6rem 1.2rem 6.4rem 4.8rem;
+  background-image: url(../img/main.png);
+  background-position: bottom;
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: end;
+}
+.hero {
+  grid-column: -2/-1;
+
+  max-width: 140rem;
+  margin: 0 auto;
+}
+.heading-box {
+  padding: 4rem;
+  background-color: #fff3e3;
+  border-radius: 10px;
+  grid-column: -2/-1;
+}
+
+.hero-discription {
+  font-size: 1.7rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 4.8rem;
+}
+.inner {
+  width: 80%;
+}
