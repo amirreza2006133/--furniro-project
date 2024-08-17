@@ -33,3 +33,24 @@
 .inner {
   width: 80%;
 }
+/* *************************** */
+/* range section */
+/* *************************** */
+.range-section {
+  margin-top: 6.4rem;
+}
+.range-img {
+  width: 100%;
+  margin-bottom: 2.4rem;
+}
+.range-title:visited,
+.range-title:link,
+.range-title:active,
+.range-title:hover {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
