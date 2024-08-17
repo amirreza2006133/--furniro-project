@@ -11,6 +11,73 @@ body {
   color: #666;
   line-height: 1;
 }
+/* *************************** */
+/* Header */
+/* *************************** */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6.4rem;
+  padding: 2.4rem 3.2rem;
+}
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 6.4rem;
+  justify-self: center;
+  color: #333;
+}
+.nav-list-item:link,
+.nav-list-item:visited {
+  color: #333;
+  font-size: 1.6rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.nav-list-item:hover,
+.nav-list-item:active {
+  color: #937226;
+}
+.header-icon-list {
+  display: flex;
+  gap: 4.8rem;
+  list-style: none;
+}
+.header-icon-item {
+  width: 2.8rem;
+  height: 2.8rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.header-icon-item:hover {
+  color: #937226;
+}
+/* *************************** */
+/* Header end */
+/* *************************** */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display: grid;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
 .sub-heading {
   font-size: 1.6rem;
   color: #333;
@@ -33,6 +100,11 @@ body {
   padding: 2.4rem 4.8rem;
   font-size: 1.6rem;
   font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover,
+.btn:active {
+  background-color: #937226;
 }
 .margin-bottom-sm {
   margin-bottom: 1.2rem;
