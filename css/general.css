@@ -58,6 +58,10 @@ body {
 /* *************************** */
 /* Header end */
 /* *************************** */
+.range-section,
+.product-section {
+  margin-top: 6.4rem;
+}
 .container {
   max-width: 120rem;
   margin: 0 auto;
@@ -99,6 +103,12 @@ body {
   font-weight: 600;
   margin-bottom: 2.4rem;
 }
+.heading-tertiary {
+  font-size: 2.4rem;
+  margin-bottom: 1.2rem;
+  color: #3a3a3a;
+  font-weight: 600;
+}
 .sec-sub {
   font-size: 1.6rem;
   letter-spacing: 0.75px;
@@ -127,3 +137,180 @@ body {
 .margin-bottom-md {
   margin-bottom: 2.4rem;
 }
+.tag {
+  display: block;
+  font-size: 1.5rem;
+  color: #898989;
+  margin-bottom: 1.2rem;
+}
+/* *************************** */
+/* product section */
+/* *************************** */
+.card-container {
+  max-width: 123rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.2rem;
+}
+
+.product-card {
+  background-color: #f4f5f7;
+  position: relative;
+  width: 100%;
+}
+.product-card:hover .gradiant {
+  opacity: 0.6;
+  visibility: visible;
+  pointer-events: all;
+  transition: all 0.4s ease-in-out;
+}
+
+.product-card:hover .hover-btn {
+  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+.product-card:hover .hover-nav {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.4s ease-in-out;
+}
+.product-card:hover .off-30::after,
+.product-card:hover .off-50::after,
+.product-card:hover .new::after {
+  opacity: 0.6;
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-btn:link,
+.hover-btn:visited {
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: #fff;
+  color: #b88e2f;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem 4.8rem;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hover-btn:hover,
+.hover-btn:active {
+  background-color: #b88e2f;
+  color: #fff;
+}
+.gradiant {
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.hover-nav {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  width: 80%;
+  position: absolute;
+  top: 55%;
+  left: 47%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+.hover-nav-item a:link,
+.hover-nav-item a:visited,
+.hover-nav-item a:active,
+.hover-nav-item a:hover {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hover-nav-item ion-icon,
+.hover-nav-item span {
+  font-size: 1.8rem;
+  color: #fff;
+}
+
+.product-card-info {
+  padding: 2.4rem 3.2rem;
+}
+.product-card-image {
+  display: block;
+  width: 100%;
+}
+.card-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price-on {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3a3a3a;
+}
+.price-off {
+  font-size: 1.3rem;
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+.off-30,
+.off-50,
+.new {
+  position: relative;
+}
+.off-30::after,
+.off-50::after,
+.new::after {
+  padding: 1.6rem 0.8rem;
+  display: flex;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.4rem;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #e97171;
+  position: absolute;
+}
+.off-30::after {
+  content: "-30%";
+}
+
+.off-50::after {
+  content: "-50%";
+}
+
+.new::after {
+  content: "new";
+  background-color: #2ec1ac;
+  padding: 1.6rem 1rem;
+}
+
+/* *************************** */
+/* product section end */
+/* *************************** */

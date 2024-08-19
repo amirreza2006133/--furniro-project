@@ -12,6 +12,7 @@
   justify-content: center;
   align-items: end;
 }
+
 .hero {
   grid-column: -2/-1;
   max-width: 140rem;
@@ -36,9 +37,6 @@
 /* *************************** */
 /* range section */
 /* *************************** */
-.range-section {
-  margin-top: 6.4rem;
-}
 .range-img {
   width: 100%;
   margin-bottom: 2.4rem;
