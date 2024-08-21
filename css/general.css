@@ -5,6 +5,7 @@
 }
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
 }
 body {
   font-family: "Poppins", sans-serif;
@@ -100,8 +101,11 @@ body {
 .secondary-heading {
   color: #333;
   font-size: 3.2rem;
-  font-weight: 600;
-  margin-bottom: 2.4rem;
+  font-weight: 700;
+}
+.heading-holder {
+  margin-top: 8rem;
+  margin-bottom: 3.2rem;
 }
 .heading-tertiary {
   font-size: 2.4rem;
@@ -112,7 +116,7 @@ body {
 .sec-sub {
   font-size: 1.6rem;
   letter-spacing: 0.75px;
-  margin-bottom: 4.8rem;
+  font-weight: 500;
 }
 .btn:link,
 .btn:visited {
@@ -122,14 +126,22 @@ body {
   background-color: #b88e2f;
   color: #fff;
   text-transform: uppercase;
-  padding: 2.4rem 4.8rem;
+  padding: 2.4rem 6.4rem;
   font-size: 1.6rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
+  border: 1px solid #b88e2f;
 }
 .btn:hover,
 .btn:active {
-  background-color: #937226;
+  background-color: #fff3e3;
+  color: #b88e2f;
+}
+.margin-bottom-negative {
+  margin-bottom: -1rem;
+}
+.margin-bottom-xs {
+  margin-bottom: 0.8rem !important;
 }
 .margin-bottom-sm {
   margin-bottom: 1.2rem;
@@ -137,6 +149,7 @@ body {
 .margin-bottom-md {
   margin-bottom: 2.4rem;
 }
+
 .tag {
   display: block;
   font-size: 1.5rem;
@@ -146,12 +159,16 @@ body {
 /* *************************** */
 /* product section */
 /* *************************** */
+.product-section {
+  margin-bottom: 6.4rem;
+}
 .card-container {
   max-width: 123rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3.2rem;
+  margin-bottom: 4.8rem;
 }
 
 .product-card {
@@ -309,6 +326,23 @@ body {
   content: "new";
   background-color: #2ec1ac;
   padding: 1.6rem 1rem;
+}
+.text-center {
+  text-align: center;
+}
+.btn-show:link,
+.btn-show:visited {
+  font-weight: 500;
+
+  background-color: #fff;
+  color: #b88e2f;
+  padding: 1.6rem 8rem;
+  border-width: 2px;
+}
+.btn-show:active,
+.btn-show:hover {
+  color: #fff;
+  background-color: #b88e2f;
 }
 
 /* *************************** */
