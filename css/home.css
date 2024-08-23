@@ -41,11 +41,7 @@
   width: 100%;
   margin-bottom: 2.4rem;
 }
-.range-title:visited,
-.range-title:link,
-.range-title:active,
-.range-title:hover {
-  display: block;
+.range-title {
   text-align: center;
   font-size: 2rem;
   color: #333;
@@ -60,16 +56,22 @@
   padding-right: 0;
   background-color: #fff3e3;
 }
-.slider-info {
-  align-self: center;
+.slider-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
+/* .slider-info {
+  align-self: center;
+} */
 
 .slider-heading {
   font-size: 4rem;
   color: #333;
   line-height: 1.1;
+  margin-bottom: 2.4rem;
 }
 .slider-discription {
+  margin-bottom: 3.2rem;
   font-size: 1.6rem;
   color: #616161;
   line-height: 1.6;
