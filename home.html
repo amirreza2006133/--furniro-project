@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="overflow" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -69,7 +69,30 @@
             <ion-icon class="header-icon-item" name="heart-outline"></ion-icon>
           </li>
           <li>
-            <ion-icon class="header-icon-item" name="cart-outline"></ion-icon>
+            <button class="main-btn-cart">
+              <ion-icon class="header-icon-item" name="cart-outline"></ion-icon>
+              <aside class="cart">
+                <div class="cart-header">
+                  <h2 class="shop-title">Shopping Cart</h2>
+                  <ion-icon class="close-icon" name="close-outline"></ion-icon>
+                </div>
+
+                <div class="card-product">
+                  <p class="product-status">There is no products in cart</p>
+                  <div>
+                    <div class="nav-card-price">
+                      <span class="subtotal"> Subtotal</span>
+                      <span class="cart-price"> Rs.0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-btns">
+                  <a class="card-btn" href="#">Cart</a>
+                  <a class="card-btn" href="#">Checkout</a>
+                </div>
+              </aside>
+              <div class="shade"></div>
+            </button>
           </li>
         </ul>
       </div>

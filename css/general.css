@@ -11,7 +11,9 @@ body {
   font-family: "Poppins", sans-serif;
   color: #666;
   line-height: 1;
+  position: relative;
 }
+
 /* *************************** */
 /* Header */
 /* *************************** */
@@ -68,7 +70,8 @@ body {
   gap: 4.8rem;
   list-style: none;
 }
-.header-icon-item {
+.header-icon-item,
+.close-icon {
   padding-bottom: 8px;
   width: 2.8rem;
   height: 2.8rem;
@@ -79,6 +82,107 @@ body {
 .header-icon-item:hover {
   color: #937226;
 }
+.shade {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* z-index: 99; */
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #89898980;
+  transform: translateX(100%);
+  transition: all 0.7s ease-in-out;
+}
+.main-btn-cart {
+  border: none;
+  background-color: inherit;
+}
+.cart {
+  transition: all 0.7s ease-in-out;
+  z-index: 999999;
+  position: fixed;
+  padding: 3.2rem 2.4rem 3.2rem 1.2rem;
+  height: 100vh;
+  width: 30%;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  transform: translateX(100%);
+}
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6.4rem;
+  /* padding-bottom: 2.4rem; */
+}
+.shop-title {
+  font-size: 2.4rem;
+  color: #3a3a3a;
+  font-weight: 600;
+  border-bottom: 1px solid rgb(221, 220, 220);
+  padding-bottom: 1.2rem;
+}
+.cart-header ion-icon {
+  color: #9f9f9f;
+}
+.card-product {
+  padding: 2.4rem 0 2.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 35rem;
+}
+.product-status {
+  font-size: 1.6rem;
+  color: #9f9f9f;
+  font-weight: 500;
+}
+.nav-card-price {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(221, 220, 220);
+  padding-bottom: 1.2rem;
+  padding-left: 1.2rem;
+}
+.subtotal {
+  font-size: 1.6rem;
+  color: #111;
+}
+.cart-price {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #b88e2f;
+}
+.card-btns {
+  display: flex;
+  justify-content: space-around;
+  gap: 1.2rem;
+}
+.card-btn:link,
+.card-btn:visited {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #111;
+  padding: 0.8rem 4.8rem;
+  border: 1px solid #111;
+  border-radius: 2rem;
+  transition: all 0.3s ease-out;
+}
+.card-btn:hover,
+.card-btn:active {
+  color: #fff;
+  background-color: #111;
+}
+.cart-open .cart {
+  transform: translateX(0);
+}
+.cart-open .shade {
+  transform: translateX(0);
+}
+
 /* *************************** */
 /* Header end */
 /* *************************** */
