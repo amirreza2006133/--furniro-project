@@ -20,15 +20,14 @@ body {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 6.4rem;
-  padding: 2.4rem 6.4rem 2.1rem 6.4rem;
+  justify-content: space-around;
+  padding: 2.4rem 0 2.1rem 0;
 }
 .nav-list {
   list-style: none;
   display: flex;
-  gap: 6.4rem;
-  justify-self: center;
+  gap: 8rem;
+
   color: #333;
 }
 .nav-list-item {
