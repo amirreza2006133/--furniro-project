@@ -80,6 +80,9 @@
 /* *************************** */
 /* gallery section */
 /* *************************** */
+.gallery {
+  margin-bottom: 8rem;
+}
 .gallery-container {
   gap: 1rem;
   display: grid;
