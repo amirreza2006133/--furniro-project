@@ -1,0 +1,136 @@
+/* *************************** */
+/* blog article section  */
+/* *************************** */
+.blog-article {
+  margin: 5rem 6.4rem 5rem 6.4rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+.main-article {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  grid-column: span 3;
+}
+
+.article-heading-img {
+  width: 100%;
+  display: block;
+  margin-bottom: 2.4rem;
+  border-radius: 7px;
+}
+.article-icons-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.article-icon-items {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 3.2rem;
+}
+.article-icon-text {
+  font-size: 1.6rem;
+  color: #9f9f9f;
+}
+.article-heading {
+  font-size: 3rem;
+  color: #111;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+.article-discription {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+}
+.read-more:link,
+.read-more:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #111;
+  padding-bottom: 1.1rem;
+  transition: font-weight 0.1s, border-bottom 0.3s;
+  border-bottom: 1px solid #111;
+}
+
+.read-more:link span {
+  padding-bottom: 0.7rem;
+}
+
+.read-more:hover,
+.read-more:active {
+  border-bottom: #fff 1px solid;
+  font-weight: bold;
+}
+.article-sidebar {
+  align-self: flex-start;
+  position: sticky;
+  top: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  padding-left: 1.2rem;
+}
+.search-box {
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  padding: 1.4rem;
+  border: 1px solid #9f9f9f;
+  border-radius: 7px;
+}
+.search-icon {
+  position: absolute;
+  top: 21%;
+  right: 8%;
+}
+.side-bar-title {
+  font-size: 2.4rem;
+  color: #111;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 4.8rem;
+}
+.categories {
+  padding: 3.2;
+  padding-bottom: 4.8rem;
+}
+.categories-deatils-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.categories-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
+.recent-posts-contanier {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.recent-post {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.recent-text-box {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 0;
+}
+.recent-text-box {
+  font-size: 1.2rem;
+  color: #9f9f9f;
+}
+.recent-post-title {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: auto;
+}

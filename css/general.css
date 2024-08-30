@@ -263,6 +263,12 @@ body {
   background-color: #fff3e3;
   color: #b88e2f;
 }
+.padding-sm {
+  padding: 2.4rem;
+}
+.margin-bottom-none {
+  margin-bottom: 0;
+}
 .margin-bottom-negative {
   margin-bottom: -1rem;
 }
@@ -578,12 +584,12 @@ body {
   align-items: center;
   justify-content: center;
 }
-.shop-heading {
+.pages-bg-heading {
   font-size: 4.8em;
   color: #111;
   font-weight: 500;
 }
-.shop-bg-container {
+.pages-bg-container {
   display: flex;
   flex-direction: column;
   align-items: center;
