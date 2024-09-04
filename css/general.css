@@ -244,6 +244,7 @@ body {
   letter-spacing: 0.75px;
   font-weight: 500;
 }
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
