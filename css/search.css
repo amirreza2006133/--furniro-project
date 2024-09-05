@@ -1,0 +1,21 @@
+.search {
+  width: 40rem;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.6rem;
+  color: #9f9f9f;
+}
+.search-holder {
+  padding: 1.2rem 0rem 0 0;
+  position: relative;
+}
+.search-icon {
+  position: absolute;
+  top: 37%;
+  right: 3%;
+  filter: opacity(0.3);
+}
+.footer {
+  margin-top: 18rem;
+}
