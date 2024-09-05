@@ -282,6 +282,9 @@ body {
 .margin-bottom-md {
   margin-bottom: 2.4rem;
 }
+.align-center {
+  text-align: center;
+}
 
 .tag {
   display: block;
