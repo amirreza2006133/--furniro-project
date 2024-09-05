@@ -4,6 +4,9 @@
   border: none;
   border-radius: 7px;
   font-size: 1.6rem;
+  font-family: inherit;
+}
+.search::placeholder {
   color: #9f9f9f;
 }
 .search-holder {
