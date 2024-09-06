@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="overflow" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="" -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script defer src="/js/general.js"></script>
+    <script defer src="/js/login.js"></script>
+
+    <link rel="icon" href="img/logo/logo.png" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <title>furniro &mdash; furniture</title>
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="#">
+        <div class="logo-box">
+          <div class="logo-img-box">
+            <img class="logo-img" src="img/Frame 168.png" alt=" furniro logo" />
+          </div>
+        </div>
+      </a>
+      <nav class="nav-pages">
+        <ul class="nav-list">
+          <li class="nav-list-li">
+            <a class="nav-list-item" href="home.html">Home</a>
+          </li>
+          <li class="nav-list-li">
+            <a class="nav-list-item" href="#">Shop</a>
+          </li>
+          <li class="nav-list-li">
+            <a class="nav-list-item" href="#">Blog </a>
+          </li>
+          <li class="nav-list-li">
+            <a class="nav-list-item" href="#">contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header-icon">
+        <ul class="header-icon-list">
+          <li>
+            <ion-icon class="header-icon-item" name="person-outline"></ion-icon>
+          </li>
+          <li>
+            <ion-icon class="header-icon-item" name="search-outline"></ion-icon>
+          </li>
+          <li>
+            <ion-icon class="header-icon-item" name="heart-outline"></ion-icon>
+          </li>
+          <li>
+            <button class="main-btn-cart">
+              <ion-icon class="header-icon-item" name="cart-outline"></ion-icon>
+              <aside class="cart">
+                <div class="cart-header">
+                  <h2 class="shop-title">Shopping Cart</h2>
+                  <img
+                    class="close-icon"
+                    src="img/icons/close-icon.svg"
+                    alt=" close shop icon"
+                  />
+                </div>
+
+                <div class="card-product">
+                  <p class="product-status">There is no products in cart</p>
+                  <div>
+                    <div class="nav-card-price">
+                      <span class="subtotal"> Subtotal</span>
+                      <span class="cart-price"> Rs.0</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-btns">
+                  <a class="card-btn" href="#">Cart</a>
+                  <a class="card-btn" href="#">Checkout</a>
+                </div>
+              </aside>
+              <div class="shade"></div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <section class="login-section">
+        <div class="login-container">
+          <div class="login-img-box">
+            <img
+              class="login-img"
+              src="img/icons/sign in.png"
+              alt=" a photo of a funiture"
+            />
+          </div>
+          <div class="form-holder">
+            <h3 class="form-title-log">Log in</h3>
+            <h3 class="form-title">Signup</h3>
+            <form class="login-form" action="">
+              <div class="input-holder">
+                <label for="email">Email</label>
+                <input
+                  class="sign-form-input"
+                  type="email"
+                  name=" email"
+                  required
+                  placeholder="Type your email"
+                />
+              </div>
+              <div class="input-holder">
+                <label for="password">password</label>
+                <input
+                  class="sign-form-input"
+                  type="password"
+                  name=" password"
+                  required
+                  placeholder="Type your password"
+                />
+              </div>
+              <div class="input-holder">
+                <label class="coniform" for="coniform">coniform password</label>
+                <input
+                  class="sign-form-input coniform"
+                  type="password"
+                  name=" coniform"
+                  required
+                  placeholder="Coniform your password"
+                />
+                <div class="check-box">
+                  <input type="checkbox" name="check" id="" />
+                  <label class="check-sub" for="check">Remember me</label>
+                  <span> forgot password?</span>
+                </div>
+              </div>
+              <button class="login-button" type="submit">Sign up</button>
+              <button class="login-button-log" type="submit">Log in</button>
+              <div class="out-flex">
+                <span class="login-sub">Already have an account?</span>
+                <span class="login-sub-log">Don't have an account?</span>
+                <a class="login-link" href="#">Login</a>
+                <!-- <a class="login-link" href="#">Sign up</a> -->
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="border-pad">
+        <div class="footer-container">
+          <div class="logo-address">
+            <a class="logo-txt" href="#"> Furniro </a>
+
+            <address class="address">
+              400 University Drive Suite 200 Coral <br />
+              Gables,<br />
+              FL 33134 USA
+            </address>
+          </div>
+          <div class="links">
+            <ul class="footer-list">
+              <p class="footer-heading">Links</p>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Home</a>
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Shop</a>
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Blog</a>
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="help">
+            <ul class="footer-list">
+              <p class="footer-heading">Help</p>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> payment option</a>
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Return</a>
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item" href="#"> Privacy polices</a>
+              </li>
+            </ul>
+          </div>
+          <div class="news-letter">
+            <p class="footer-heading">Newsletter</p>
+            <div class="input">
+              <input
+                required
+                class="email"
+                type="email"
+                name=""
+                id="email"
+                placeholder=" Enter Your Email Address"
+              />
+              <label class="label-sub" for="email"> subscribe</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="copy-box">
+        <p class="copy-right-text">
+          <span class="year">2023</span>,Furniro, (Amirreza Mehrani). All rights
+          reserved
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
