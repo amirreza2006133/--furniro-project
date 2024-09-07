@@ -158,12 +158,17 @@ body {
 .card-btns {
   display: flex;
   justify-content: space-around;
-  gap: 1.2rem;
+  align-items: center;
+  /* gap: 1.2rem; */
 }
 .card-btn:link,
 .card-btn:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: #111;
   padding: 0.8rem 4.8rem;
   border: 1px solid #111;
@@ -494,7 +499,6 @@ body {
 .footer-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-
   gap: 6.4rem;
 }
 
@@ -578,7 +582,6 @@ body {
 /* *************************** */
 .pages-bg {
   background-image: url(../img/shop\ bg.png);
-
   background-repeat: no-repeats;
   background-size: cover;
   background-position: center;
