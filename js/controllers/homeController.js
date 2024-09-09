@@ -1,7 +1,9 @@
 import { state } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
+import ProductListView from "../views/productListView";
 function init() {
   CartPreviewView.render(state.cart);
+  ProductListView.render(state.shopItems);
 }
 
 init();
