@@ -44,9 +44,9 @@ class ProductListView {
                 <h3 class="heading-tertiary">${item.name}</h3>
                 <span class="tag">${item.tag}</span>
                 <p class="card-price">
-                  <span class="price-on"> ${item.price} </span>
+                  <span class="price-on"> ${item.price}${item.priceUnit} </span>
                   <span class="price-off"> ${
-                    (item.price * item.off) / 100 + item.price
+                    (item.price * item.off) / 100 - item.price
                   } </span>
                 </p>
               </div>

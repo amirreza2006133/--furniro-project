@@ -6,9 +6,10 @@ export const shopItems = [
   {
     id: 1,
     name: "Grifo",
+    tag: "stylish luxury",
     sizes: ["s", "m", "l"],
     colors: ["red", "green", "blue"],
-    price: "500",
+    price: 500,
     priceUnit,
     off: 30,
     image: syltherine,
