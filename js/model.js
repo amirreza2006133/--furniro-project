@@ -18,3 +18,7 @@ export function addItemToCart(newItem) {
   state.cart.push(newItem);
   return state;
 }
+
+export function findItemInItemsList(id) {
+  return shopItems.find((item) => item.id === Number(id));
+}
