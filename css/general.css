@@ -226,7 +226,7 @@ body {
 }
 .heading-primary {
   font-size: 5.2rem;
-  letter-spacing: 2px;
+  letter-spacing: 0.75px;
   color: #b88e2f;
 }
 .secondary-heading {
@@ -302,6 +302,7 @@ body {
 /* *************************** */
 .product-section {
   margin-bottom: 6.4rem;
+  padding: 2.4rem;
 }
 .card-container {
   max-width: 123rem;
@@ -545,14 +546,17 @@ body {
   text-decoration: none;
 }
 .input {
+  /* width: 100%; */
   display: flex;
   gap: 2.4rem;
   align-items: center;
   justify-content: center;
 }
+
 .email {
+  width: 100%;
   border: none;
-  padding: 0 3.2rem 0.4rem 0;
+  /* padding: 0 3.2rem 0.4rem 0; */
   font-family: inherit;
   font-size: 1.4rem;
   padding-bottom: 0.4rem;
