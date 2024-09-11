@@ -73,6 +73,11 @@ i {
   gap: 4.8rem;
   list-style: none;
 }
+.header-icon-list img {
+  width: 2.8rem;
+  height: 2.8rem;
+  cursor: pointer;
+}
 .header-icon-item,
 .close-icon {
   padding-bottom: 8px;
