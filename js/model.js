@@ -6,15 +6,25 @@ export const state = {
     {
       id: 1,
       name: "Grifo",
-      sizes: "s",
-      colors: "green",
+      size: "s",
+      color: "green",
       price: "500",
       priceUnit: "$",
+      quantity: 2,
     },
   ],
 };
 
-export function addItemToCart(newItem) {
+export function addItemToTheCart(newItem) {
+  newItem = {
+    id: newItem.id,
+    name: newItem.name,
+    size: newItem.size,
+    color: newItem.color,
+    price: newItem.price,
+    priceUnit: newItem.priceUnit,
+    quantity: newItem.quantity,
+  };
   state.cart.push(newItem);
   return state;
 }
