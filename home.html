@@ -10,7 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
     <link rel="icon" href="img/logo/logo.png" />
     <link rel="stylesheet" href="css/home.css" />
@@ -19,10 +22,10 @@
     <title>furniro &mdash; furniture</title>
 
     <script type="module" src="js/controllers/homeController.js"></script>
-  
+
     <!-- // TODO: refactor this styles to some external css file => -->
     <style>
-      .modal-container{
+      .modal-container {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -35,19 +38,18 @@
         display: none;
       }
 
-      .modal-container.active{
+      .modal-container.active {
         display: flex;
       }
 
-      .add-item-to-cart-modal{
+      .add-item-to-cart-modal {
         background-color: #fff;
         width: 320px;
       }
     </style>
   </head>
   <body>
-    <form class="modal-container">
-    </form>
+    <form class="modal-container"></form>
 
     <header class="header">
       <a class="logo" href="home.html">
@@ -77,22 +79,23 @@
         <ul class="header-icon-list">
           <li>
             <a href="login.html">
-              <i class='bx bx-user header-icon-item'></i>
+              <img src="img/icons/user-header.svg" alt="icon of a a user " />
             </a>
           </li>
           <li>
             <a href="search.html">
-              <i class='bx bx-search header-icon-item'></i>
+              <img src="img/icons/header-search.svg" alt=" a search icon" />
             </a>
           </li>
+
           <li>
             <a href="wishlist.html">
-              <i class='bx bx-heart header-icon-item'></i>
+              <img src="img/icons/header-heart.svg" alt=" a heart icon" />
             </a>
           </li>
           <li>
             <button class="main-btn-cart">
-              <i class='bx bx-cart header-icon-item'></i>
+              <img src="img/icons/header-cart.svg" alt=" a cart icon" />
               <aside class="cart">
                 <div class="cart-header">
                   <h2 class="shop-title">Shopping Cart</h2>
@@ -185,8 +188,7 @@
         <div class="heading-holder">
           <h2 class="secondary-heading">Our Products</h2>
         </div>
-        <div class="card-container">
-        </div>
+        <div class="card-container"></div>
         <div class="text-center">
           <a class="btn btn-show" href="shop.html"> Show More</a>
         </div>
@@ -220,7 +222,7 @@
               src="img/gallery/gallery-2.png"
               alt=" a photo of a white pot"
             />
-          </div> 
+          </div>
           <div class="gallery-pic-holder third">
             <img src="img/gallery/gallery-3.png" a photo of a white pot" />
           </div>

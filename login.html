@@ -47,64 +47,55 @@
           </li>
         </ul>
       </nav>
-      <div class="header-icon">
-        <ul class="header-icon-list">
-          <li>
-            <a href="login.html">
-              <ion-icon
-                class="header-icon-item"
-                name="person-outline"
-              ></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="search.html">
-              <ion-icon
-                class="header-icon-item"
-                name="search-outline"
-              ></ion-icon>
-            </a>
-          </li>
-          <li>
-            <a href="wishlist.html">
-              <ion-icon
-                class="header-icon-item"
-                name="heart-outline"
-              ></ion-icon>
-            </a>
-          </li>
-          <li>
-            <button class="main-btn-cart">
-              <ion-icon class="header-icon-item" name="cart-outline"></ion-icon>
-              <aside class="cart">
-                <div class="cart-header">
-                  <h2 class="shop-title">Shopping Cart</h2>
-                  <img
-                    class="close-icon"
-                    src="img/icons/close-icon.svg"
-                    alt=" close shop icon"
-                  />
-                </div>
+      <ul class="header-icon-list">
+        <li>
+          <a href="login.html">
+            <img src="img/icons/user-header.svg" alt="icon of a a user " />
+          </a>
+        </li>
+        <li>
+          <a href="search.html">
+            <img src="img/icons/header-search.svg" alt=" a search icon" />
+          </a>
+        </li>
 
-                <div class="card-product">
-                  <p class="product-status">There is no products in cart</p>
-                  <div>
-                    <div class="nav-card-price">
-                      <span class="subtotal"> Subtotal</span>
-                      <span class="cart-price"> Rs.0</span>
-                    </div>
+        <li>
+          <a href="wishlist.html">
+            <img src="img/icons/header-heart.svg" alt=" a heart icon" />
+          </a>
+        </li>
+        <li>
+          <button class="main-btn-cart">
+            <img src="img/icons/header-cart.svg" alt=" a cart icon" />
+            <aside class="cart">
+              <div class="cart-header">
+                <h2 class="shop-title">Shopping Cart</h2>
+                <img
+                  class="close-icon"
+                  src="img/icons/close-icon.svg"
+                  alt=" close shop icon"
+                />
+              </div>
+
+              <div class="card-product">
+                <ul class="cart-items-list"></ul>
+                <p class="product-status">There is no products in cart</p>
+                <div>
+                  <div class="nav-card-price">
+                    <span class="subtotal"> Subtotal</span>
+                    <span class="cart-price"> Rs.0</span>
                   </div>
                 </div>
-                <div class="card-btns">
-                  <a class="card-btn" href="cart.html">Cart</a>
-                  <a class="card-btn" href="login.html">Checkout</a>
-                </div>
-              </aside>
-              <div class="shade"></div>
-            </button>
-          </li>
-        </ul>
-      </div>
+              </div>
+              <div class="card-btns">
+                <a class="card-btn" href="cart.html">Cart</a>
+                <a class="card-btn" href="login.html">Checkout</a>
+              </div>
+            </aside>
+            <div class="shade"></div>
+          </button>
+        </li>
+      </ul>
     </header>
     <main>
       <section class="login-section">
