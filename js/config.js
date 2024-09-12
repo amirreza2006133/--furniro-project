@@ -22,26 +22,29 @@ export const products = [
   /* <div class="product-card">
 <div class="gradiant"></div>
 <a class="hover-btn" href="#"> Add to cart </a>
-<nav class="hover-nav">
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="share-social-outline"></ion-icon>
-      <span>share</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="git-compare-outline"></ion-icon>
-      <span>compare</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="heart-outline"></ion-icon>
-      <span>like</span>
-    </a>
-  </div>
-</nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
 <img
   class="product-card-image"
@@ -61,30 +64,29 @@ export const products = [
 <div class="off-50">
   <div class="gradiant"></div>
   <a class="hover-btn" href="#"> Add to cart </a>
-  <nav class="hover-nav">
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="share-social-outline"></ion-icon>
-        <span>share</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <a href="#">
-          <ion-icon name="git-compare-outline"></ion-icon>
-          <span>compare</span>
-        </a>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <a href="#">
-          <ion-icon name="heart-outline"></ion-icon>
-          <span>like</span>
-        </a>
-      </a>
-    </div>
-  </nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
   <img
     class="product-card-image"
@@ -105,26 +107,29 @@ export const products = [
 <div class="new">
   <div class="gradiant"></div>
   <a class="hover-btn" href="#"> Add to cart </a>
-  <nav class="hover-nav">
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="share-social-outline"></ion-icon>
-        <span>share</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="git-compare-outline"></ion-icon>
-        <span>compare</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="heart-outline"></ion-icon>
-        <span>like</span>
-      </a>
-    </div>
-  </nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
   <img
     class="product-card-image"
@@ -144,26 +149,29 @@ export const products = [
 <div class="new">
   <div class="gradiant"></div>
   <a class="hover-btn" href="#"> Add to cart </a>
-  <nav class="hover-nav">
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="share-social-outline"></ion-icon>
-        <span>share</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="git-compare-outline"></ion-icon>
-        <span>compare</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="heart-outline"></ion-icon>
-        <span>like</span>
-      </a>
-    </div>
-  </nav>
+     <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
   <img
     class="product-card-image"
@@ -182,26 +190,29 @@ export const products = [
 <div class="product-card">
 <div class="gradiant"></div>
 <a class="hover-btn" href="#"> Add to cart </a>
-<nav class="hover-nav">
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="share-social-outline"></ion-icon>
-      <span>share</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="git-compare-outline"></ion-icon>
-      <span>compare</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="heart-outline"></ion-icon>
-      <span>like</span>
-    </a>
-  </div>
-</nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
 <img
   class="product-card-image"
@@ -219,26 +230,29 @@ export const products = [
 <div class="product-card">
 <div class="gradiant"></div>
 <a class="hover-btn" href="#"> Add to cart </a>
-<nav class="hover-nav">
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="share-social-outline"></ion-icon>
-      <span>share</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="git-compare-outline"></ion-icon>
-      <span>compare</span>
-    </a>
-  </div>
-  <div class="hover-nav-item">
-    <a href="#">
-      <ion-icon name="heart-outline"></ion-icon>
-      <span>like</span>
-    </a>
-  </div>
-</nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
 <img
   class="product-card-image"
@@ -254,29 +268,72 @@ export const products = [
 </div>
 </div>
 <div class="product-card">
+            <div class="gradiant"></div>
+            <a class="hover-btn" href="#"> Add to cart </a>
+            <nav class="hover-nav">
+              <div class="hover-nav-item">
+                <a href="#">
+                  <img src="img/icons/share.svg" alt=" a share icon" />
+                  <span>share</span>
+                </a>
+              </div>
+              <div class="hover-nav-item">
+                <a href="#">
+                  <img
+                    src="img/icons/compare-svgrepo-com 1.png"
+                    alt=" a compare icon"
+                  />
+                  <span>compare</span>
+                </a>
+              </div>
+              <div class="hover-nav-item">
+                <a href="#">
+                  <img src="img/icons/heart.svg" alt=" a heart icon " />
+                  <span>like</span>
+                </a>
+              </div>
+            </nav>
+
+            <img
+              class="product-card-image"
+              src="img/product/muggo.png"
+              alt="a small mug"
+            />
+            <div class="product-card-info">
+              <h3 class="heading-tertiary">Moggo</h3>
+              <span class="tag">a small mug</span>
+              <p class="card-price">
+                <span class="price-on"> Rp 150.000 </span>
+              </p>
+            </div>
+          </div>
+<div class="product-card">
 <div class="off-50">
   <div class="gradiant"></div>
   <a class="hover-btn" href="#"> Add to cart </a>
-  <nav class="hover-nav">
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="share-social-outline"></ion-icon>
-        <span>share</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="git-compare-outline"></ion-icon>
-        <span>compare</span>
-      </a>
-    </div>
-    <div class="hover-nav-item">
-      <a href="#">
-        <ion-icon name="heart-outline"></ion-icon>
-        <span>like</span>
-      </a>
-    </div>
-  </nav>
+   <nav class="hover-nav">
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/share.svg" alt=" a share icon" />
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img
+                      src="img/icons/compare-svgrepo-com 1.png"
+                      alt=" a compare icon"
+                    />
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <img src="img/icons/heart.svg" alt=" a heart icon " />
+                    <span>like</span>
+                  </a>
+                </div>
+              </nav>
 
   <img
     class="product-card-image"
