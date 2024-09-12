@@ -3,6 +3,7 @@ class CartPreviewView {
 
   render(cart) {
     const markup = this._generateMarkup(cart);
+    this._elContentCleaner(this._parentElement);
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
@@ -19,6 +20,10 @@ class CartPreviewView {
           </li>`
       )
       .join("");
+  }
+
+  _elContentCleaner(el) {
+    el.innerHTML = "";
   }
 }
 
