@@ -1,24 +1,22 @@
 class CartPreviewView {
-  _parentEl = document.querySelector(".cart-items-list");
+  _parentElement = document.querySelector(".cart-items-list");
 
   render(cart) {
-    const generatedMarkup = this._generateMarkup(cart);
-    this._parentEl.insertAdjacentHTML("afterbegin", generatedMarkup);
+    const markup = this._generateMarkup(cart);
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
   _generateMarkup(cart) {
     return cart
       .map(
-        (item) => `
-          <li class="cartItem">
-              ${item.id}
-              ${item.name}
-              ${item.sizes}
-              ${item.colors}
-              ${item.price}
-              ${item.priceUnit} 
-          </li>
-      `
+        (product) => `
+          <li class="cart-item">
+            <span>${product.name}</span>
+            <span>Size: ${product.size}</span>
+            <span>Color: ${product.color}</span>
+            <span>${product.currency}${product.price}</span>
+            <span>Quantity: ${product.quantity}</span>
+          </li>`
       )
       .join("");
   }

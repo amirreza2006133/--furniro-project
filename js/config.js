@@ -1,18 +1,18 @@
-import syltherine from "url:../img/product/syltherine.png";
+import syltherineImage from "url:../img/product/syltherine.png";
 
-export const priceUnit = "$";
+export const CURRENCY_UNIT = "$";
 
-export const shopItems = [
+export const products = [
   {
     id: 1,
     name: "Grifo",
-    tag: "stylish luxury",
-    sizes: ["s", "m", "l"],
-    colors: ["red", "green", "blue"],
+    description: "Stylish luxury",
+    sizes: ["S", "M", "L"],
+    colors: ["Red", "Green", "Blue"],
     price: 500,
-    priceUnit,
-    off: 30,
-    image: syltherine,
+    currency: CURRENCY_UNIT,
+    discount: 30,
+    imageUrl: syltherineImage,
   },
 ];
 

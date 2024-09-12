@@ -1,34 +1,38 @@
-import { shopItems } from "./config";
+import { products } from "./config";
+
+if (module.hot) {
+  module.hot.accept();
+}
 
 export const state = {
-  shopItems,
+  products,
   cart: [
     {
       id: 1,
       name: "Grifo",
-      size: "s",
-      color: "green",
-      price: "500",
-      priceUnit: "$",
+      size: "S",
+      color: "Green",
+      price: 500,
+      currency: "$",
       quantity: 2,
     },
   ],
 };
 
-export function addItemToTheCart(newItem) {
-  newItem = {
-    id: newItem.id,
-    name: newItem.name,
-    size: newItem.size,
-    color: newItem.color,
-    price: newItem.price,
-    priceUnit: newItem.priceUnit,
-    quantity: newItem.quantity,
+export function addProductToCart(product) {
+  const newProduct = {
+    id: product.id,
+    name: product.name,
+    size: product.size,
+    color: product.color,
+    price: product.price,
+    currency: product.currency,
+    quantity: product.quantity,
   };
-  state.cart.push(newItem);
+  state.cart.push(newProduct);
   return state;
 }
 
-export function findItemInItemsList(id) {
-  return shopItems.find((item) => item.id === Number(id));
+export function findProductById(id) {
+  return products.find((product) => product.id === Number(id));
 }

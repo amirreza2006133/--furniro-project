@@ -1,164 +1,177 @@
 class ProductListView {
-  _parentEl = document.querySelector(".card-container");
-  _modalEl = document.querySelector(".modal-container");
-  _findItem;
-  _addItemToTheCart;
-  _currentItem;
-  _itemQuantity = 1;
+  _parentElement = document.querySelector(".card-container");
+  _modalElement = document.querySelector(".modal-container");
+  _findProductById;
+  _addProductToCart;
+  _currentProduct;
+  _productQuantity = 1;
 
-  render(shopItems, findItemInItemsList, addItemToTheCart) {
-    const generatedMarkup = this._generateMarkup(shopItems);
-    this._parentEl.insertAdjacentHTML("afterbegin", generatedMarkup);
-    this._findItem = findItemInItemsList;
-    this._addItemToTheCart = addItemToTheCart;
-    this._eventListener();
+  render(products, findProductById, addProductToCart) {
+    this._findProductById = findProductById;
+    this._addProductToCart = addProductToCart;
+
+    const markup = this._generateMarkup(products);
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._setupEventListeners();
   }
 
-  _eventListener() {
-    this._parentEl.addEventListener("click", (e) => {
+  _setupEventListeners() {
+    this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
-      if (e.target.classList.contains("show-modal")) this._showModal(e);
+      if (e.target.classList.contains("show-modal")) this._openModal(e);
     });
 
-    this._modalEl.addEventListener("submit", (e) => {
-      e.preventDefault();
-      this._submitModalForm(e);
-    });
-
-    this._modalEl.addEventListener("click", (e) => {
-      if (e.target.classList.contains("decrease-quantity-btn"))
-        this._decreaseQuantity();
-
-      if (e.target.classList.contains("increase-quantity-btn"))
-        this._increaseQuantity();
+    this._modalElement.addEventListener("submit", (e) =>
+      this._handleFormSubmit(e)
+    );
+    this._modalElement.addEventListener("click", (e) => {
+      this._handleQuantityChange(e);
     });
   }
 
-  _generateMarkup(shopItems) {
-    return shopItems
+  _generateMarkup(products) {
+    return products
       .map(
-        (item) => `
-          <div class="product-card" data-id="${item.id}">
-            <div class="off-${item.off}">
+        (product) => `
+          <div class="product-card" data-id="${product.id}">
+            <div class="off-${product.discount}">
               <div class="gradiant"></div>
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
-                  <div class="hover-nav-item">
-                    <a href="#">
-                      <ion-icon name="share-social-outline"></ion-icon>
-                      <span>share</span>
-                    </a>
-                  </div>
-                  <div class="hover-nav-item">
-                    <a href="#">
-                      <ion-icon name="git-compare-outline"></ion-icon>
-                      <span>compare</span>
-                    </a>
-                  </div>
-                  <div class="hover-nav-item">
-                    <a href="#">
-                      <ion-icon name="heart-outline"></ion-icon>
-                      <span>like</span>
-                    </a>
-                  </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    <span>share</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <ion-icon name="git-compare-outline"></ion-icon>
+                    <span>compare</span>
+                  </a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#">
+                    <ion-icon name="heart-outline"></ion-icon>
+                    <span>like</span>
+                  </a>
+                </div>
               </nav>
-
+  
               <img
                 class="product-card-image"
-                src="${item.image}"
-                alt="a Stylish caffe chair"
+                src="${product.imageUrl}"
+                alt="A stylish caffe chair"
               />
               <div class="product-card-info">
-                <h3 class="heading-tertiary">${item.name}</h3>
-                <span class="tag">${item.tag}</span>
+                <h3 class="heading-tertiary">${product.name}</h3>
+                <span class="tag">${product.description}</span>
                 <p class="card-price">
-                <span class="price-on"> ${item.price}${item.priceUnit} </span>
-                <span class="price-off"> ${
-                  (item.price * item.off) / 100 - item.price
-                } </span>
+                  <span class="price-on"> ${product.currency}${
+          product.price
+        } </span>
+                  <span class="price-off"> ${this._calculateDiscountedPrice(
+                    product
+                  )} </span>
                 </p>
               </div>
             </div>
-          </div>
-      `
+          </div>`
       )
       .join("");
   }
 
-  _showModal(e) {
-    this._modalEl.classList.add("active");
-    this._currentItem = this._findItem(
-      e.target.closest(".product-card").dataset.id
+  _calculateDiscountedPrice(product) {
+    return (product.price - (product.price * product.discount) / 100).toFixed(
+      2
     );
-
-    const generatedMarkup = `
-     <div class="add-item-to-cart-modal">
-        <b>${this._currentItem.name}</b>
-        <br>
-        <b>colors:</b>
-        ${this._currentItem.colors
-          .map(
-            (color, i) => `
-          <input type="radio" checked="${
-            i === 0
-          }" id="${color}" name="color" value="${color}"/>
-          <label for="${color}">${color}</label>
-        `
-          )
-          .join("")}
-        <br>
-        <b>sizes</b>
-        ${this._currentItem.sizes
-          .map(
-            (size, i) => `
-            <input type="radio" checked="${
-              i === 0
-            }" id="${size}" name="size" value="${size}"/>
-            <label for="${size}">${size}</label>
-          `
-          )
-          .join("")}
-        <br>
-        <div>
-          <div class="decrease-quantity-btn">-</div>
-          <input class="quantity" type="text" name="quantity" disabled value="${
-            this._itemQuantity
-          }"/>
-          <div class="increase-quantity-btn">+</div>
-      </div>
-      <input type="submit" value="add" />
-    </div>
-    `;
-    this._modalEl.insertAdjacentHTML("afterbegin", generatedMarkup);
   }
 
-  _submitModalForm(e) {
-    const formData = new FormData(e.target);
-    const formValues = Object.fromEntries(formData.entries());
+  _openModal(e) {
+    this._modalElement.classList.add("active");
+    const productId = e.target.closest(".product-card").dataset.id;
+    this._currentProduct = this._findProductById(productId);
 
-    const newItem = {
-      ...this._currentItem,
-      ...formValues,
-      quantity: this._itemQuantity,
+    this._renderModalContent();
+  }
+
+  _renderModalContent() {
+    const markup = `
+      <div class="modal-content">
+        <h3>${this._currentProduct.name}</h3>
+        <div class="modal-options">
+          <b>Colors:</b>
+          ${this._generateColorOptions(this._currentProduct.colors)}
+        </div>
+        <div class="modal-options">
+          <b>Sizes:</b>
+          ${this._generateSizeOptions(this._currentProduct.sizes)}
+        </div>
+        <div class="quantity-controls">
+          <span class="decrease-quantity-btn">-</span>
+          <input class="quantity-input" type="text" value="${
+            this._productQuantity
+          }" disabled />
+          <span class="increase-quantity-btn">+</span>
+        </div>
+        <input type="submit" value="add" class="add-to-cart-btn">
+      </div>`;
+    this._modalElement.innerHTML = markup;
+  }
+
+  _generateColorOptions(colors) {
+    return colors
+      .map(
+        (color, index) => `
+        <input type="radio" id="${color}" name="color" value="${color}" ${
+          index === 0 ? "checked" : ""
+        } />
+        <label for="${color}">${color}</label>`
+      )
+      .join("");
+  }
+
+  _generateSizeOptions(sizes) {
+    return sizes
+      .map(
+        (size, index) => `
+        <input type="radio" id="${size}" name="size" value="${size}" ${
+          index === 0 ? "checked" : ""
+        } />
+        <label for="${size}">${size}</label>`
+      )
+      .join("");
+  }
+
+  _handleFormSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const productDetails = {
+      ...this._currentProduct,
+      color: formData.get("color"),
+      size: formData.get("size"),
+      quantity: this._productQuantity,
     };
 
-    this._addItemToTheCart(newItem);
+    this._addProductToCart(productDetails);
+    this._modalElement.classList.remove("active");
   }
 
-  _decreaseQuantity() {
-    if (this._itemQuantity <= 1) return;
-    this._itemQuantity -= 1;
-    this._updateQuantityInInterface();
+  _handleQuantityChange(e) {
+    if (e.target.classList.contains("decrease-quantity-btn"))
+      this._changeQuantity(-1);
+    if (e.target.classList.contains("increase-quantity-btn"))
+      this._changeQuantity(1);
   }
 
-  _increaseQuantity() {
-    this._itemQuantity += 1;
-    this._updateQuantityInInterface();
+  _changeQuantity(change) {
+    this._productQuantity = Math.max(1, this._productQuantity + change);
+    this._updateQuantityDisplay();
   }
 
-  _updateQuantityInInterface() {
-    const el = this._modalEl.querySelector(".quantity");
-    el.value = this._itemQuantity;
+  _updateQuantityDisplay() {
+    const quantityInput = this._modalElement.querySelector(".quantity-input");
+    quantityInput.value = this._productQuantity;
   }
 }
 

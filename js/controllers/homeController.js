@@ -1,9 +1,10 @@
-import { state, findItemInItemsList, addItemToTheCart } from "../model";
+import { state, findProductById, addProductToCart } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
 import ProductListView from "../views/productListView";
+
 function init() {
   CartPreviewView.render(state.cart);
-  ProductListView.render(state.shopItems, findItemInItemsList, addItemToTheCart);
+  ProductListView.render(state.products, findProductById, addProductToCart);
 }
 
 init();
