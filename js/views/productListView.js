@@ -98,49 +98,63 @@ class ProductListView {
   _renderModalContent() {
     const markup = `
       <div class="modal-content">
-        <h3>${this._currentProduct.name}</h3>
-        <div class="modal-options">
-          <b>Colors:</b>
-          ${this._generateColorOptions(this._currentProduct.colors)}
+        <div class="modal-close">
+          <span class="modal-close-btn">✖</span>
         </div>
+        <span>${this._currentProduct.name}</span>
         <div class="modal-options">
-          <b>Sizes:</b>
+          <span>Size</span>
           ${this._generateSizeOptions(this._currentProduct.sizes)}
         </div>
-        <div class="quantity-controls">
+        <div class="modal-options">
+          <span>Color</span>
+          ${this._generateColorOptions(this._currentProduct.colors)}
+        </div>
+        <div class="modal-controls">
+          <div class="quantity-controls">
           <span class="decrease-quantity-btn">-</span>
           <input class="quantity-input" type="text" value="${
             this._productQuantity
           }" disabled />
           <span class="increase-quantity-btn">+</span>
+          </div>
+          <input type="submit" value="add to cart" class="add-to-cart-btn">
         </div>
-        <input type="submit" value="add" class="add-to-cart-btn">
       </div>`;
     this._modalElement.innerHTML = markup;
   }
 
   _generateColorOptions(colors) {
-    return colors
+    return `
+    <div class="inputs color">
+    ${colors
       .map(
         (color, index) => `
-        <input type="radio" id="${color}" name="color" value="${color}" ${
+       <input type="radio" id="${color}" name="color" value="${color}" ${
           index === 0 ? "checked" : ""
         } />
-        <label for="${color}">${color}</label>`
+        <label for="${color}" style="background-color: ${color.toLowerCase()};"></label>
+        `
       )
-      .join("");
+      .join("")}
+    </div>
+    `;
   }
 
   _generateSizeOptions(sizes) {
-    return sizes
-      .map(
-        (size, index) => `
+    return `
+    <div class="inputs size"> 
+      ${sizes
+        .map(
+          (size, index) => `
         <input type="radio" id="${size}" name="size" value="${size}" ${
-          index === 0 ? "checked" : ""
-        } />
+            index === 0 ? "checked" : ""
+          } />
         <label for="${size}">${size}</label>`
-      )
-      .join("");
+        )
+        .join("")}
+    </div>
+    `;
   }
 
   _handleFormSubmit(e) {

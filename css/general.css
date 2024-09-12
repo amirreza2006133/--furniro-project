@@ -695,3 +695,142 @@ i {
   background-color: #b88e2f;
   color: #fff;
 }
+/* ******************************* */
+/* Modal Styles: */
+/* ******************************* */
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000005b;
+  display: none;
+}
+
+.modal-container.active {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  width: 320px;
+  background-color: #fff;
+
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+
+  padding: 5.5rem 4.5rem 1.5rem;
+  border-radius: 15px;
+
+  color: #000;
+}
+
+.modal-content .modal-close {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-content .modal-close span {
+  width: 28px;
+  height: 28px;
+  background-color: #e5e7eb;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  font-size: 1.25rem;
+}
+
+.modal-content > span {
+  display: inline-block;
+
+  font-size: 2.25rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.modal-content .modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-size: 1.5rem;
+}
+
+.modal-content .modal-options .inputs input {
+  width: 0;
+}
+
+.modal-content .modal-options .inputs.color input:is(:focus, :checked) + label {
+  border: 4px solid #898989;
+}
+
+.modal-content .modal-options .inputs.color label {
+  display: inline-block;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.modal-content .modal-options .inputs.size label {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #f9f1e7;
+  border-radius: 5px;
+}
+
+.modal-content .modal-options .inputs.size input:is(:focus, :checked) + label {
+  background-color: #b88e2f;
+  color: #fff;
+}
+
+.modal-content .modal-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-content .modal-controls .quantity-controls {
+  border: 1px solid #898989;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 2rem;
+}
+
+.modal-content .modal-controls .quantity-controls input {
+  background-color: transparent;
+  border: none;
+  width: 15px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.modal-content .modal-controls input[type="submit"] {
+  flex-grow: 1;
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
