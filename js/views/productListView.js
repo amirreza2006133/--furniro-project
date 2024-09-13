@@ -21,6 +21,9 @@ class ProductListView {
       if (e.target.classList.contains("show-modal")) this._openModal(e);
     });
 
+    this._modalElement.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-close-btn")) this._closeModal();
+    });
     this._modalElement.addEventListener("submit", (e) =>
       this._handleFormSubmit(e)
     );
@@ -157,6 +160,10 @@ class ProductListView {
     `;
   }
 
+  _closeModal() {
+    this._modalElement.classList.remove("active");
+  }
+
   _handleFormSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -168,7 +175,7 @@ class ProductListView {
     };
 
     this._addProductToCart(productDetails);
-    this._modalElement.classList.remove("active");
+    this._closeModal();
   }
 
   _handleQuantityChange(e) {
