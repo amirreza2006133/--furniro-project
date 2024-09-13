@@ -1,6 +1,7 @@
 import { state, findProductById, addProductToCart } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
 import ProductListView from "../views/productListView";
+import ProductModalView from "../views/productModalView";
 
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
@@ -9,11 +10,8 @@ function addProductToCartHandler(newItem) {
 
 function init() {
   CartPreviewView.render(state.cart);
-  ProductListView.render(
-    state.products,
-    findProductById,
-    addProductToCartHandler
-  );
+  ProductModalView.render(addProductToCartHandler);
+  ProductListView.render(state.products, findProductById, ProductModalView);
 }
 
 init();
