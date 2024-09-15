@@ -1,15 +1,13 @@
 import { products } from "./config";
 
-if (module.hot) {
-  module.hot.accept();
-}
-
 export const state = {
   products,
   cart: [],
 };
 
 export function addProductToCart(product) {
+  console.log(product);
+  
   const newProduct = {
     id: product.id,
     name: product.name,
@@ -18,7 +16,7 @@ export function addProductToCart(product) {
     price: product.price,
     currency: product.currency,
     quantity: product.quantity,
-    imgUrl: product.imgUrl,
+    imageUrl: product.imageUrl,
   };
   state.cart.push(newProduct);
   return state;

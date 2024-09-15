@@ -12,11 +12,16 @@ class CartPreviewView {
       .map(
         (product) => `
           <li class="cart-item">
-            <span>${product.name}</span>
-            <span>Size: ${product.size}</span>
-            <span>Color: ${product.color}</span>
-            <span>${product.currency}${product.price}</span>
-            <span>Quantity: ${product.quantity}</span>
+            <img src="${product.imageUrl}" alt="${product.name}" />
+            <div>
+                <p>
+                  <span>${product.name}</span> <span class="txt-lt">( ${product.color} / ${product.size} )</span>
+                </p>
+                <p>
+                  <span>${product.quantity} x</span><span class="cart-item-price">${product.currency}${product.price}</span>
+                </p>
+            </div>
+            <button class="cart-delete-product">✖</button>
           </li>`
       )
       .join("");

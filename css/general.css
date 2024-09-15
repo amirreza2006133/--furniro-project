@@ -114,7 +114,7 @@ i {
   position: fixed;
   padding: 3.2rem 2.4rem 3.2rem 1.2rem;
   height: 100vh;
-  width: 30%;
+  width: 50%;
   top: 0;
   right: 0;
   background-color: #fff;
@@ -836,4 +836,56 @@ i {
   border-radius: 5px;
   font-size: 1.8rem;
   text-transform: capitalize;
+}
+
+/* ******************************* */
+/* Cart Item Styles: */
+/* ******************************* */
+
+/* TODO: working onn some details for modal */
+/* TODO: move this code to the cart styles */
+
+.cart-item {
+  /* height: 120px; */
+  display: grid;
+  grid-template-columns: 96px 1fr 24px;
+  gap: 6rem;
+  align-items: center;
+}
+
+.cart-item img {
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 5px 5px 20px #00000069;
+}
+
+.cart-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cart-item div p {
+  display: flex;
+  font-size: 2rem;
+  gap: 5px;
+}
+
+.cart-item div p .txt-lt {
+  color: #9ca3af;
+}
+
+.cart-item div p .cart-item-price {
+  font-size: 2rem;
+  color: #b88e2f;
+}
+
+.cart-item .cart-delete-product{
+  border: none;
+  background-color: transparent;
+  color: #898989;
+  font-size: 28px;
 }
