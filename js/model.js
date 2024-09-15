@@ -6,17 +6,7 @@ if (module.hot) {
 
 export const state = {
   products,
-  cart: [
-    {
-      id: 1,
-      name: "Grifo",
-      size: "S",
-      color: "Green",
-      price: 500,
-      currency: "$",
-      quantity: 2,
-    },
-  ],
+  cart: [],
 };
 
 export function addProductToCart(product) {
@@ -28,6 +18,7 @@ export function addProductToCart(product) {
     price: product.price,
     currency: product.currency,
     quantity: product.quantity,
+    imgUrl: product.imgUrl,
   };
   state.cart.push(newProduct);
   return state;
