@@ -845,8 +845,13 @@ i {
 /* TODO: working onn some details for modal */
 /* TODO: move this code to the cart styles */
 
+.cart-items-list{
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .cart-item {
-  /* height: 120px; */
   display: grid;
   grid-template-columns: 96px 1fr 24px;
   gap: 6rem;
