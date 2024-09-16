@@ -1,10 +1,30 @@
 class CartPreviewView {
-  _parentElement = document.querySelector(".cart-items-list");
+  _parentEl = document.querySelector(".main-btn-cart");
+  _productsListEl = document.querySelector(".cart-items-list");
+  _openPreviewEl = document.querySelector(".open-cart-preview");
+  _closePreviewEl = document.querySelector(".close-icon");
 
   render(cart) {
     const markup = this._generateMarkup(cart);
-    this._elContentCleaner(this._parentElement);
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    this._elContentCleaner(this._productsListEl);
+    this._productsListEl.insertAdjacentHTML("afterbegin", markup);
+    this._setupEventListeners();
+  }
+
+  _setupEventListeners() {
+    this._openPreviewEl.addEventListener("click", this._openPreview.bind(this));
+    this._closePreviewEl.addEventListener(
+      "click",
+      this._closePreview.bind(this)
+    );
+  }
+
+  _openPreview() {
+    this._parentEl.classList.add("cart-open");
+  }
+
+  _closePreview() {
+    this._parentEl.classList.remove("cart-open");
   }
 
   _generateMarkup(cart) {
