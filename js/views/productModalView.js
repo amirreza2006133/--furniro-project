@@ -6,13 +6,13 @@ class ProductModalView {
 
   render(addProductToCart) {
     this._addProductToCart = addProductToCart;
+    this._setupEventListeners();
   }
 
   openModal(product) {
     this._currentProduct = product;
     this._renderModalContent();
     this._modalElement.classList.add("active");
-    this._setupEventListeners();
   }
 
   _setupEventListeners() {
