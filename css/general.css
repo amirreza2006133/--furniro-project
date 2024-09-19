@@ -436,12 +436,12 @@ i {
   align-items: center;
 }
 .price-on {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
   color: #3a3a3a;
 }
 .price-off {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: #b0b0b0;
   text-decoration: line-through;
 }
