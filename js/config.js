@@ -53,6 +53,7 @@ export const products = [
     currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: RespiraImage,
+    new: true,
   },
   {
     id: 5,
@@ -64,6 +65,7 @@ export const products = [
     currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: GrifoImage,
+    new: true,
   },
   {
     id: 6,
