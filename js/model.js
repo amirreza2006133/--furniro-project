@@ -11,7 +11,7 @@ export function addProductToCart(product) {
     name: product.name,
     size: product.size,
     color: product.color,
-    price: product.price,
+    price: product.price - (product.price * product.discount) / 100,
     currency: product.currency,
     quantity: product.quantity,
     imageUrl: product.imageUrl,

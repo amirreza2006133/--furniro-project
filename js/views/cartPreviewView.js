@@ -1,8 +1,11 @@
+import { CURRENCY_UNIT } from "../config";
+
 class CartPreviewView {
   _parentEl = document.querySelector(".main-btn-cart");
   _productsListEl = document.querySelector(".cart-items-list");
   _openPreviewEl = document.querySelector(".open-cart-preview");
   _closePreviewEl = document.querySelector(".close-icon");
+  _totalPriceEl = document.querySelector(".cart-price");
   _deleteProductFromCart;
 
   render(cart, deleteProductHandler) {
@@ -17,6 +20,14 @@ class CartPreviewView {
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
+    this._changeTotalPrice(cart);
+  }
+
+  _changeTotalPrice(cart) {
+    const totalPrice = cart.reduce((prev, curr) => {
+      return prev + curr.price;
+    }, 0);
+    this._totalPriceEl.textContent = `${totalPrice}${CURRENCY_UNIT}`;
   }
 
   _setupEventListeners() {
