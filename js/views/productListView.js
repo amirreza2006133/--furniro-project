@@ -24,7 +24,7 @@ class ProductListView {
       .map(
         (product) => `
           <div class="product-card" data-id="${product.id}">
-            <div class="off-${product.discount}">
+            <div class="off-${product.discount} ${product.new ? "new" : ""}">
               <div class="gradiant"></div>
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
@@ -50,10 +50,11 @@ class ProductListView {
           product.price
         } </span> 
         ${
-          product.discount ?
-          `<span class="price-off"> ${this._calculateDiscountedPrice(
-            product
-          )} </span>` : ""
+          product.discount
+            ? `<span class="price-off"> ${this._calculateDiscountedPrice(
+                product
+              )} </span>`
+            : ""
         }
                 </p>
               </div>
