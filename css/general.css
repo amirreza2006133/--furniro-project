@@ -747,7 +747,7 @@ i {
   width: 28px;
   height: 28px;
   background-color: #e5e7eb;
-
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -774,6 +774,8 @@ i {
 }
 
 .modal-content .modal-options .inputs input {
+  cursor: pointer;
+
   width: 0;
 }
 
@@ -782,6 +784,8 @@ i {
 }
 
 .modal-content .modal-options .inputs.color label {
+  cursor: pointer;
+
   display: inline-block;
   border-radius: 50%;
   width: 32px;
@@ -791,11 +795,10 @@ i {
 .modal-content .modal-options .inputs.size label {
   width: 34px;
   height: 34px;
-
+  cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
   background-color: #f9f1e7;
   border-radius: 5px;
 }
@@ -819,6 +822,7 @@ i {
   padding: 12px;
   border-radius: 5px;
   font-size: 2rem;
+  cursor: pointer;
 }
 
 .modal-content .modal-controls .quantity-controls input {
@@ -836,6 +840,13 @@ i {
   border-radius: 5px;
   font-size: 1.8rem;
   text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-controls input[type="submit"]:hover {
+  background-color: #111;
+  color: #fff;
 }
 
 /* ******************************* */
@@ -845,7 +856,7 @@ i {
 /* TODO: working onn some details for modal */
 /* TODO: move this code to the cart styles */
 
-.cart-items-list{
+.cart-items-list {
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -888,7 +899,7 @@ i {
   color: #b88e2f;
 }
 
-.cart-item .cart-delete-product{
+.cart-item .cart-delete-product {
   border: none;
   background-color: transparent;
   color: #898989;
