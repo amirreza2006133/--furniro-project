@@ -3,12 +3,20 @@ class CartPreviewView {
   _productsListEl = document.querySelector(".cart-items-list");
   _openPreviewEl = document.querySelector(".open-cart-preview");
   _closePreviewEl = document.querySelector(".close-icon");
+  _deleteProductFromCart;
 
-  render(cart) {
+  render(cart, deleteProductHandler) {
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
     this._setupEventListeners();
+    this._deleteProductFromCart = deleteProductHandler;
+  }
+
+  reRender(cart) {
+    const markup = this._generateMarkup(cart);
+    this._elContentCleaner(this._productsListEl);
+    this._productsListEl.insertAdjacentHTML("afterbegin", markup);
   }
 
   _setupEventListeners() {
@@ -17,6 +25,12 @@ class CartPreviewView {
       "click",
       this._closePreview.bind(this)
     );
+    this._parentEl.addEventListener("click", (e) => {
+      if (e.target.classList.contains("cart-delete-product")) {
+        const targetProductId = e.target.closest(".cart-item").dataset.id;
+        this._deleteProductFromCart(targetProductId);
+      }
+    });
   }
 
   _openPreview() {
@@ -31,7 +45,7 @@ class CartPreviewView {
     return cart
       .map(
         (product) => `
-          <li class="cart-item">
+          <li class="cart-item" data-id="${product.id}">
             <img src="${product.imageUrl}" alt="${product.name}" />
             <div>
                 <p>

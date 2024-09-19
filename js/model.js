@@ -6,8 +6,6 @@ export const state = {
 };
 
 export function addProductToCart(product) {
-  console.log(product);
-  
   const newProduct = {
     id: product.id,
     name: product.name,
@@ -20,6 +18,10 @@ export function addProductToCart(product) {
   };
   state.cart.push(newProduct);
   return state;
+}
+
+export function deleteProductFromCart(productId) {
+  state.cart = state.cart.filter((product) => product.id !== Number(productId));
 }
 
 export function findProductById(id) {
