@@ -48,10 +48,13 @@ class ProductListView {
                 <p class="card-price">
                   <span class="price-on"> ${product.currency}${
           product.price
-        } </span>
-                  <span class="price-off"> ${this._calculateDiscountedPrice(
-                    product
-                  )} </span>
+        } </span> 
+        ${
+          product.discount ?
+          `<span class="price-off"> ${this._calculateDiscountedPrice(
+            product
+          )} </span>` : ""
+        }
                 </p>
               </div>
             </div>
@@ -61,6 +64,8 @@ class ProductListView {
   }
 
   _calculateDiscountedPrice(product) {
+    console.log(product.discount);
+
     return (product.price - (product.price * product.discount) / 100).toFixed(
       2
     );
