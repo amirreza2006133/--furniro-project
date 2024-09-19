@@ -119,6 +119,10 @@ i {
   right: 0;
   background-color: #fff;
   transform: translateX(100%);
+
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 2rem;
 }
 .cart-header {
   display: flex;
@@ -141,7 +145,6 @@ i {
   padding: 2.4rem 0 2.4rem 0;
   display: flex;
   flex-direction: column;
-  gap: 35rem;
 }
 .product-status {
   font-size: 1.6rem;
@@ -855,6 +858,11 @@ i {
 
 /* TODO: working onn some details for modal */
 /* TODO: move this code to the cart styles */
+/* TODO: customize the scrollbar */
+
+.card-product{
+  overflow-y: scroll;
+}
 
 .cart-items-list {
   display: flex;
