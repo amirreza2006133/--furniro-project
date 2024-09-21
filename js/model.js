@@ -6,6 +6,16 @@ export const state = {
 };
 
 export function addProductToCart(product) {
+  const existingCartProduct = state.cart.find((item) => item.id === product.id);
+  if (
+    existingCartProduct &&
+    existingCartProduct.size === product.size &&
+    existingCartProduct.color === product.color
+  ) {
+    increaseProductQuantity(product.id, product.quantity);
+    return;
+  }
+
   const newProduct = {
     id: product.id,
     name: product.name,
@@ -26,4 +36,9 @@ export function deleteProductFromCart(productId) {
 
 export function findProductById(id) {
   return products.find((product) => product.id === Number(id));
+}
+
+export function increaseProductQuantity(productId, increaseAmount = 1) {
+  const existingCartProduct = state.cart.find((item) => item.id === productId);
+  existingCartProduct.quantity += increaseAmount;
 }
