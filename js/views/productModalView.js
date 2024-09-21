@@ -100,6 +100,7 @@ class ProductModalView {
 
     this._addProductToCart(productDetails);
     this._closeModal();
+    this._handleResetForm();
   }
 
   _changeQuantity(change) {
@@ -114,6 +115,11 @@ class ProductModalView {
 
   _closeModal() {
     this._modalElement.classList.remove("active");
+  }
+
+  _handleResetForm() {
+    this._modalElement.reset();
+    this._productQuantity = 1;
   }
 }
 
