@@ -860,7 +860,7 @@ i {
 /* TODO: move this code to the cart styles */
 /* TODO: customize the scrollbar */
 
-.card-product{
+.card-product {
   overflow-y: scroll;
 }
 
@@ -912,4 +912,28 @@ i {
   background-color: transparent;
   color: #898989;
   font-size: 28px;
+}
+
+/* ******************************* */
+/* Notification Styles: */
+/* ******************************* */
+
+.notification {
+  background-color: #FFF !important;
+}
+
+.iziToast-title {
+  font-size: 2.4rem !important;
+}
+
+.iziToast-message {
+  font-size: 2.2rem !important;
+}
+
+.iziToast-progressbar div {
+  height: 5px !important;
+}
+
+.notification.success .iziToast-progressbar div {
+  background-color: #20bf55 !important;
 }
