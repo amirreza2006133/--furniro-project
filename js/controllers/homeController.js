@@ -19,6 +19,7 @@ function addProductToCartHandler(newItem) {
 function deleteProductFromCartHandler(productId) {
   deleteProductFromCart(productId);
   CartPreviewView.reRender(state.cart);
+  NotificationView.info("product deleted successfully");
 }
 
 function init() {

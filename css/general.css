@@ -1000,3 +1000,7 @@ i {
 .notification.success .iziToast-progressbar div {
   background-color: #20bf55 !important;
 }
+
+.notification.info .iziToast-progressbar div {
+  background-color: #228be6 !important;
+}
