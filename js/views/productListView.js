@@ -65,16 +65,18 @@ class ProductListView {
                 <h3 class="heading-tertiary">${product.name}</h3>
                 <span class="tag">${product.description}</span>
                 <p class="card-price">
-                  <span class="price-on"> ${product.currency}${
-          product.price
-        } </span> 
-        ${
-          product.discount
-            ? `<span class="price-off"> ${this._calculateDiscountedPrice(
-                product
-              )} </span>`
-            : ""
-        }
+                  ${
+                    product.discount
+                      ? ` <span class="price-on"> ${product.currency}${this._calculateDiscountedPrice(product)} </span>`
+                      : `<span class="price-on">${product.currency}${product.price}</span>`
+                  }
+
+                  ${
+                    product.discount 
+                    ? `<span class="price-off"> ${product.currency}${product.price} </span>`
+                    : ""
+                  }
+                  
                 </p>
               </div>
             </div>
@@ -84,9 +86,10 @@ class ProductListView {
   }
 
   _calculateDiscountedPrice(product) {
-    return (product.price - (product.price * product.discount) / 100).toFixed(
-      2
-    );
+    const calculatedPrice =
+      product.price - (product.price * product.discount) / 100;
+    if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
+    return calculatedPrice;
   }
 
   _openProductModal(e) {
