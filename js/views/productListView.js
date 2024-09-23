@@ -5,21 +5,37 @@ import shareIcon from "../../img/icons/share.svg";
 class ProductListView {
   _parentElement = document.querySelector(".card-container");
   _findProductById;
+  _wishlistClickHandler;
   modalView;
 
-  render(products, findProductById, modalView) {
+  render(products, findProductById, modalView, wishlistClickHandler) {
     this._findProductById = findProductById;
-
+    this._wishlistClickHandler = wishlistClickHandler;
     const markup = this._generateMarkup(products);
     this._parentElement.innerHTML = markup;
     this.modalView = modalView;
     this._setupEventListeners();
   }
 
+  renderWishlist(wishlist) {
+    const productCardEls =
+      this._parentElement.querySelectorAll(".product-card");
+    productCardEls.forEach((card) => {
+      const productId = Number(card.dataset.id);
+      const isProductInWishList = wishlist.some((id) => id === productId);
+      const wishlistIcon = card.querySelector(".wishlist-click-btn");
+      if (isProductInWishList) wishlistIcon.src = filledHeartIcon;
+      else wishlistIcon.src = emptyHeartIcon;
+    });
+  }
+
   _setupEventListeners() {
     this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
+      const productId = Number(e.target.closest(".product-card").dataset.id);
       if (e.target.classList.contains("show-modal")) this._openProductModal(e);
+      if (e.target.classList.contains("wishlist-click-btn"))
+        this._wishlistClickHandler(productId);
     });
   }
 
@@ -36,7 +52,7 @@ class ProductListView {
                   <a href="#"><img src="${shareIcon}" alt="share" /><span>share</span></a>
                 </div>
                 <div class="hover-nav-item">
-                  <a href="#"><img src="${
+                  <a href="#"><img class="wishlist-click-btn" src="${
                     product.wishlist ? filledHeartIcon : emptyHeartIcon
                   }" alt="share" /> <span>wishlist</span> </a>
                 </div>

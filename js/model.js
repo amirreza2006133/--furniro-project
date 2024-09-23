@@ -46,3 +46,24 @@ export function increaseProductQuantity(productId, increaseAmount = 1) {
 export function findProductInCartById(productId) {
   return state.cart.find((product) => product.id === Number(productId));
 }
+
+export function addProductToWishlist(productId) {
+  const wishlist = getWishlist();
+  wishlist.push(productId);
+  saveWishlist(wishlist);
+}
+
+export function deleteProductFromWishlist(productId) {
+  let wishlist = getWishlist();
+  wishlist = wishlist.filter((id) => id !== productId);
+  saveWishlist(wishlist);
+}
+
+export function getWishlist() {
+  const wishlist = localStorage.getItem("wishlist");
+  return wishlist ? JSON.parse(wishlist).map((id) => Number(id)) : [];
+}
+
+function saveWishlist(wishlist) {
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
