@@ -9,23 +9,24 @@ class CartPreviewView {
   _deleteProductFromCart;
 
   render(cart, deleteProductHandler) {
+    this._deleteProductFromCart = deleteProductHandler;
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
+    this._calculateTotalPrice(cart);
     this._setupEventListeners();
-    this._deleteProductFromCart = deleteProductHandler;
   }
 
   reRender(cart) {
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
-    this._changeTotalPrice(cart);
+    this._calculateTotalPrice(cart);
   }
 
-  _changeTotalPrice(cart) {
+  _calculateTotalPrice(cart) {
     const totalPrice = cart.reduce((prev, curr) => {
-      return prev + curr.price;
+      return prev + curr.price * curr.quantity;
     }, 0);
     this._totalPriceEl.textContent = `${totalPrice}${CURRENCY_UNIT}`;
   }
