@@ -1,3 +1,7 @@
+import emptyHeartIcon from "../../img/icons/heart-empty.svg";
+import filledHeartIcon from "../../img/icons/heart-filled.svg";
+import shareIcon from "../../img/icons/share.svg";
+
 class ProductListView {
   _parentElement = document.querySelector(".card-container");
   _findProductById;
@@ -29,13 +33,12 @@ class ProductListView {
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
                 <div class="hover-nav-item">
-                  <a href="#"><ion-icon name="share-social-outline"></ion-icon><span>share</span></a>
+                  <a href="#"><img src="${shareIcon}" alt="share" /><span>share</span></a>
                 </div>
                 <div class="hover-nav-item">
-                  <a href="#"><ion-icon name="git-compare-outline"></ion-icon><span>compare</span></a>
-                </div>
-                <div class="hover-nav-item">
-                  <a href="#"><ion-icon name="heart-outline"></ion-icon><span>like</span></a>
+                  <a href="#"><img src="${
+                    product.wishlist ? filledHeartIcon : emptyHeartIcon
+                  }" alt="share" /> <span>wishlist</span> </a>
                 </div>
               </nav>
   
