@@ -1,4 +1,5 @@
 import { CURRENCY_UNIT } from "../config";
+import { formatCurrency } from "../helper";
 
 class CartPreviewView {
   _parentEl = document.querySelector(".main-btn-cart");
@@ -37,7 +38,7 @@ class CartPreviewView {
     const totalPrice = cart.reduce((prev, curr) => {
       return prev + curr.price * curr.quantity;
     }, 0);
-    this._totalPriceEl.textContent = `${totalPrice}${CURRENCY_UNIT}`;
+    this._totalPriceEl.textContent = `${formatCurrency(totalPrice)}`;
   }
 
   _setupEventListeners() {
@@ -73,7 +74,7 @@ class CartPreviewView {
                   <span>${product.name}</span> <span class="txt-lt">( ${product.color} / ${product.size} )</span>
                 </p>
                 <p>
-                  <span>${product.quantity} x</span><span class="cart-item-price">${product.currency}${product.price}</span>
+                  <span>${product.quantity} x</span><span class="cart-item-price">${formatCurrency(product.price)}</span>
                 </p>
             </div>
             <button class="cart-delete-product">✖</button>

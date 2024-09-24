@@ -1,6 +1,7 @@
 import emptyHeartIcon from "../../img/icons/heart-empty.svg";
 import filledHeartIcon from "../../img/icons/heart-filled.svg";
 import shareIcon from "../../img/icons/share.svg";
+import { formatCurrency } from "../helper";
 
 class ProductListView {
   _parentElement = document.querySelector(".card-container");
@@ -67,13 +68,13 @@ class ProductListView {
                 <p class="card-price">
                   ${
                     product.discount
-                      ? ` <span class="price-on"> ${product.currency}${this._calculateDiscountedPrice(product)} </span>`
-                      : `<span class="price-on">${product.currency}${product.price}</span>`
+                      ? ` <span class="price-on"> ${formatCurrency(this._calculateDiscountedPrice(product))} </span>`
+                      : `<span class="price-on">${formatCurrency(product.price)}</span>`
                   }
 
                   ${
                     product.discount 
-                    ? `<span class="price-off"> ${product.currency}${product.price} </span>`
+                    ? `<span class="price-off">${formatCurrency(product.price)} </span>`
                     : ""
                   }
                   

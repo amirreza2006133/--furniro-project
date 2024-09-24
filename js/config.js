@@ -7,7 +7,7 @@ import PingkyImage from "url:../img/product/pingky.png";
 import MuggoImage from "url:../img/product/muggo.png";
 import pottyImage from "url:../img/product/potty.png";
 
-export const CURRENCY_UNIT = "$";
+export const CURRENCY_UNIT = "USD";
 
 export const products = [
   {
@@ -17,7 +17,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 250,
-    currency: CURRENCY_UNIT,
     discount: 30,
     imageUrl: syltherineImage,
   },
@@ -28,7 +27,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 250,
-    currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: leviosaImage,
   },
@@ -39,7 +37,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 1400,
-    currency: CURRENCY_UNIT,
     discount: 50,
     imageUrl: lolitaImage,
   },
@@ -50,7 +47,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 500,
-    currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: RespiraImage,
     new: true,
@@ -62,7 +58,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "green", "Blue"],
     price: 150,
-    currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: GrifoImage,
     new: true,
@@ -74,7 +69,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "green", "Blue"],
     price: 700,
-    currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: PingkyImage,
   },
@@ -85,7 +79,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "green", "Blue"],
     price: 100,
-    currency: CURRENCY_UNIT,
     discount: "",
     imageUrl: MuggoImage,
   },
@@ -96,7 +89,6 @@ export const products = [
     sizes: ["S", "M", "L"],
     colors: ["Red", "green", "Blue"],
     price: 500,
-    currency: CURRENCY_UNIT,
     discount: 50,
     imageUrl: pottyImage,
   },
