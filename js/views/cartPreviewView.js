@@ -6,10 +6,13 @@ class CartPreviewView {
   _openPreviewEl = document.querySelector(".open-cart-preview");
   _closePreviewEl = document.querySelector(".close-icon");
   _totalPriceEl = document.querySelector(".cart-price");
+  _messageEl = document.querySelector(".cart-preview-message");
   _deleteProductFromCart;
 
   render(cart, deleteProductHandler) {
     this._deleteProductFromCart = deleteProductHandler;
+    if (!cart.length) this._showMessage("There is no products in cart");
+
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
@@ -18,10 +21,16 @@ class CartPreviewView {
   }
 
   reRender(cart) {
+    if (!cart.length) return this._showMessage("There is no products in cart");
+
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
     this._calculateTotalPrice(cart);
+  }
+
+  _showMessage(message) {
+    this._messageEl.textContent = message;
   }
 
   _calculateTotalPrice(cart) {
