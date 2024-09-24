@@ -47,21 +47,21 @@ export function findProductInCartById(productId) {
   return state.cart.find((product) => product.id === Number(productId));
 }
 
-export function addProductToWishlist(productId) {
+export function addProductToWishlist(product) {
   const wishlist = getWishlist();
-  wishlist.push(productId);
+  wishlist.push(product);
   saveWishlist(wishlist);
 }
 
 export function deleteProductFromWishlist(productId) {
   let wishlist = getWishlist();
-  wishlist = wishlist.filter((id) => id !== productId);
+  wishlist = wishlist.filter((product) => product.id !== productId);
   saveWishlist(wishlist);
 }
 
 export function getWishlist() {
   const wishlist = localStorage.getItem("wishlist");
-  return wishlist ? JSON.parse(wishlist).map((id) => Number(id)) : [];
+  return wishlist ? JSON.parse(wishlist) : [];
 }
 
 function saveWishlist(wishlist) {

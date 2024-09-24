@@ -26,10 +26,11 @@ function deleteProductFromCartHandler(productId) {
 }
 
 function wishlistClickHandler(productId) {
-  const isProductInWishlist = getWishlist().some((id) => id === productId);
+  const isProductInWishlist = getWishlist().some((product) => product.id === productId);
+  const product = findProductById(productId)
   
-  if (isProductInWishlist) deleteProductFromWishlist(productId);
-  else addProductToWishlist(productId);
+  if (isProductInWishlist) deleteProductFromWishlist(product.id);
+  else addProductToWishlist(product);
 
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }

@@ -22,7 +22,7 @@ class ProductListView {
       this._parentElement.querySelectorAll(".product-card");
     productCardEls.forEach((card) => {
       const productId = Number(card.dataset.id);
-      const isProductInWishList = wishlist.some((id) => id === productId);
+      const isProductInWishList = wishlist.some((product) => product.id === productId);
       const wishlistIcon = card.querySelector(".wishlist-click-btn");
       if (isProductInWishList) wishlistIcon.src = filledHeartIcon;
       else wishlistIcon.src = emptyHeartIcon;
