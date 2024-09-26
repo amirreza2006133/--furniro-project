@@ -1,3 +1,5 @@
+import { formatCurrency } from "../helper";
+
 class WishlistView {
   _parentEl = document.querySelector(".wishlist");
   _messageEl = document.querySelector(".whishlist-message");
@@ -18,7 +20,7 @@ class WishlistView {
         <li class="item">
             <img class="thumb" src="${item.imageUrl}" alt="${item.name}">
             <b class="title">${item.name}</b>
-            <span class="price">${item.price}</span>
+            <span class="price">${formatCurrency(item.price)}</span>
             <button class="delete-product-from-wishlist-btn">✖</button>
         </li>`;
       })
