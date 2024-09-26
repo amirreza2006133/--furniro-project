@@ -245,6 +245,14 @@
   .slider-discription {
     text-align: left;
   }
+
+  .products-slider-pagination.de{
+    display: none;
+  }
+
+  .products-slider-pagination.mb{
+    display: flex;
+  }
 }
 
 /* *************************** */
