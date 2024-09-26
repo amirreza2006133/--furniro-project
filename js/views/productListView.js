@@ -1,6 +1,7 @@
 import emptyHeartIcon from "../../img/icons/heart-empty.svg";
 import filledHeartIcon from "../../img/icons/heart-filled.svg";
 import shareIcon from "../../img/icons/share.svg";
+import compareIcon from "../../img/icons/compare-svgrepo-com 1.png";
 import { formatCurrency } from "../helper";
 
 class ProductListView {
@@ -51,6 +52,9 @@ class ProductListView {
               <nav class="hover-nav">
                 <div class="hover-nav-item">
                   <a href="#"><img src="${shareIcon}" alt="share" /><span>share</span></a>
+                </div>
+                <div class="hover-nav-item">
+                  <a href="#"><img src="${compareIcon}" alt="compare" /><span>compare</span></a>
                 </div>
                 <div class="hover-nav-item">
                   <a href="#"><img class="wishlist-click-btn" src="${
