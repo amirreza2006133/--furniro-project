@@ -76,8 +76,9 @@ class ProductsSliderView {
   }
 
   _handlePagination(activeIndex) {
-    const alreadyActiveSlide = document.querySelector(".dots>li.active");
-    if (alreadyActiveSlide) alreadyActiveSlide.classList.remove("active");
+    const alreadyActiveSlide = document.querySelectorAll(".dots>li.active");
+    if (alreadyActiveSlide)
+      alreadyActiveSlide.forEach((el) => el.classList.remove("active"));
 
     this._paginationEls.forEach((el) =>
       el.children[activeIndex].classList.add("active")
