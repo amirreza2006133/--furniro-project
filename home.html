@@ -1,118 +1,113 @@
 <!DOCTYPE html>
 <html class="overflow" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
 
-    <link rel="icon" href="img/logo/logo.png" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/queriese.css" />
-    <link rel="stylesheet" href="node_modules/izitoast/dist/css/iziToast.min.css">
-    <title>furniro &mdash; furniture</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <script type="module" src="js/controllers/homeController.js"></script>
-  </head>
-  <body>
-    <form class="modal-container"></form>
+  <link rel="icon" href="img/logo/logo.png" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/general.css" />
+  <link rel="stylesheet" href="css/queriese.css" />
+  <link rel="stylesheet" href="node_modules/izitoast/dist/css/iziToast.min.css">
+  <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
+  <title>furniro &mdash; furniture</title>
 
-    <header class="header">
-      <a class="logo" href="home.html">
-        <div class="logo-box">
-          <div class="logo-img-box">
-            <img class="logo-img" src="img/Frame 168.png" alt=" furniro logo" />
-          </div>
+  <script type="module" src="js/controllers/homeController.js"></script>
+</head>
+
+<body>
+  <form class="modal-container"></form>
+
+  <header class="header">
+    <a class="logo" href="home.html">
+      <div class="logo-box">
+        <div class="logo-img-box">
+          <img class="logo-img" src="img/Frame 168.png" alt=" furniro logo" />
         </div>
-      </a>
-      <nav class="nav-pages">
-        <ul class="nav-list">
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="home.html">Home</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="shop.html">Shop</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="blog.html">blog</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="contact.html">contact</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-icon">
-        <ul class="header-icon-list">
-          <li>
-            <a href="login.html">
-              <img src="img/icons/user-header.svg" alt="icon of a a user " />
-            </a>
-          </li>
-          <li>
-            <a href="search.html">
-              <img src="img/icons/header-search.svg" alt=" a search icon" />
-            </a>
-          </li>
-
-          <li>
-            <a href="wishlist.html">
-              <img src="img/icons/header-heart.svg" alt=" a heart icon" />
-            </a>
-          </li>
-          <li>
-            <button class="main-btn-cart">
-              <img class="open-cart-preview" src="img/icons/header-cart.svg" alt=" a cart icon" />
-              <aside class="cart">
-                <div class="cart-header">
-                  <h2 class="shop-title">Shopping Cart</h2>
-                  <img
-                    class="close-icon"
-                    src="img/icons/close-icon.svg"
-                    alt=" close shop icon"
-                  />
-                </div>
-
-                <div class="card-product">
-                  <ul class="cart-items-list"></ul>
-                  <p class="cart-preview-message"></p>
-                </div>
-                <div>
-                  <div class="nav-card-price">
-                    <span class="subtotal"> Subtotal</span>
-                    <span class="cart-price"> Rs.0</span>
-                  </div>
-                </div>
-                <div class="card-btns">
-                  <a class="card-btn" href="cart.html">Cart</a>
-                  <a class="card-btn" href="login.html">Checkout</a>
-                </div>
-              </aside>
-              <div class="shade"></div>
-            </button>
-          </li>
-        </ul>
       </div>
-    </header>
-    <main>
-      <section class="hero-section">
-        <div class="hero">
-          <div class="heading-box">
-            <span class="sub-heading margin-bottom-sm">New Arrival</span>
-            <div class="inner">
-              <h1 class="heading-primary margin-bottom-sm">
-                Discover Our New Collection
-              </h1>
-            </div>
+    </a>
+    <nav class="nav-pages">
+      <ul class="nav-list">
+        <li class="nav-list-li">
+          <a class="nav-list-item" href="home.html">Home</a>
+        </li>
+        <li class="nav-list-li">
+          <a class="nav-list-item" href="shop.html">Shop</a>
+        </li>
+        <li class="nav-list-li">
+          <a class="nav-list-item" href="blog.html">blog</a>
+        </li>
+        <li class="nav-list-li">
+          <a class="nav-list-item" href="contact.html">contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-icon">
+      <ul class="header-icon-list">
+        <li>
+          <a href="login.html">
+            <img src="img/icons/user-header.svg" alt="icon of a a user " />
+          </a>
+        </li>
+        <li>
+          <a href="search.html">
+            <img src="img/icons/header-search.svg" alt=" a search icon" />
+          </a>
+        </li>
+
+        <li>
+          <a href="wishlist.html">
+            <img src="img/icons/header-heart.svg" alt=" a heart icon" />
+          </a>
+        </li>
+        <li>
+          <button class="main-btn-cart">
+            <img class="open-cart-preview" src="img/icons/header-cart.svg" alt=" a cart icon" />
+            <aside class="cart">
+              <div class="cart-header">
+                <h2 class="shop-title">Shopping Cart</h2>
+                <img class="close-icon" src="img/icons/close-icon.svg" alt=" close shop icon" />
+              </div>
+
+              <div class="card-product">
+                <ul class="cart-items-list"></ul>
+                <p class="cart-preview-message"></p>
+              </div>
+              <div>
+                <div class="nav-card-price">
+                  <span class="subtotal"> Subtotal</span>
+                  <span class="cart-price"> Rs.0</span>
+                </div>
+              </div>
+              <div class="card-btns">
+                <a class="card-btn" href="cart.html">Cart</a>
+                <a class="card-btn" href="login.html">Checkout</a>
+              </div>
+            </aside>
+            <div class="shade"></div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <section class="hero-section">
+      <div class="hero">
+        <div class="heading-box">
+          <span class="sub-heading margin-bottom-sm">New Arrival</span>
+          <div class="inner">
+            <h1 class="heading-primary margin-bottom-sm">
+              Discover Our New Collection
+            </h1>
+          </div>
 
             <p class="hero-discription">
               Embrace the change with our curated selection of arrivals,
@@ -141,16 +136,12 @@
           </div>
           <div class="range-card">
             <p class="range-title" href="#">
-              <img
-                class="range-img"
-                src="img/browse/living.png"
-                alt=" a photo of a bed in living room"
-              />
-            </p>
-            <p class="range-title" href="#">Living</p>
-          </div>
-          <div class="range-card">
-            <a href="#">
+            <img class="range-img" src="img/browse/living.png" alt=" a photo of a bed in living room" />
+          </p>
+          <p class="range-title" href="#">Living</p>
+        </div>
+        <div class="range-card">
+          <a href="#">
               <img
                 class="range-img"
                 src="img/browse/bedroom.png"
@@ -180,6 +171,19 @@
             <a class="btn" href="#">explore more</a>
           </div>
         </div>
+      <div class="swiper products-slider">
+        <div class="products-slider-navigation">
+          <button class="products-slider-prev-slide">
+            <img src="img/icons/arrow-to-right.svg" alt="next">
+          </button>
+          <button class="products-slider-next-slide">
+            <img src="img/icons/arrow-to-right.svg" alt="prev">
+          </button>
+        </div>
+        <div class="swiper-wrapper products-slider-list"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      </div>
       </section>
       <section class="gallery">
         <div class="heading-holder margin-bottom-negative">
@@ -188,12 +192,9 @@
         </div>
         <div class="gallery-container">
           <div class="gallery-pic-holder first">
-            <img
-              src="img/gallery/gallery-1.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder second">
+          <img src="img/gallery/gallery-1.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder second">
             <img
               src="img/gallery/gallery-2.png"
               alt=" a photo of a white pot"
@@ -203,36 +204,21 @@
             <img src="img/gallery/gallery-3.png" a photo of a white pot" />
           </div>
           <div class="gallery-pic-holder fourth">
-            <img
-              src="img/gallery/gallery-4.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder fifth">
-            <img
-              src="img/gallery/gallery-5.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder sixth">
-            <img
-              src="img/gallery/gallery-6.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder seventh">
-            <img
-              src="img/gallery/gallery-7.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder eighth">
-            <img
-              src="img/gallery/gallery-8.png"
-              alt=" a photo of a white pot"
-            />
-          </div>
-          <div class="gallery-pic-holder ninth">
+          <img src="img/gallery/gallery-4.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder fifth">
+          <img src="img/gallery/gallery-5.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder sixth">
+          <img src="img/gallery/gallery-6.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder seventh">
+          <img src="img/gallery/gallery-7.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder eighth">
+          <img src="img/gallery/gallery-8.png" alt=" a photo of a white pot" />
+        </div>
+        <div class="gallery-pic-holder ninth">
             <img
               src="img/gallery/gallety-9.png"
               alt=" a photo of a white pot"

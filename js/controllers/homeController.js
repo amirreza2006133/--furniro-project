@@ -1,3 +1,4 @@
+import { slides } from "../config";
 import {
   state,
   findProductById,
@@ -12,6 +13,7 @@ import FooterView from "../views/footerView";
 import NotificationView from "../views/notificationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
+import productsSliderView from "../views/productsSliderView";
 
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
@@ -46,6 +48,7 @@ function init() {
   );
   ProductListView.renderWishlist(getWishlist());
   FooterView.render();
+  productsSliderView.render(slides)
 }
 
 init();

@@ -7,6 +7,11 @@ import PingkyImage from "url:../img/product/pingky.png";
 import MuggoImage from "url:../img/product/muggo.png";
 import pottyImage from "url:../img/product/potty.png";
 
+import sliderImage1 from "url:../img/slider/slide1.png";
+import sliderImage2 from "url:../img/slider/slide2.png";
+import sliderImage3 from "url:../img/slider/slide3.png";
+import sliderImage4 from "url:../img/slider/slide4.png";
+
 export const CURRENCY_UNIT = "USD";
 
 export const products = [
@@ -91,5 +96,28 @@ export const products = [
     price: 500,
     discount: 50,
     imageUrl: pottyImage,
+  },
+];
+
+export const slides = [
+  {
+    title: "bedroom",
+    description: "inner peace",
+    imageUrl: sliderImage1,
+  },
+  {
+    title: "bedroom",
+    description: "inner peace",
+    imageUrl: sliderImage2,
+  },
+  {
+    title: "bedroom",
+    description: "inner peace",
+    imageUrl: sliderImage3,
+  },
+  {
+    title: "bedroom",
+    description: "inner peace",
+    imageUrl: sliderImage4,
   },
 ];
