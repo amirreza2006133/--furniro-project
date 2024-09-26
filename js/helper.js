@@ -1,7 +1,7 @@
-import { CURRENCY_UNIT } from "./config";
+import { CURRENCY_UNIT, LANG } from "./config";
 
 export const formatCurrency = (value) =>
-  new Intl.NumberFormat("en", {
+  new Intl.NumberFormat(LANG, {
     style: "currency",
     currency: CURRENCY_UNIT,
   }).format(value);

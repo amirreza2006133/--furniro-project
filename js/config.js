@@ -13,6 +13,7 @@ import sliderImage3 from "url:../img/slider/slide3.png";
 import sliderImage4 from "url:../img/slider/slide4.png";
 
 export const CURRENCY_UNIT = "USD";
+export const LANG = "en-US"
 
 export const products = [
   {
