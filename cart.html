@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/queriese.css" />
 
     <title>furniro &mdash; furniture</title>
-    <script type="module" src="js/general.js"></script>
+    <script type="module" src="js/controllers/cartController.js"></script>
   </head>
   <body>
     <header class="header">
@@ -120,6 +120,8 @@
               <p class="cart-table-item">Quantity</p>
               <p class="cart-table-item">Subtotal</p>
             </div>
+            <p class="cart-message"></p>
+
             <!-- Cart Item Model => -->
             <!-- <div class="second-row">
               <div class="cart-img-box">
@@ -146,12 +148,8 @@
           <aside class="aside-cart">
             <h3 class="aside-title">Cart Totals</h3>
             <div class="aside-item">
-              <p class="aside-cart-title">Subtotal</p>
-              <span class="aside-cart-pricet">Rs.1.500.000</span>
-            </div>
-            <div class="aside-item">
               <p class="aside-cart-title">total</p>
-              <span class="aside-cart-price gold">Rs.1.500.000</span>
+              <span class="aside-cart-price gold"></span>
             </div>
             <div class="align-center">
               <a class="btn-checout" href="#"> Checkout</a>

@@ -27,12 +27,13 @@ export function addProductToCart(product) {
     imageUrl: product.imageUrl,
   };
   state.cart.push(newProduct);
-  addProductToCartStorage(newProduct)
+  addProductToCartStorage(newProduct);
   return state;
 }
 
 export function deleteProductFromCart(productId) {
   state.cart = state.cart.filter((product) => product.id !== Number(productId));
+  saveCartStorage(state.cart);
 }
 
 export function findProductById(id) {
@@ -58,7 +59,7 @@ export function deleteProductFromWishlist(productId) {
   let wishlist = getWishlist();
   wishlist = wishlist.filter((product) => product.id !== productId);
   saveWishlist(wishlist);
-  deleteProductFromCartStorage(productId)
+  deleteProductFromCartStorage(productId);
 }
 
 export function getWishlist() {
@@ -84,7 +85,12 @@ export function deleteProductFromCartStorage(productId) {
 
 export function getCartStorage() {
   const cart = localStorage.getItem("cart");
-  return cart ? JSON.parse(cart) : [];
+  if (cart) {
+    state.cart = JSON.parse(cart);
+    return state.cart;
+  } else {
+    return [];
+  }
 }
 
 function saveCartStorage(cart) {

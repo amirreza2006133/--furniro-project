@@ -115,3 +115,10 @@
   background-color: #111;
   color: #fff3e3;
 }
+
+.cart-message{ 
+  font-size: 2.4rem;
+  color:#9f9f99;
+  text-align: center;
+  text-transform: capitalize;
+}
