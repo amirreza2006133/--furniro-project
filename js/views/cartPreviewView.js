@@ -52,6 +52,8 @@ class CartPreviewView {
         const targetProductId = e.target.closest(".cart-item").dataset.id;
         this._deleteProductFromCart(targetProductId);
       }
+
+      if (e.target.closest(".shade")) this._closePreview();
     });
   }
 
@@ -71,10 +73,16 @@ class CartPreviewView {
             <img src="${product.imageUrl}" alt="${product.name}" />
             <div>
                 <p>
-                  <span>${product.name}</span> <span class="txt-lt">( ${product.color} / ${product.size} )</span>
+                  <span>${product.name}</span> <span class="txt-lt">( ${
+          product.color
+        } / ${product.size} )</span>
                 </p>
                 <p>
-                  <span>${product.quantity} x</span><span class="cart-item-price">${formatCurrency(product.price)}</span>
+                  <span>${
+                    product.quantity
+                  } x</span><span class="cart-item-price">${formatCurrency(
+          product.price
+        )}</span>
                 </p>
             </div>
             <button class="cart-delete-product">✖</button>
