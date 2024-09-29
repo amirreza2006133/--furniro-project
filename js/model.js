@@ -1,7 +1,8 @@
-import { products } from "./config";
+import { fullProducts, products } from "./config";
 
 export const state = {
   products,
+  fullProducts,
   cart: [],
 };
 
