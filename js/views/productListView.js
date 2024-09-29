@@ -91,7 +91,7 @@ class ProductListView {
   }
 
   _calculateDiscountedPrice(product) {
-    const calculatedPrice =
+    let calculatedPrice =
       product.price - (product.price * product.discount) / 100;
     if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
     return calculatedPrice;
