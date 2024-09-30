@@ -79,7 +79,7 @@
   font-size: 1.3rem;
   color: #9f9f9f;
 }
-.product-discription {
+.product-description {
   font-size: 1.6rem;
   color: #111;
   line-height: 1.6;
@@ -108,6 +108,41 @@
 }
 .share-icons img {
   cursor: pointer;
+}
+.Review-section {
+  border-top: 1px solid #9f9f9f;
+  padding: 3.2rem;
+}
+.heading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+.Review-heading {
+  font-size: 2.4rem;
+  color: #9f9f9f;
+  font-weight: 400;
+  cursor: pointer;
+}
+.Review-section-p-holder {
+  padding: 6.4rem;
+}
+.Review-section-p {
+  font-size: 1.6rem;
+  color: #9f9f9f;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+.reviews-boxes {
+  display: none;
+}
+.show {
+  color: #111;
+  font-weight: 500;
+}
+.Description-container {
+  display: block;
 }
 .related-heading-holder {
   margin: 0;
