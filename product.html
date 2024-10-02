@@ -113,40 +113,44 @@
       </section>
       <section class="main-product-cart">
         <aside class="product-aside">
-          <div class="product-aside-img-box">
-            <img
-              class="product-aside-img"
-              src="img/sofa.png"
-              alt=" a sofa picture"
-            />
+          <div class="side-img">
+            <div class="product-aside-img-box">
+              <img
+                class="product-aside-img"
+                src="img/sofa.png"
+                alt=" a sofa picture"
+              />
+            </div>
+            <div class="product-aside-img-box">
+              <img
+                class="product-aside-img"
+                src="img/sofa.png"
+                alt=" a sofa picture"
+              />
+            </div>
+            <div class="product-aside-img-box">
+              <img
+                class="product-aside-img"
+                src="img/sofa.png"
+                alt=" a sofa picture"
+              />
+            </div>
+            <div class="product-aside-img-box">
+              <img
+                class="product-aside-img"
+                src="img/sofa.png"
+                alt=" a sofa picture"
+              />
+            </div>
           </div>
-          <div class="product-aside-img-box">
+          <div class="main-product-img-holder">
             <img
-              class="product-aside-img"
-              src="img/sofa.png"
-              alt=" a sofa picture"
-            />
-          </div>
-          <div class="product-aside-img-box">
-            <img
-              class="product-aside-img"
-              src="img/sofa.png"
-              alt=" a sofa picture"
-            />
-          </div>
-          <div class="product-aside-img-box">
-            <img
-              class="product-aside-img"
-              src="img/sofa.png"
-              alt=" a sofa picture"
+              class="main-product-img"
+              src="img/product-main-img.png"
+              alt=" photo of product "
             />
           </div>
         </aside>
-        <img
-          class="main-product-img"
-          src="img/product-main-img.png"
-          alt=" photo of product "
-        />
 
         <div class="product-info">
           <p class="product-title">Muggo</p>
@@ -162,6 +166,55 @@
             audio which boasts a clear midrange and<br />
             extended highs for a sound
           </p>
+          <div class="modal-content product-modal">
+            <div class="modal-options">
+              <span>Size</span>
+
+              <div class="inputs size">
+                <input type="radio" id="S" name="size" value="S" checked="" />
+                <label for="S">S</label>
+                <input type="radio" id="M" name="size" value="M" />
+                <label for="M">M</label>
+                <input type="radio" id="L" name="size" value="L" />
+                <label for="L">L</label>
+              </div>
+            </div>
+            <div class="modal-options">
+              <span>Color</span>
+
+              <div class="inputs color">
+                <input
+                  type="radio"
+                  id="Red"
+                  name="color"
+                  value="Red"
+                  checked=""
+                />
+                <label for="Red" style="background-color: red"></label>
+                <input type="radio" id="Green" name="color" value="Green" />
+                <label for="Green" style="background-color: green"></label>
+                <input type="radio" id="Blue" name="color" value="Blue" />
+                <label for="Blue" style="background-color: blue"></label>
+              </div>
+            </div>
+            <div class="modal-controls">
+              <div class="quantity-controls">
+                <span class="decrease-quantity-btn">-</span>
+                <input
+                  class="quantity-input"
+                  type="text"
+                  value="1"
+                  disabled=""
+                />
+                <span class="increase-quantity-btn">+</span>
+              </div>
+              <input
+                type="submit"
+                value="Add to cart"
+                class="add-to-cart-btn"
+              />
+            </div>
+          </div>
           <div class="share-container">
             <div class="share-flex">
               <span class="share-item">sku</span>

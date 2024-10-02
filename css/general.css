@@ -867,6 +867,7 @@ i {
   align-items: center;
   background-color: #f9f1e7;
   border-radius: 5px;
+  transition: all 0.2s ease-out;
 }
 
 .modal-content .modal-options .inputs.size input:is(:focus, :checked) + label {
