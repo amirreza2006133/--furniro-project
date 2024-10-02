@@ -152,9 +152,17 @@
   color: #9f9f9f;
   line-height: 1.6;
   margin-bottom: 1.6rem;
+  padding: 1.2rem 3.2rem;
 }
 .reviews-boxes {
   display: none;
+}
+.review-img-flex {
+  display: flex;
+  gap: 3.2rem;
+}
+.review-img-flex img {
+  width: 100%;
 }
 /*
  ////////delete this its written for test purpose only/////////
