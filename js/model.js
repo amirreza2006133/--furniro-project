@@ -79,7 +79,7 @@ export function addProductToCartStorage(product) {
 }
 
 export function deleteProductFromCartStorage(productId) {
-  let cart = getCart();
+  let cart = getCartStorage();
   cart = cart.filter((product) => product.id !== productId);
   saveCartStorage(cart);
 }
