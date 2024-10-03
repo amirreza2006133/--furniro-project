@@ -8,11 +8,13 @@ class ProductListView {
   _parentElement = document.querySelector(".card-container");
   _findProductById;
   _wishlistClickHandler;
+  _goToDetailsPage;
   modalView;
 
-  render(products, findProductById, modalView, wishlistClickHandler) {
+  render(products, findProductById, modalView, wishlistClickHandler, goToDetailsPage) {
     this._findProductById = findProductById;
     this._wishlistClickHandler = wishlistClickHandler;
+    this._goToDetailsPage = goToDetailsPage;
     const markup = this._generateMarkup(products);
     this._parentElement.innerHTML = markup;
     this.modalView = modalView;
@@ -38,6 +40,7 @@ class ProductListView {
       
       const productId = Number(e.target.closest(".product-card").dataset.id);
       if (e.target.classList.contains("show-modal")) this._openProductModal(e);
+      if (e.target.classList.contains("gradiant")) this._goToDetailsPage(productId);
       if (e.target.classList.contains("wishlist-click-btn"))
         this._wishlistClickHandler(productId);
     });

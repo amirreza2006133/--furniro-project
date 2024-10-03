@@ -44,6 +44,10 @@ function wishlistClickHandler(productId) {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
+function goToDetailsPage(productId) {
+  window.location.assign(`product.html?id=${productId}`)
+}
+
 function init() {
   CartPreviewView.render(state.cart, deleteProductFromCartHandler);
   ProductModalView.render(addProductToCartHandler);
@@ -51,7 +55,8 @@ function init() {
     state.products,
     findProductById,
     ProductModalView,
-    wishlistClickHandler
+    wishlistClickHandler,
+    goToDetailsPage
   );
   ProductListView.renderWishlist(getWishlist());
   FooterView.render();
