@@ -34,6 +34,8 @@ class ProductListView {
   _setupEventListeners() {
     this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
+      console.log(e.target);
+      
       const productId = Number(e.target.closest(".product-card").dataset.id);
       if (e.target.classList.contains("show-modal")) this._openProductModal(e);
       if (e.target.classList.contains("wishlist-click-btn"))
@@ -46,8 +48,8 @@ class ProductListView {
       .map(
         (product) => `
           <div class="product-card" data-id="${product.id}">
-            <div class="off-${product.discount} ${product.new ? "new" : ""}">
-              <div class="gradiant"></div>
+            <div class="off-${product.discount} ${product.new ? "new" : ""}"></div>
+            <div class="gradiant">
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
                 <div class="hover-nav-item">
@@ -57,33 +59,28 @@ class ProductListView {
                   <a href="#"><img src="${compareIcon}" alt="compare" /><span>compare</span></a>
                 </div>
                 <div class="hover-nav-item">
-                  <a href="#"><img class="wishlist-click-btn" src="${
-                    product.wishlist ? filledHeartIcon : emptyHeartIcon
-                  }" alt="share" /> <span>wishlist</span> </a>
+                  <a href="#"><img class="wishlist-click-btn" src="${product.wishlist ? filledHeartIcon : emptyHeartIcon}" alt="share" /> <span>like</span> </a>
                 </div>
               </nav>
-  
-              <img class="product-card-image" src="${product.imageUrl}" alt="${
-          product.name
-        }" />
-              <div class="product-card-info">
-                <h3 class="heading-tertiary">${product.name}</h3>
-                <span class="tag">${product.description}</span>
-                <p class="card-price">
-                  ${
-                    product.discount
-                      ? ` <span class="price-on"> ${formatCurrency(this._calculateDiscountedPrice(product))} </span>`
-                      : `<span class="price-on">${formatCurrency(product.price)}</span>`
-                  }
+            </div>
+              
+            <img class="product-card-image" src="${product.imageUrl}" alt="${product.name}" />
+            <div class="product-card-info">
+              <h3 class="heading-tertiary">${product.name}</h3>
+              <span class="tag">${product.description}</span>
+              <p class="card-price">
+                ${
+                  product.discount
+                    ? ` <span class="price-on"> ${formatCurrency(this._calculateDiscountedPrice(product))} </span>`
+                    : `<span class="price-on">${formatCurrency(product.price)}</span>`
+                }
 
-                  ${
-                    product.discount 
-                    ? `<span class="price-off">${formatCurrency(product.price)} </span>`
-                    : ""
-                  }
-                  
-                </p>
-              </div>
+                ${
+                  product.discount 
+                  ? `<span class="price-off">${formatCurrency(product.price)} </span>`
+                  : ""
+                }
+              </p>
             </div>
           </div>`
       )

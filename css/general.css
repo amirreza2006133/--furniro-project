@@ -395,47 +395,18 @@ i {
   width: 100%;
 }
 .product-card:hover .gradiant {
-  opacity: 0.6;
-  visibility: visible;
-  pointer-events: all;
-  transition: all 0.6s ease-in-out;
-}
-
-.product-card:hover .hover-btn {
-  transition: opacity 0.6s ease-in-out, background 0.3s ease-in-out,
-    color 0.3 ease-in-out;
   opacity: 1;
-  visibility: visible;
-  pointer-events: all;
 }
-.product-card:hover .hover-nav {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: all;
-  transition: all 0.6s ease-in-out;
+.hover-btn {
+  transition: 0.3s;
 }
-.product-card:hover .off-30::after,
-.product-card:hover .off-50::after,
-.product-card:hover .new::after {
-  opacity: 0.6;
-  transition: all 0.6s ease-in-out;
-}
-
 .hover-btn:link,
 .hover-btn:visited {
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   background-color: #fff;
   color: #b88e2f;
   font-size: 1.6rem;
   font-weight: 600;
   text-decoration: none;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   padding: 2rem 4.8rem;
   width: 70%;
   display: flex;
@@ -448,25 +419,21 @@ i {
   color: #fff;
 }
 .gradiant {
-  background-color: #333;
+  background-color: #00000066;
+  opacity: 0;
   width: 100%;
   height: 100%;
   position: absolute;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
-
 .hover-nav {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   width: 80%;
-  position: absolute;
-  top: 55%;
-  left: 45%;
-  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -519,32 +486,29 @@ i {
 .off-30::after,
 .off-50::after,
 .new::after {
-  padding: 1.6rem 0.8rem;
-  display: flex;
-  font-weight: 700;
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #fff;
+  font-weight: 700;
   border-radius: 50%;
   background-color: #e97171;
-  position: absolute;
 }
 .off-30::after {
   content: "-30%";
 }
-
 .off-50::after {
   content: "-50%";
 }
-
 .new::after {
   content: "new";
   background-color: #2ec1ac;
-  padding: 1.6rem 1rem;
 }
 .text-center {
   text-align: center;
