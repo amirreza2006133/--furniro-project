@@ -1,4 +1,5 @@
-import { findProductById } from "../model";
+import { addProductToCart, findProductById } from "../model";
+import NotificationView from "../views/notificationView";
 import ProductView from "../views/productView";
 
 function controlProduct() {
@@ -9,8 +10,13 @@ function controlProduct() {
   ProductView.reRender(product);
 }
 
+function addProductToCartHandler(newItem) {
+  addProductToCart(newItem);
+  NotificationView.success("product added successfully");
+}
+
 function init() {
-  ProductView.render(controlProduct);
+  ProductView.render(controlProduct, addProductToCartHandler);
 }
 
 init();

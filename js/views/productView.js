@@ -1,16 +1,18 @@
 import starsImage from "../../img/icons/starts.png";
-import facebookIcon from "../../img/facebook.svg"
-import linkedinIcon from "../../img/linkedin.svg"
-import twitterIcon from "../../img/twitter.svg"
+import facebookIcon from "../../img/facebook.svg";
+import linkedinIcon from "../../img/linkedin.svg";
+import twitterIcon from "../../img/twitter.svg";
 import { formatCurrency } from "../helper";
-
 
 class ProductView {
   _parentEl = document.querySelector(".main-product-cart");
+  _productQuantity = 1;
+  _addProductToCart;
   _loadProduct;
 
-  render(loadProduct) {
+  render(loadProduct, addProductToCart) {
     this._loadProduct = loadProduct;
+    this._addProductToCart = addProductToCart;
     this._setupEventListeners();
   }
 
@@ -25,6 +27,16 @@ class ProductView {
       // if (e.target.classList.contains()) {
       // }
     });
+
+    this._parentEl.addEventListener("click", (e) => {
+      if (e.target.classList.contains("modal-close-btn")) this._closeModal();
+      if (e.target.classList.contains("decrease-quantity-btn"))
+        this._changeQuantity(-1);
+      if (e.target.classList.contains("increase-quantity-btn"))
+        this._changeQuantity(1);
+    });
+
+    this._parentEl.addEventListener("submit", (e) => this._handleFormSubmit(e));
   }
 
   _generateMarkup(product) {
@@ -89,7 +101,7 @@ class ProductView {
           <p class="product-description">
           ${product.description}
           </p>
-          <div class="modal-content product-modal">
+          <form class="modal-content product-modal">
             <div class="modal-options">
               <span>Size</span>
 
@@ -117,7 +129,7 @@ class ProductView {
                 class="add-to-cart-btn"
               />
             </div>
-          </div>
+          </form>
           <div class="share-container">
             <div class="share-flex">
               <span class="share-item">sku</span>
@@ -177,12 +189,42 @@ class ProductView {
             .join("")}
         </div>`;
   }
-  
+
   _calculateDiscountedPrice(product) {
     let calculatedPrice =
       product.price - (product.price * product.discount) / 100;
     if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
     return calculatedPrice;
+  }
+
+  _changeQuantity(change) {
+    this._productQuantity = Math.max(1, this._productQuantity + change);
+    this._updateQuantityDisplay();
+  }
+
+  _updateQuantityDisplay() {
+    const quantityInput = this._parentEl.querySelector(".quantity-input");
+    quantityInput.value = this._productQuantity;
+  }
+
+  _handleFormSubmit(e) {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const productDetails = {
+      ...this._currentProduct,
+      color: formData.get("color"),
+      size: formData.get("size"),
+      quantity: this._productQuantity,
+    };
+
+    this._addProductToCart(productDetails);
+    this._handleResetForm();
+    console.log(productDetails);
+  }
+
+  _handleResetForm() {
+    this._parentEl.querySelector("form").reset();
+    this._productQuantity = 1;
   }
 }
 
