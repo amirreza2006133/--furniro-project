@@ -42,7 +42,7 @@
 
 .product-aside-img-box {
   background-color: #f9f1e7;
-  border-radius: 7.5px;
+  border-radius: 11px;
   max-width: 96px;
 }
 .product-aside-img-box:last-child {
@@ -50,6 +50,7 @@
 }
 
 .product-aside-img {
+  border-radius: 11px;
   width: 96px;
   display: block;
   object-fit: cover;
