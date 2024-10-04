@@ -1,5 +1,7 @@
-import { findProductById, state } from "../model";
+import { addProductToCart, findProductById, state } from "../model";
+import NotificationView from "../views/notificationView";
 import ProductListView from "../views/productListView";
+import ProductModalView from "../views/productModalView";
 import ModalView from "../views/productModalView";
 
 function wishlistClickHandler(productId) {
@@ -19,7 +21,13 @@ function wishlistClickHandler(productId) {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
+function addProductToCartHandler(newItem) {
+  addProductToCart(newItem);
+  NotificationView.success("product added successfully");
+}
+
 function init() {
+  ProductModalView.render(addProductToCartHandler);
   ProductListView.render(
     state.fullProducts,
     findProductById,
