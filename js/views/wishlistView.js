@@ -13,11 +13,19 @@ class WishlistView {
     this._parentEl.insertAdjacentHTML("afterbegin", generatedMarkup);
   }
 
+  addEventHandler(render, deleteProductFromCartHandler) {
+    window.addEventListener("load", render);
+    this._parentEl.addEventListener("click", e => {
+      const productId = e.target.closest(".item")?.dataset.id;
+      if (e.target.classList.contains("delete-product-from-wishlist-btn")) deleteProductFromCartHandler(productId)
+    })
+  }
+
   _generateMarkup(wishlist) {
     return wishlist
       .map((item) => {
         return `
-        <li class="item">
+        <li class="item" data-id="${item.id}">
             <img class="thumb" src="${item.imageUrl}" alt="${item.name}">
             <b class="title">${item.name}</b>
             <span class="price">${formatCurrency(item.price)}</span>

@@ -15,6 +15,10 @@ import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import productsSliderView from "../views/productsSliderView";
 
+function controlWishlist() {
+  ProductListView.renderWishlist(getWishlist()); // Update the view
+}
+
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
   CartPreviewView.reRender(state.cart);
@@ -41,11 +45,11 @@ function wishlistClickHandler(productId) {
     NotificationView.success("product added to wishlist successfully");
   }
 
-  ProductListView.renderWishlist(getWishlist()); // Update the view
+  controlWishlist(); // Update the view
 }
 
 function goToDetailsPage(productId) {
-  window.location.assign(`product.html?id=${productId}`)
+  window.location.assign(`product.html?id=${productId}`);
 }
 
 function init() {
@@ -58,7 +62,8 @@ function init() {
     wishlistClickHandler,
     goToDetailsPage
   );
-  ProductListView.renderWishlist(getWishlist());
+
+  ProductListView.addEventHandler(controlWishlist);
   FooterView.render();
   productsSliderView.render(slides);
 }

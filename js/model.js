@@ -4,6 +4,7 @@ export const state = {
   products,
   fullProducts,
   cart: [],
+  wishlist: [],
 };
 
 export function addProductToCart(product) {
@@ -51,25 +52,23 @@ export function findProductInCartById(productId) {
 }
 
 export function addProductToWishlist(product) {
-  const wishlist = getWishlist();
-  wishlist.push(product);
-  saveWishlist(wishlist);
+  state.wishlist.push(product);
+  saveWishlist();
 }
 
 export function deleteProductFromWishlist(productId) {
-  let wishlist = getWishlist();
-  wishlist = wishlist.filter((product) => product.id !== productId);
-  saveWishlist(wishlist);
-  deleteProductFromCartStorage(productId);
+  state.wishlist = state.wishlist.filter((product) => product.id !== Number(productId));
+  saveWishlist();
 }
 
 export function getWishlist() {
   const wishlist = localStorage.getItem("wishlist");
-  return wishlist ? JSON.parse(wishlist) : [];
+  state.wishlist = wishlist ? JSON.parse(wishlist) : []
+  return state.wishlist
 }
 
-function saveWishlist(wishlist) {
-  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+function saveWishlist() {
+  localStorage.setItem("wishlist", JSON.stringify(state.wishlist));
 }
 
 export function addProductToCartStorage(product) {

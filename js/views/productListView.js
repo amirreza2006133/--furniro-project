@@ -11,7 +11,13 @@ class ProductListView {
   _goToDetailsPage;
   modalView;
 
-  render(products, findProductById, modalView, wishlistClickHandler, goToDetailsPage) {
+  render(
+    products,
+    findProductById,
+    modalView,
+    wishlistClickHandler,
+    goToDetailsPage
+  ) {
     this._findProductById = findProductById;
     this._wishlistClickHandler = wishlistClickHandler;
     this._goToDetailsPage = goToDetailsPage;
@@ -24,23 +30,36 @@ class ProductListView {
   renderWishlist(wishlist) {
     const productCardEls =
       this._parentElement.querySelectorAll(".product-card");
+
     productCardEls.forEach((card) => {
       const productId = Number(card.dataset.id);
-      const isProductInWishList = wishlist.some((product) => product.id === productId);
+      const isProductInWishList = wishlist.some(
+        (product) => product.id === productId
+      );
       const wishlistIcon = card.querySelector(".wishlist-click-btn");
-      if (isProductInWishList) wishlistIcon.src = filledHeartIcon;
-      else wishlistIcon.src = emptyHeartIcon;
+      const wishlistLabel = wishlistIcon.nextElementSibling;
+      if (isProductInWishList) {
+        wishlistIcon.src = filledHeartIcon;
+        wishlistLabel.textContent = "unlike";
+      } else {
+        wishlistIcon.src = emptyHeartIcon;
+        wishlistLabel.textContent = "like";
+      }
     });
+  }
+
+  addEventHandler(renderWishlist) {
+    window.addEventListener("load", renderWishlist);
   }
 
   _setupEventListeners() {
     this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
-      console.log(e.target);
-      
+
       const productId = Number(e.target.closest(".product-card").dataset.id);
       if (e.target.classList.contains("show-modal")) this._openProductModal(e);
-      if (e.target.classList.contains("gradiant")) this._goToDetailsPage(productId);
+      if (e.target.classList.contains("gradiant"))
+        this._goToDetailsPage(productId);
       if (e.target.classList.contains("wishlist-click-btn"))
         this._wishlistClickHandler(productId);
     });
@@ -51,7 +70,9 @@ class ProductListView {
       .map(
         (product) => `
           <div class="product-card" data-id="${product.id}">
-            <div class="off-${product.discount} ${product.new ? "new" : ""}"></div>
+            <div class="off-${product.discount} ${
+          product.new ? "new" : ""
+        }"></div>
             <div class="gradiant">
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
@@ -62,26 +83,36 @@ class ProductListView {
                   <a href="#"><img src="${compareIcon}" alt="compare" /><span>compare</span></a>
                 </div>
                 <div class="hover-nav-item">
-                  <a href="#"><img class="wishlist-click-btn" src="${product.wishlist ? filledHeartIcon : emptyHeartIcon}" alt="share" /> <span>like</span> </a>
+                  <a href="#"><img class="wishlist-click-btn" src="${
+                    product.wishlist ? filledHeartIcon : emptyHeartIcon
+                  }" alt="share" /> <span>like</span> </a>
                 </div>
               </nav>
             </div>
               
-            <img class="product-card-image" src="${product.imageUrl}" alt="${product.name}" />
+            <img class="product-card-image" src="${product.imageUrl}" alt="${
+          product.name
+        }" />
             <div class="product-card-info">
               <h3 class="heading-tertiary">${product.name}</h3>
               <span class="tag">${product.description}</span>
               <p class="card-price">
                 ${
                   product.discount
-                    ? ` <span class="price-on"> ${formatCurrency(this._calculateDiscountedPrice(product))} </span>`
-                    : `<span class="price-on">${formatCurrency(product.price)}</span>`
+                    ? ` <span class="price-on"> ${formatCurrency(
+                        this._calculateDiscountedPrice(product)
+                      )} </span>`
+                    : `<span class="price-on">${formatCurrency(
+                        product.price
+                      )}</span>`
                 }
 
                 ${
-                  product.discount 
-                  ? `<span class="price-off">${formatCurrency(product.price)} </span>`
-                  : ""
+                  product.discount
+                    ? `<span class="price-off">${formatCurrency(
+                        product.price
+                      )} </span>`
+                    : ""
                 }
               </p>
             </div>

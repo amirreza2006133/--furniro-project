@@ -1,8 +1,12 @@
-import { addProductToCart, findProductById, state } from "../model";
+import { addProductToCart, addProductToWishlist, deleteProductFromWishlist, findProductById, getWishlist, state } from "../model";
 import NotificationView from "../views/notificationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import ModalView from "../views/productModalView";
+
+function controlWishlist() {
+  ProductListView.renderWishlist(getWishlist()); // Update the view
+}
 
 function wishlistClickHandler(productId) {
   const isProductInWishlist = getWishlist().some(
@@ -18,7 +22,7 @@ function wishlistClickHandler(productId) {
     NotificationView.success("product added to wishlist successfully");
   }
 
-  ProductListView.renderWishlist(getWishlist()); // Update the view
+  controlWishlist(); // Update the view
 }
 
 function addProductToCartHandler(newItem) {
@@ -34,6 +38,8 @@ function init() {
     ModalView,
     wishlistClickHandler
   );
+
+  ProductListView.addEventHandler(controlWishlist);
 }
 
 init();
