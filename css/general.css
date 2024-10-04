@@ -878,6 +878,25 @@ i {
   background-color: #111;
   color: #fff;
 }
+.quantity-hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.quantity-hover::after {
+  content: "";
+  background-color: rgb(209 213 219);
+  border-radius: 50%;
+  padding: 1rem;
+  position: absolute;
+  z-index: -99;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+}
+.quantity-hover:hover.quantity-hover::after {
+  opacity: 1;
+}
 
 /* ******************************* */
 /* Notification Styles: */

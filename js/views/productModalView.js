@@ -46,11 +46,11 @@ class ProductModalView {
           </div>
           <div class="modal-controls">
             <div class="quantity-controls">
-              <span class="decrease-quantity-btn">-</span>
+              <span class="quantity-hover decrease-quantity-btn">-</span>
               <input class="quantity-input" type="text" value="${
                 this._productQuantity
               }" disabled />
-              <span class="increase-quantity-btn">+</span>
+              <span class="quantity-hover increase-quantity-btn">+</span>
             </div>
             <input type="submit" value="Add to cart" class="add-to-cart-btn">
           </div>
