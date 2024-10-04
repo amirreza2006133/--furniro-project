@@ -19,6 +19,15 @@ function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
+function controlProductList() {
+  ProductListView.render(state.products);
+}
+
+function controlModal(productId) {
+  // Pass the clicked product to the modal view
+  ProductModalView.openModal(findProductById(productId));
+}
+
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
   CartPreviewView.reRender(state.cart);
@@ -55,15 +64,13 @@ function goToDetailsPage(productId) {
 function init() {
   CartPreviewView.render(state.cart, deleteProductFromCartHandler);
   ProductModalView.render(addProductToCartHandler);
-  ProductListView.render(
-    state.products,
-    findProductById,
-    ProductModalView,
+  ProductListView.addEventHandler(
+    controlProductList,
+    controlWishlist,
+    controlModal,
     wishlistClickHandler,
-    goToDetailsPage
+    goToDetailsPage,
   );
-
-  ProductListView.addEventHandler(controlWishlist);
   FooterView.render();
   productsSliderView.render(slides);
 }

@@ -6,62 +6,46 @@ import { formatCurrency } from "../helper";
 
 class ProductListView {
   _parentElement = document.querySelector(".card-container");
-  _findProductById;
-  _wishlistClickHandler;
-  _goToDetailsPage;
-  modalView;
 
-  render(
-    products,
-    findProductById,
-    modalView,
-    wishlistClickHandler,
-    goToDetailsPage
-  ) {
-    this._findProductById = findProductById;
-    this._wishlistClickHandler = wishlistClickHandler;
-    this._goToDetailsPage = goToDetailsPage;
-    const markup = this._generateMarkup(products);
-    this._parentElement.innerHTML = markup;
-    this.modalView = modalView;
-    this._setupEventListeners();
+  render(products) {
+    const generatedMarkup = this._generateMarkup(products);
+    this._parentElement.insertAdjacentHTML("beforeend", generatedMarkup);
   }
 
   renderWishlist(wishlist) {
+    // selecting the cards
     const productCardEls =
       this._parentElement.querySelectorAll(".product-card");
 
     productCardEls.forEach((card) => {
       const productId = Number(card.dataset.id);
-      const isProductInWishList = wishlist.some(
-        (product) => product.id === productId
-      );
+      const isProductInWishList = wishlist.some((product) => product.id === productId);
+      if (!isProductInWishList) return;
+
+      // if product is in user's wishlist, change it's icon and label
       const wishlistIcon = card.querySelector(".wishlist-click-btn");
       const wishlistLabel = wishlistIcon.nextElementSibling;
+
       if (isProductInWishList) {
         wishlistIcon.src = filledHeartIcon;
         wishlistLabel.textContent = "unlike";
-      } else {
-        wishlistIcon.src = emptyHeartIcon;
-        wishlistLabel.textContent = "like";
       }
     });
   }
 
-  addEventHandler(renderWishlist) {
-    window.addEventListener("load", renderWishlist);
-  }
+  addEventHandler(renderProductList, renderWishlist, renderModal, wishlistClickHandler, goToDetailsPage) {
+    window.addEventListener("load", () => {
+      renderProductList();
+      renderWishlist();
+    });
 
-  _setupEventListeners() {
     this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const productId = Number(e.target.closest(".product-card").dataset.id);
-      if (e.target.classList.contains("show-modal")) this._openProductModal(e);
-      if (e.target.classList.contains("gradiant"))
-        this._goToDetailsPage(productId);
-      if (e.target.classList.contains("wishlist-click-btn"))
-        this._wishlistClickHandler(productId);
+      const productId = e.target.closest(".product-card")?.dataset.id;
+      if (e.target.classList.contains("show-modal")) renderModal(productId);
+      if (e.target.classList.contains("gradiant")) goToDetailsPage(productId);
+      if (e.target.classList.contains("wishlist-click-btn")) wishlistClickHandler(productId);
     });
   }
 
@@ -83,9 +67,7 @@ class ProductListView {
                   <a href="#"><img src="${compareIcon}" alt="compare" /><span>compare</span></a>
                 </div>
                 <div class="hover-nav-item">
-                  <a href="#"><img class="wishlist-click-btn" src="${
-                    product.wishlist ? filledHeartIcon : emptyHeartIcon
-                  }" alt="share" /> <span>like</span> </a>
+                  <a href="#"><img class="wishlist-click-btn" src="${emptyHeartIcon}" alt="share" /> <span>like</span> </a>
                 </div>
               </nav>
             </div>
@@ -126,14 +108,6 @@ class ProductListView {
       product.price - (product.price * product.discount) / 100;
     if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
     return calculatedPrice;
-  }
-
-  _openProductModal(e) {
-    const productId = e.target.closest(".product-card").dataset.id;
-    const currentProduct = this._findProductById(productId);
-
-    // Pass the current product to the modal view
-    this.modalView.openModal(currentProduct);
   }
 }
 
