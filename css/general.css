@@ -780,6 +780,7 @@ i {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.15s ease-out;
 
   border-radius: 50%;
 
@@ -877,6 +878,11 @@ i {
 .modal-controls input[type="submit"]:hover {
   background-color: #111;
   color: #fff;
+}
+.modal-close span:hover {
+  background-color: #fff;
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 .quantity-hover {
   display: flex;
