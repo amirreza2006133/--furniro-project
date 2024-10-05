@@ -1,4 +1,3 @@
-import { CURRENCY_UNIT } from "../config";
 import { formatCurrency } from "../helper";
 
 class CartPreviewView {
@@ -8,26 +7,28 @@ class CartPreviewView {
   _closePreviewEl = document.querySelector(".close-icon");
   _totalPriceEl = document.querySelector(".cart-price");
   _messageEl = document.querySelector(".cart-preview-message");
-  _deleteProductFromCart;
 
-  render(cart, deleteProductHandler) {
-    this._deleteProductFromCart = deleteProductHandler;
-    if (!cart.length) this._showMessage("There is no products in cart");
-
-    const markup = this._generateMarkup(cart);
-    this._elContentCleaner(this._productsListEl);
-    this._productsListEl.insertAdjacentHTML("afterbegin", markup);
-    this._calculateTotalPrice(cart);
-    this._setupEventListeners();
-  }
-
-  reRender(cart) {
+  render(cart) {
     if (!cart.length) return this._showMessage("There is no products in cart");
 
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
     this._productsListEl.insertAdjacentHTML("afterbegin", markup);
     this._calculateTotalPrice(cart);
+  }
+
+  addEventHandler(render, deleteProductFromCartHandler) {
+    window.addEventListener("load", render);
+    this._openPreviewEl.addEventListener("click", this._openPreview.bind(this));
+    this._closePreviewEl.addEventListener("click", this._closePreview.bind(this));
+    this._parentEl.addEventListener("click", (e) => {
+      if (e.target.classList.contains("cart-delete-product")) {
+        const targetProductId = e.target.closest(".cart-item").dataset.id;
+        deleteProductFromCartHandler(targetProductId);
+      }
+
+      if (e.target.closest(".shade")) this._closePreview();
+    });
   }
 
   _showMessage(message) {
@@ -39,22 +40,6 @@ class CartPreviewView {
       return prev + curr.price * curr.quantity;
     }, 0);
     this._totalPriceEl.textContent = `${formatCurrency(totalPrice)}`;
-  }
-
-  _setupEventListeners() {
-    this._openPreviewEl.addEventListener("click", this._openPreview.bind(this));
-    this._closePreviewEl.addEventListener(
-      "click",
-      this._closePreview.bind(this)
-    );
-    this._parentEl.addEventListener("click", (e) => {
-      if (e.target.classList.contains("cart-delete-product")) {
-        const targetProductId = e.target.closest(".cart-item").dataset.id;
-        this._deleteProductFromCart(targetProductId);
-      }
-
-      if (e.target.closest(".shade")) this._closePreview();
-    });
   }
 
   _openPreview() {

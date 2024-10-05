@@ -7,6 +7,7 @@ import {
   getWishlist,
   addProductToWishlist,
   deleteProductFromWishlist,
+  getCartStorage,
 } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
 import FooterView from "../views/footerView";
@@ -28,15 +29,19 @@ function controlModal(productId) {
   ProductModalView.openModal(findProductById(productId));
 }
 
+function controlCartPreview() {
+  CartPreviewView.render(getCartStorage());
+}
+
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
-  CartPreviewView.reRender(state.cart);
+  controlCartPreview();
   NotificationView.success("product added successfully");
 }
 
 function deleteProductFromCartHandler(productId) {
   deleteProductFromCart(productId);
-  CartPreviewView.reRender(state.cart);
+  controlCartPreview();
   NotificationView.info("product deleted successfully");
 }
 
@@ -62,14 +67,17 @@ function goToDetailsPage(productId) {
 }
 
 function init() {
-  CartPreviewView.render(state.cart, deleteProductFromCartHandler);
+  CartPreviewView.addEventHandler(
+    controlCartPreview,
+    deleteProductFromCartHandler
+  );
   ProductModalView.render(addProductToCartHandler);
   ProductListView.addEventHandler(
     controlProductList,
     controlWishlist,
     controlModal,
     wishlistClickHandler,
-    goToDetailsPage,
+    goToDetailsPage
   );
   FooterView.render();
   productsSliderView.render(slides);
