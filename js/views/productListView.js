@@ -17,6 +17,16 @@ class ProductListView {
     const productCardEls =
       this._parentElement.querySelectorAll(".product-card");
 
+    // resting icons
+    const currentLikedIcons = document.querySelectorAll(".wishlist-click-btn.liked");
+    console.log(currentLikedIcons);
+    
+    currentLikedIcons.forEach(el => {
+      el.src = emptyHeartIcon;
+      el.textContent = "like";
+      el.classList.remove("liked")
+    })
+
     productCardEls.forEach((card) => {
       const productId = Number(card.dataset.id);
       const isProductInWishList = wishlist.some((product) => product.id === productId);
@@ -29,6 +39,7 @@ class ProductListView {
       if (isProductInWishList) {
         wishlistIcon.src = filledHeartIcon;
         wishlistLabel.textContent = "unlike";
+        wishlistIcon.classList.add("liked")
       }
     });
   }

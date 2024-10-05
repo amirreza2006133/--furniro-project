@@ -2,15 +2,26 @@ import { addProductToCart, addProductToWishlist, deleteProductFromWishlist, find
 import NotificationView from "../views/notificationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
-import ModalView from "../views/productModalView";
+import ProductModalView from "../views/productModalView";
 
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
+function controlProductList() {
+  ProductListView.render(state.fullProducts);
+}
+
+function controlModal(productId) {
+  // Pass the clicked product to the modal view
+  ProductModalView.openModal(findProductById(productId));
+}
+
 function wishlistClickHandler(productId) {
+  console.log(productId);
+  
   const isProductInWishlist = getWishlist().some(
-    (product) => product.id === productId
+    (product) => product.id === Number(productId)
   );
   const product = findProductById(productId);
 
@@ -30,16 +41,20 @@ function addProductToCartHandler(newItem) {
   NotificationView.success("product added successfully");
 }
 
+function goToDetailsPage(productId) {
+  window.location.assign(`product.html?id=${productId}`);
+}
+
 function init() {
   ProductModalView.render(addProductToCartHandler);
-  ProductListView.render(
-    state.fullProducts,
-    findProductById,
-    ModalView,
-    wishlistClickHandler
+  ProductListView.addEventHandler(
+    controlProductList,
+    controlWishlist,
+    controlModal,
+    wishlistClickHandler,
+    goToDetailsPage,
   );
-
-  ProductListView.addEventHandler(controlWishlist);
+  ProductListView.render(state.fullProducts);
 }
 
 init();
