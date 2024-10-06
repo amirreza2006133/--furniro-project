@@ -9,7 +9,7 @@ class CartPreviewView {
   _messageEl = document.querySelector(".cart-preview-message");
 
   render(cart) {
-    if (!cart.length) return this._showMessage("There is no products in cart");
+    if (!cart.length) this._showMessage("There is no products in cart");
 
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
