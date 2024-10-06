@@ -1,6 +1,7 @@
-import { addProductToCart, findProductById } from "../model";
+import { addProductToCart, findProductById, state } from "../model";
 import NotificationView from "../views/notificationView";
 import ProductView from "../views/productView";
+import TabbarView from "../views/tabbarView";
 
 function controlProduct() {
   const id = new URLSearchParams(window.location.search).get("id");
@@ -10,6 +11,10 @@ function controlProduct() {
   ProductView.reRender(product);
 }
 
+function controlTabbar() {
+  TabbarView.render(state.tabbar);
+}
+
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
   NotificationView.success("product added successfully");
@@ -17,6 +22,7 @@ function addProductToCartHandler(newItem) {
 
 function init() {
   ProductView.render(controlProduct, addProductToCartHandler);
+  TabbarView.addEventHandler(controlTabbar);
 }
 
 init();

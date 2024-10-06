@@ -1,10 +1,11 @@
-import { fullProducts, products } from "./config";
+import { fullProducts, products, TabbarTabs } from "./config";
 
 export const state = {
   products,
   fullProducts,
   cart: [],
   wishlist: [],
+  tabbar: TabbarTabs,
 };
 
 export function addProductToCart(product) {
@@ -63,8 +64,8 @@ export function deleteProductFromWishlist(productId) {
 
 export function getWishlist() {
   const wishlist = localStorage.getItem("wishlist");
-  state.wishlist = wishlist ? JSON.parse(wishlist) : []
-  return state.wishlist
+  state.wishlist = wishlist ? JSON.parse(wishlist) : [];
+  return state.wishlist;
 }
 
 function saveWishlist() {

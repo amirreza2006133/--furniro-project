@@ -12,8 +12,11 @@ import sliderImage2 from "url:../img/slider/slide2.png";
 import sliderImage3 from "url:../img/slider/slide3.png";
 import sliderImage4 from "url:../img/slider/slide4.png";
 
+import tabbarImage1 from "url:../img/Group 106.png";
+import tabbarImage2 from "url:../img/Group 107.png";
+
 export const CURRENCY_UNIT = "USD";
-export const LANG = "en-US"
+export const LANG = "en-US";
 
 export const products = [
   {
@@ -104,7 +107,8 @@ export const fullProducts = [
   {
     id: 1,
     name: "Syltherine Chair",
-    description: "Modern and stylish caffe chair perfect for any contemporary space.",
+    description:
+      "Modern and stylish caffe chair perfect for any contemporary space.",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 250,
@@ -134,7 +138,8 @@ export const fullProducts = [
   {
     id: 4,
     name: "Respira Outdoor Table",
-    description: "Stylish outdoor bar table and stools, ideal for patios and gardens.",
+    description:
+      "Stylish outdoor bar table and stools, ideal for patios and gardens.",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 500,
@@ -145,7 +150,8 @@ export const fullProducts = [
   {
     id: 5,
     name: "Griffo Night Lamp",
-    description: "Contemporary night lamp with an elegant and minimalistic design.",
+    description:
+      "Contemporary night lamp with an elegant and minimalistic design.",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
     price: 150,
@@ -196,7 +202,8 @@ export const fullProducts = [
   {
     id: 10,
     name: "Luna Bookshelf",
-    description: "A tall and elegant bookshelf with multiple shelves for storage.",
+    description:
+      "A tall and elegant bookshelf with multiple shelves for storage.",
     sizes: ["S", "M", "L"],
     colors: ["White", "Walnut", "Black"],
     price: 750,
@@ -226,7 +233,8 @@ export const fullProducts = [
   {
     id: 13,
     name: "Vega Floor Lamp",
-    description: "A modern floor lamp perfect for illuminating any living space.",
+    description:
+      "A modern floor lamp perfect for illuminating any living space.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Gold", "Silver"],
     price: 200,
@@ -246,7 +254,8 @@ export const fullProducts = [
   {
     id: 15,
     name: "Atlas Bar Stool",
-    description: "A modern bar stool with a comfortable seat and adjustable height.",
+    description:
+      "A modern bar stool with a comfortable seat and adjustable height.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Red", "Blue"],
     price: 180,
@@ -356,7 +365,8 @@ export const fullProducts = [
   {
     id: 26,
     name: "Jupiter Dining Chair",
-    description: "A stylish dining chair with wooden legs and a cushioned seat.",
+    description:
+      "A stylish dining chair with wooden legs and a cushioned seat.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gray"],
     price: 220,
@@ -386,7 +396,8 @@ export const fullProducts = [
   {
     id: 29,
     name: "Aurora TV Stand",
-    description: "A sleek and modern TV stand with multiple shelves for storage.",
+    description:
+      "A sleek and modern TV stand with multiple shelves for storage.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Brown"],
     price: 600,
@@ -396,7 +407,8 @@ export const fullProducts = [
   {
     id: 30,
     name: "Solis Wardrobe",
-    description: "A spacious wardrobe with sliding doors and multiple compartments.",
+    description:
+      "A spacious wardrobe with sliding doors and multiple compartments.",
     sizes: ["S", "M", "L"],
     colors: ["White", "Gray", "Black"],
     price: 1400,
@@ -496,7 +508,8 @@ export const fullProducts = [
   {
     id: 40,
     name: "Atlas Office Chair",
-    description: "A comfortable and adjustable office chair with lumbar support.",
+    description:
+      "A comfortable and adjustable office chair with lumbar support.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Gray", "Blue"],
     price: 350,
@@ -536,7 +549,8 @@ export const fullProducts = [
   {
     id: 44,
     name: "Zeus Recliner",
-    description: "A modern recliner chair with adjustable features and comfort.",
+    description:
+      "A modern recliner chair with adjustable features and comfort.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Brown", "Gray"],
     price: 1100,
@@ -596,7 +610,8 @@ export const fullProducts = [
   {
     id: 50,
     name: "Hephaestus Desk",
-    description: "A sturdy desk with ample workspace for office or study needs.",
+    description:
+      "A sturdy desk with ample workspace for office or study needs.",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Walnut"],
     price: 700,
@@ -604,7 +619,6 @@ export const fullProducts = [
     imageUrl: leviosaImage,
   },
 ];
-
 
 export const slides = [
   {
@@ -626,5 +640,27 @@ export const slides = [
     title: "bedroom",
     description: "inner peace",
     imageUrl: sliderImage4,
+  },
+];
+
+export const TabbarTabs = [
+  {
+    title: "description",
+    description: {
+      paragraphes: [
+        `Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road`,
+        `Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.`,
+      ],
+      images: [tabbarImage1, tabbarImage2],
+    },
+  },
+  {
+    title: "aditional information",
+    description: {
+      paragraphes: [
+        `Embodying the raw, wayward spirit of rock ‘n’ roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road`,
+        `Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.`,
+      ],
+    },
   },
 ];
