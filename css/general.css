@@ -882,7 +882,8 @@ i {
 .modal-close span:hover {
   background-color: #fff;
   font-weight: 600;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
+  transform: scale(1.4);
 }
 .quantity-hover {
   display: flex;
