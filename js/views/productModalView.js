@@ -2,20 +2,15 @@ class ProductModalView {
   _modalElement = document.querySelector(".modal-container");
   _productQuantity = 1;
   _currentProduct;
-  _addProductToCart;
 
-  render(addProductToCart) {
-    this._addProductToCart = addProductToCart;
-    this._setupEventListeners();
-  }
-
-  openModal(product) {
+  render(product) {
     this._currentProduct = product;
-    this._renderModalContent();
+    const generatedMarkup = this._generateMarkup();
+    this._modalElement.insertAdjacentHTML("beforeend", generatedMarkup);
     this._modalElement.classList.add("active");
   }
 
-  _setupEventListeners() {
+  addEventHandler(addProductToCart) {
     this._modalElement.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-close-btn")) this._closeModal();
       if (e.target.classList.contains("decrease-quantity-btn"))
@@ -24,13 +19,14 @@ class ProductModalView {
         this._changeQuantity(1);
     });
 
-    this._modalElement.addEventListener("submit", (e) =>
-      this._handleFormSubmit(e)
-    );
+    this._modalElement.addEventListener("submit", (e) => {
+      e.preventDefault();
+      this._handleFormSubmit(e.target, addProductToCart);
+    });
   }
 
-  _renderModalContent() {
-    const markup = `
+  _generateMarkup() {
+    return `
         <div class="modal-content">
           <div class="modal-close">
             <span class="modal-close-btn">✖</span>
@@ -55,7 +51,6 @@ class ProductModalView {
             <input type="submit" value="Add to cart" class="add-to-cart-btn">
           </div>
         </div>`;
-    this._modalElement.innerHTML = markup;
   }
 
   _generateColorOptions(colors) {
@@ -88,9 +83,8 @@ class ProductModalView {
         </div>`;
   }
 
-  _handleFormSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
+  _handleFormSubmit(target, addProductToCart) {
+    const formData = new FormData(target);
     const productDetails = {
       ...this._currentProduct,
       color: formData.get("color"),
@@ -98,7 +92,7 @@ class ProductModalView {
       quantity: this._productQuantity,
     };
 
-    this._addProductToCart(productDetails);
+    addProductToCart(productDetails);
     this._closeModal();
     this._handleResetForm();
   }

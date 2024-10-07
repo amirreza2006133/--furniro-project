@@ -25,8 +25,7 @@ function controlProductList() {
 }
 
 function controlModal(productId) {
-  // Pass the clicked product to the modal view
-  ProductModalView.openModal(findProductById(productId));
+  ProductModalView.render(findProductById(productId));
 }
 
 function controlCartPreview() {
@@ -71,7 +70,7 @@ function init() {
     controlCartPreview,
     deleteProductFromCartHandler
   );
-  ProductModalView.render(addProductToCartHandler);
+  ProductModalView.addEventHandler(addProductToCartHandler);
   ProductListView.addEventHandler(
     controlProductList,
     controlWishlist,
