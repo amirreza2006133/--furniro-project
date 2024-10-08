@@ -1,6 +1,10 @@
 /* *************************** */
 /* blog article section  */
 /* *************************** */
+a {
+  color: #111;
+}
+
 .blog-article {
   margin: 5rem 6.4rem 5rem 6.4rem;
   display: grid;
@@ -46,25 +50,22 @@
   line-height: 1.6;
   margin-bottom: 2.4rem;
 }
-.read-more:link,
-.read-more:visited {
+.read-more {
   display: inline-block;
   text-decoration: none;
   font-size: 1.6rem;
-  color: #111;
+  color: #444 !important;
   padding-bottom: 1.1rem;
-  transition: font-weight 0.1s, border-bottom 0.3s;
+  transition: all 0.2s ease-in-out;
   border-bottom: 1px solid #111;
 }
 
-.read-more:link span {
-  padding-bottom: 0.7rem;
-}
-
-.read-more:hover,
-.read-more:active {
+.read-more:hover {
   border-bottom: #fff 1px solid;
-  font-weight: bold;
+  transform: scale(1.1);
+  font-weight: 600;
+  color: #111 !important;
+  padding-left: 0.6rem;
 }
 .article-sidebar {
   align-self: flex-start;
