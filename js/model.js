@@ -1,4 +1,9 @@
-import { fullProducts, products, TabbarTabs } from "./config";
+import {
+  COUNT_PAGINATION_ITEMS,
+  fullProducts,
+  products,
+  TabbarTabs,
+} from "./config";
 
 export const state = {
   products,
@@ -96,4 +101,11 @@ export function getCartStorage() {
 
 function saveCartStorage(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function requestPaginationItems(array, index) {
+  const startIndex = index * COUNT_PAGINATION_ITEMS;
+  const endIndex = startIndex + COUNT_PAGINATION_ITEMS;
+  const paginationItems = array.slice(startIndex, endIndex);
+  return paginationItems
 }
