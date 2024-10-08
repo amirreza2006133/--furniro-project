@@ -8,6 +8,7 @@ class ProductListView {
   _parentElement = document.querySelector(".card-container");
 
   render(products) {
+    this._parentElement.innerHTML = ""
     const generatedMarkup = this._generateMarkup(products);
     this._parentElement.insertAdjacentHTML("beforeend", generatedMarkup);
   }
@@ -19,8 +20,6 @@ class ProductListView {
 
     // resting icons
     const currentLikedIcons = document.querySelectorAll(".wishlist-click-btn.liked");
-    console.log(currentLikedIcons);
-    
     currentLikedIcons.forEach(el => {
       el.src = emptyHeartIcon;
       el.textContent = "like";

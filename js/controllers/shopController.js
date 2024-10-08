@@ -1,5 +1,15 @@
-import { addProductToCart, addProductToWishlist, deleteProductFromWishlist, findProductById, getWishlist, state } from "../model";
+import { COUNT_PAGINATION_ITEMS } from "../config";
+import {
+  addProductToCart,
+  addProductToWishlist,
+  deleteProductFromWishlist,
+  findProductById,
+  getWishlist,
+  requestPaginationItems,
+  state,
+} from "../model";
 import NotificationView from "../views/notificationView";
+import PaginationView from "../views/paginationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import ProductModalView from "../views/productModalView";
@@ -8,8 +18,8 @@ function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
-function controlProductList() {
-  ProductListView.render(state.fullProducts);
+function controlProductList(gotoPage) {
+  ProductListView.render(requestPaginationItems(state.fullProducts, gotoPage));
 }
 
 function controlModal(productId) {
@@ -17,9 +27,15 @@ function controlModal(productId) {
   ProductModalView.render(findProductById(productId));
 }
 
+function controlPagination(gotoPage = 0) {
+  controlProductList(gotoPage);
+  PaginationView.render(
+    gotoPage,
+    Math.ceil(state.fullProducts.length / COUNT_PAGINATION_ITEMS)
+  );
+}
+
 function wishlistClickHandler(productId) {
-  console.log(productId);
-  
   const isProductInWishlist = getWishlist().some(
     (product) => product.id === Number(productId)
   );
@@ -52,9 +68,9 @@ function init() {
     controlWishlist,
     controlModal,
     wishlistClickHandler,
-    goToDetailsPage,
+    goToDetailsPage
   );
-  ProductListView.render(state.fullProducts);
+  PaginationView.addEventHandler(controlPagination);
 }
 
 init();

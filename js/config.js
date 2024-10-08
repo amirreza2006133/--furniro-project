@@ -18,6 +18,9 @@ import tabbarImage2 from "url:../img/Group 107.png";
 export const CURRENCY_UNIT = "USD";
 export const LANG = "en-US";
 
+export const COUNT_PAGINATION_ITEMS = 8;
+export const COUNT_PAGINATION_BUTTONS = 3;
+
 export const products = [
   {
     id: 1,
