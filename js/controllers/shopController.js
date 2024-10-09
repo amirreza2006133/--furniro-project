@@ -1,4 +1,3 @@
-import { COUNT_PAGINATION_ITEMS } from "../config";
 import {
   addProductToCart,
   addProductToWishlist,
@@ -6,6 +5,7 @@ import {
   findProductById,
   getWishlist,
   requestPaginationItems,
+  requestSortProducts,
   state,
 } from "../model";
 import NotificationView from "../views/notificationView";
@@ -13,26 +13,34 @@ import PaginationView from "../views/paginationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import ProductModalView from "../views/productModalView";
+import SortProductView from "../views/sortProductView";
 
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
-function controlProductList(gotoPage) {
-  ProductListView.render(requestPaginationItems(state.fullProducts, gotoPage));
-}
-
 function controlModal(productId) {
-  // Pass the clicked product to the modal view
   ProductModalView.render(findProductById(productId));
 }
 
-function controlPagination(gotoPage = 0) {
-  controlProductList(gotoPage);
+function controlProductList(gotoPage = 0, products = requestPaginationItems(state.sortedProducts, gotoPage), viewMode = "box") {
+  ProductListView.render(products, viewMode);
+}
+
+function controlPagination(gotoPage = 0, products = state.sortedProducts) {
+  controlProductList(gotoPage, requestPaginationItems(products, gotoPage));
   PaginationView.render(
     gotoPage,
-    Math.ceil(state.fullProducts.length / COUNT_PAGINATION_ITEMS)
+    Math.ceil(products.length / state.countPaginationItems),
+    products.length,
+    state.countPaginationItems
   );
+}
+
+function controlSortProduct(sortInfo) {
+  state.countPaginationItems = sortInfo.countItems;
+  SortProductView.render(state.countPaginationItems);
+  controlPagination(0, requestSortProducts(sortInfo.sortBy))
 }
 
 function wishlistClickHandler(productId) {
@@ -63,13 +71,8 @@ function goToDetailsPage(productId) {
 
 function init() {
   ProductModalView.addEventHandler(addProductToCartHandler);
-  ProductListView.addEventHandler(
-    controlProductList,
-    controlWishlist,
-    controlModal,
-    wishlistClickHandler,
-    goToDetailsPage
-  );
+  ProductListView.addEventHandler( controlProductList, controlWishlist, controlModal, wishlistClickHandler, goToDetailsPage);
+  SortProductView.addEventHandler(controlSortProduct)
   PaginationView.addEventHandler(controlPagination);
 }
 

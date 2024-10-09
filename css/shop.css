@@ -55,7 +55,7 @@ input[type="number"] {
 .in-num,
 .input-select {
   font-size: 1.8rem;
-  color: #9f9f9f;
+  color: #3a3a3a;
   background-color: #fff;
   border: none;
   font-family: inherit;
@@ -72,8 +72,8 @@ input[type="number"] {
   color: #9f9f9f;
 }
 .input-select {
-  width: 4.4rem;
-  padding: 1.2rem 16rem 1.2rem 2rem;
+  width: 10.4rem;
+  height: 3rem;
   border: none;
 } /* *************************** */
 /* product-inline-card  */

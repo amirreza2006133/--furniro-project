@@ -11,6 +11,9 @@ export const state = {
   cart: [],
   wishlist: [],
   tabbar: TabbarTabs,
+  currentIndex: 0,
+  sortedProducts: fullProducts,
+  countPaginationItems: COUNT_PAGINATION_ITEMS
 };
 
 export function addProductToCart(product) {
@@ -104,8 +107,16 @@ function saveCartStorage(cart) {
 }
 
 export function requestPaginationItems(array, index) {
-  const startIndex = index * COUNT_PAGINATION_ITEMS;
-  const endIndex = startIndex + COUNT_PAGINATION_ITEMS;
+  const startIndex = index * state.countPaginationItems;
+  const endIndex = startIndex + state.countPaginationItems;
   const paginationItems = array.slice(startIndex, endIndex);
+  state.currentIndex = index;
   return paginationItems
+}
+
+export function requestSortProducts (sortBy) {
+  if (sortBy === "new") state.sortedProducts = state.fullProducts.filter(product => product.new);
+  if (sortBy === "off") state.sortedProducts = state.fullProducts.filter(product => product.discount);
+  if (sortBy === "default") state.sortedProducts = state.fullProducts;
+  return state.sortedProducts;
 }
