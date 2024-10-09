@@ -79,64 +79,67 @@ input[type="number"] {
 /* product-inline-card  */
 /* *************************** */
 .card-inline-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 4.8rem;
+  padding: 1.2rem;
 }
 .product-inline-card {
   border-bottom: #111 solid 1px;
   padding-bottom: 3.2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
 .product-inline-info {
   display: flex;
   align-items: center;
-  gap: 2.4rem;
+  gap: 1.2rem;
 }
 .product-inline-img {
   display: block;
-  width: 20%;
+  width: 35%;
   object-fit: cover;
 }
 .product-description {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  align-items: flex-start;
 }
 .product-inline-heading {
-  font-size: 3.8rem;
+  font-size: 2.4rem;
   color: #111;
 }
 .tag-inline {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
   color: #9f9f9f;
 }
 .product-prices {
   display: flex;
   align-items: flex-start;
-  align-items: center;
   gap: 1.2rem;
 }
 .inline-on {
-  font-size: 6.2rem;
+  font-size: 3.2rem;
   color: #111;
 }
 .inline-off {
-  font-size: 2.4rem;
+  font-size: 1.6rem;
 }
 .product-info-cta {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  align-items: center;
+  width: 35%;
 }
 .hover-btn {
-  width: 100% !important;
+  padding: 1.2rem !important;
   background-color: #b88e2f !important;
   color: #fff !important;
   border: #b88e2f 2px solid !important;
+  border-radius: 5px;
 }
 .hover-btn:hover {
   background-color: #fff !important;
@@ -148,10 +151,10 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 100%;
-  gap: 1.2rem;
+  width: 70%;
+  /* gap: 0.8rem; */
   border-radius: 11px;
-  padding: 0.4rem 1.2rem;
+  padding: 0.4rem;
 }
 .icons-inline-container a {
   text-decoration: none;
@@ -160,4 +163,5 @@ input[type="number"] {
   display: flex;
   align-items: center;
   color: #fff;
+  /* display: none; */
 }
