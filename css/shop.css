@@ -96,11 +96,16 @@ input[type="number"] {
   align-items: center;
   gap: 1.2rem;
 }
+.product-inline-img-box {
+  width: 35%;
+  overflow: hidden;
+}
 .product-inline-img {
   display: block;
-  width: 35%;
+  width: 100%;
   object-fit: cover;
 }
+
 .product-description {
   display: flex;
   flex-direction: column;
@@ -152,7 +157,6 @@ input[type="number"] {
   align-items: center;
   justify-content: space-around;
   width: 70%;
-  /* gap: 0.8rem; */
   border-radius: 11px;
   padding: 0.4rem;
 }
@@ -163,5 +167,40 @@ input[type="number"] {
   display: flex;
   align-items: center;
   color: #fff;
-  /* display: none; */
+}
+.inline-new,
+.inline-off-30,
+.inline-off-50 {
+  position: relative;
+}
+.inline-off-30::after,
+.inline-off-50::after,
+.inline-new::after {
+  display: flex;
+  position: absolute;
+  left: -40% !important;
+  top: 10% !important;
+  transform: rotate(-45deg);
+  padding: 2.4px 70px;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.inline-off-30::after {
+  content: "-30%";
+}
+.inline-off-50::after {
+  content: "-50%";
+}
+.inline-off-30::after,
+.inline-off-50::after {
+  background-color: #e97171;
+  top: 13% !important;
+}
+
+.inline-new::after {
+  content: "new";
+  background-color: #2ec1ac;
 }
