@@ -85,7 +85,7 @@ input[type="number"] {
   padding: 1.2rem;
 }
 .product-inline-card {
-  border-bottom: #111 solid 1px;
+  border-bottom: #535353 solid 1px;
   padding-bottom: 3.2rem;
   display: flex;
   align-items: center;
@@ -97,6 +97,7 @@ input[type="number"] {
   gap: 1.2rem;
 }
 .product-inline-img-box {
+  position: relative;
   width: 35%;
   overflow: hidden;
 }
@@ -168,39 +169,30 @@ input[type="number"] {
   align-items: center;
   color: #fff;
 }
-.inline-new,
-.inline-off-30,
-.inline-off-50 {
-  position: relative;
-}
-.inline-off-30::after,
-.inline-off-50::after,
-.inline-new::after {
-  display: flex;
+
+.product-inline-tag {
   position: absolute;
-  left: -40% !important;
-  top: 10% !important;
+  width: 100%;
+  padding-block: .1rem;
+  left: -20% !important;
+  top: 20% !important;
   transform: rotate(-45deg);
-  padding: 2.4px 70px;
-  font-weight: 600;
-  justify-content: center;
+  display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.4rem;
   color: #fff;
 }
-.inline-off-30::after {
-  content: "-30%";
-}
-.inline-off-50::after {
-  content: "-50%";
-}
-.inline-off-30::after,
-.inline-off-50::after {
+
+.inline-off {
   background-color: #e97171;
-  top: 13% !important;
 }
 
-.inline-new::after {
-  content: "new";
+.inline-new {
   background-color: #2ec1ac;
+}
+
+.inline-off::after {
+  content: "%";
 }

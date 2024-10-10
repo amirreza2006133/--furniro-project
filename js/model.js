@@ -13,7 +13,8 @@ export const state = {
   tabbar: TabbarTabs,
   currentIndex: 0,
   sortedProducts: fullProducts,
-  countPaginationItems: COUNT_PAGINATION_ITEMS
+  countPaginationItems: COUNT_PAGINATION_ITEMS,
+  productsViewMode: "box",
 };
 
 export function addProductToCart(product) {

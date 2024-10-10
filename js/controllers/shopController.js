@@ -23,7 +23,7 @@ function controlModal(productId) {
   ProductModalView.render(findProductById(productId));
 }
 
-function controlProductList(gotoPage = 0, products = requestPaginationItems(state.sortedProducts, gotoPage), viewMode = "box") {
+function controlProductList(gotoPage = 0, products = requestPaginationItems(state.sortedProducts, gotoPage), viewMode = state.productsViewMode) {
   ProductListView.render(products, viewMode);
 }
 
@@ -39,6 +39,7 @@ function controlPagination(gotoPage = 0, products = state.sortedProducts) {
 
 function controlSortProduct(sortInfo) {
   state.countPaginationItems = sortInfo.countItems;
+  state.productsViewMode = sortInfo.viewMode;
   SortProductView.render(state.countPaginationItems);
   controlPagination(0, requestSortProducts(sortInfo.sortBy))
 }

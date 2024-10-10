@@ -5,12 +5,24 @@ import compareIcon from "../../img/icons/compare-svgrepo-com 1.png";
 import { formatCurrency } from "../helper";
 
 class ProductListView {
-  _parentElement = document.querySelector(".card-container");
+  _parentElement = document.querySelector(".product-section")
+  _boxParentElement = document.querySelector(".card-container");
+  _inlineParentElement = document.querySelector(".card-inline-container");
 
-  render(products) {
-    this._parentElement.innerHTML = ""
-    const generatedMarkup = this._generateMarkup(products);
-    this._parentElement.insertAdjacentHTML("beforeend", generatedMarkup);
+  render(products, viewMode = "box") {
+    let generatedMarkup;
+    this._boxParentElement.innerHTML = ""
+    this._inlineParentElement.innerHTML = ""
+
+    if (viewMode === "box") {
+      generatedMarkup = this._generateBoxMarkup(products);
+      this._boxParentElement.insertAdjacentHTML("beforeend", generatedMarkup);
+    }
+
+    if (viewMode === "inline") {
+      generatedMarkup = this._generateInlineMarkup(products);
+      this._inlineParentElement.insertAdjacentHTML("beforeend", generatedMarkup);
+    }
   }
 
   renderWishlist(wishlist) {
@@ -59,7 +71,7 @@ class ProductListView {
     });
   }
 
-  _generateMarkup(products) {
+  _generateBoxMarkup(products) {
     return products
       .map(
         (product) => `
@@ -111,6 +123,51 @@ class ProductListView {
           </div>`
       )
       .join("");
+  }
+
+  _generateInlineMarkup(products) {
+    return products.map(product => `
+      <div class="product-inline-card">
+        <div class="product-inline-info">
+        <div class="product-inline-img-box">
+          <div class="product-inline-tag ${product.new ? "inline-new" : ""}${product.discount ? "inline-off" : ""}">${product.discount || ""}${product.new ? "new" : ""}</div>
+          <img class="product-inline-img" src="${product.imageUrl}" alt=" a photo of a stylish caffe chair"/>
+        </div>
+          <div class="product-description">
+            <h3 class="product-inline-heading">${product.name}</h3>
+            <span class="tag-inline">${product.description}</span>
+            <div class="product-prices">
+              ${
+                product.discount
+                  ? ` <span class="price-on inline-on"> ${formatCurrency(
+                      this._calculateDiscountedPrice(product)
+                    )} </span>`
+                  : `<span class="price-on inline-on">${formatCurrency(
+                      product.price
+                    )}</span>`
+              }
+
+              ${
+                product.discount
+                  ? `<span class="price-off" inline-off>${formatCurrency(
+                      product.price
+                    )} </span>`
+                  : ""
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="product-info-cta">
+              <a class="hover-btn show-modal" href="#"> Add to cart </a>
+              <div class="icons-inline-container">
+                <a href="#"><img src="${shareIcon}" alt="share" /></a>
+                <a href="#"><img src="${compareIcon}" alt="compare"/></a>
+                <a href="#"><img class="wishlist-click-btn" src="${emptyHeartIcon}" alt="share"/></a>
+              </div>
+        </div>
+      </div>
+      `).join("")
   }
 
   _calculateDiscountedPrice(product) {
