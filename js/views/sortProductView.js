@@ -61,7 +61,7 @@ class SortProductView {
   }
 
   _validatePageItemsCountInput(value) {
-    return (value > 32 || value < 8) ? false : true;
+    return (value > 100 || value < 8) ? false : true;
   }
 
   _generateMarkup(countPagItems) {

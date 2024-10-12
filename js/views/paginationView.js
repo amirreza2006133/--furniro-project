@@ -33,7 +33,7 @@ class PaginationView {
     const paginationNextBtn = `<li class="pagination-item" data-goto="${index + 1}">next</li>`;
 
     // just one index
-    if (index === 0 && countItems < countPagItems)
+    if (index === 0 && countItems <= countPagItems)
       return `<li class="pagination-item fill-pag data-goto="${0}">1</li>`;
 
     // index = 0
