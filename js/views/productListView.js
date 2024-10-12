@@ -30,7 +30,7 @@ class ProductListView {
   renderWishlist(wishlist) {
     // selecting the cards
     const productCardEls =
-      this._parentElement.querySelectorAll(".product-card");
+      this._parentElement.querySelectorAll(".pr-list-card");
 
     // resting icons
     const currentLikedIcons = document.querySelectorAll(".wishlist-click-btn.liked");
@@ -51,8 +51,8 @@ class ProductListView {
 
       if (isProductInWishList) {
         wishlistIcon.src = filledHeartIcon;
-        wishlistLabel.textContent = "unlike";
         wishlistIcon.classList.add("liked")
+        wishlistLabel ? wishlistLabel.textContent = "unlike" : "";
       }
     });
   }
@@ -66,7 +66,7 @@ class ProductListView {
     this._parentElement.addEventListener("click", (e) => {
       e.preventDefault();
 
-      const productId = e.target.closest(".product-card")?.dataset.id;
+      const productId = e.target.closest(".pr-list-card")?.dataset.id;
       if (e.target.classList.contains("show-modal")) renderModal(productId);
       if (e.target.classList.contains("gradiant")) goToDetailsPage(productId);
       if (e.target.classList.contains("wishlist-click-btn")) wishlistClickHandler(productId);
@@ -77,7 +77,7 @@ class ProductListView {
     return products
       .map(
         (product) => `
-          <div class="product-card" data-id="${product.id}">
+          <div class="pr-list-card product-card" data-id="${product.id}">
             <div class="${product.discount ? "off" : ""} ${
           product.new ? "new" : ""
         }">${product.discount || ""}</div>
@@ -129,7 +129,7 @@ class ProductListView {
 
   _generateInlineMarkup(products) {
     return products.map(product => `
-      <div class="product-inline-card">
+      <div class="pr-list-card product-inline-card" data-id="${product.id}">
         <div class="product-inline-info">
         <div class="product-inline-img-box">
           <div class="product-inline-tag ${product.new ? "inline-new" : ""}${product.discount ? "inline-off" : ""}">${product.discount || ""}${product.new ? "new" : ""}</div>
