@@ -5,6 +5,7 @@ class ProductModalView {
 
   render(product) {
     this._currentProduct = product;
+    this._modalElement.innerHTML = ""
     const generatedMarkup = this._generateMarkup();
     this._modalElement.insertAdjacentHTML("beforeend", generatedMarkup);
     this._modalElement.classList.add("active");
