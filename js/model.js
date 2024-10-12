@@ -49,7 +49,7 @@ export function deleteProductFromCart(productId) {
 }
 
 export function findProductById(id) {
-  return products.find((product) => product.id === Number(id));
+  return state.fullProducts.find((product) => product.id === Number(id));
 }
 
 export function increaseProductQuantity(productId, increaseAmount = 1) {

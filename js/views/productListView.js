@@ -9,7 +9,7 @@ class ProductListView {
   _boxParentElement = document.querySelector(".card-container");
   _inlineParentElement = document.querySelector(".card-inline-container");
 
-  render(products, viewMode = "box") {
+  render(products, wishlist, viewMode = "box") {
     let generatedMarkup;
     this._boxParentElement.innerHTML = ""
     this._inlineParentElement.innerHTML = ""
@@ -23,6 +23,8 @@ class ProductListView {
       generatedMarkup = this._generateInlineMarkup(products);
       this._inlineParentElement.insertAdjacentHTML("beforeend", generatedMarkup);
     }
+
+    this.renderWishlist(wishlist);
   }
 
   renderWishlist(wishlist) {
@@ -57,8 +59,8 @@ class ProductListView {
 
   addEventHandler(renderProductList, renderWishlist, renderModal, wishlistClickHandler, goToDetailsPage) {
     window.addEventListener("load", () => {
-      renderProductList();
-      renderWishlist();
+      renderProductList && renderProductList();
+      renderWishlist && renderWishlist();
     });
 
     this._parentElement.addEventListener("click", (e) => {

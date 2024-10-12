@@ -1,13 +1,4 @@
-import {
-  addProductToCart,
-  addProductToWishlist,
-  deleteProductFromWishlist,
-  findProductById,
-  getWishlist,
-  requestPaginationItems,
-  requestSortProducts,
-  state,
-} from "../model";
+import { addProductToCart, addProductToWishlist, deleteProductFromWishlist, findProductById, getWishlist, requestPaginationItems, requestSortProducts, state,} from "../model";
 import NotificationView from "../views/notificationView";
 import PaginationView from "../views/paginationView";
 import ProductListView from "../views/productListView";
@@ -24,7 +15,7 @@ function controlModal(productId) {
 }
 
 function controlProductList(gotoPage = 0, products = requestPaginationItems(state.sortedProducts, gotoPage), viewMode = state.productsViewMode) {
-  ProductListView.render(products, viewMode);
+  ProductListView.render(products, getWishlist(), viewMode);
 }
 
 function controlPagination(gotoPage = 0, products = state.sortedProducts) {
@@ -45,9 +36,7 @@ function controlSortProduct(sortInfo) {
 }
 
 function wishlistClickHandler(productId) {
-  const isProductInWishlist = getWishlist().some(
-    (product) => product.id === Number(productId)
-  );
+  const isProductInWishlist = getWishlist().some((product) => product.id === Number(productId));
   const product = findProductById(productId);
 
   if (isProductInWishlist) {
@@ -72,7 +61,7 @@ function goToDetailsPage(productId) {
 
 function init() {
   ProductModalView.addEventHandler(addProductToCartHandler);
-  ProductListView.addEventHandler( controlProductList, controlWishlist, controlModal, wishlistClickHandler, goToDetailsPage);
+  ProductListView.addEventHandler( null, null, controlModal, wishlistClickHandler, goToDetailsPage);
   SortProductView.addEventHandler(controlSortProduct)
   PaginationView.addEventHandler(controlPagination);
 }
