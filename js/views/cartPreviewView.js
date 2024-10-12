@@ -10,6 +10,7 @@ class CartPreviewView {
 
   render(cart) {
     if (!cart.length) this._showMessage("There is no products in cart");
+    else this._showMessage("")
 
     const markup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
