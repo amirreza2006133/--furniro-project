@@ -21,7 +21,7 @@ function controlWishlist() {
 }
 
 function controlProductList() {
-  ProductListView.render(state.products);
+  ProductListView.render(state.products, getWishlist(), "box");
 }
 
 function controlModal(productId) {
