@@ -1,3 +1,7 @@
+:root {
+  --input-items-count-error: "";
+}
+
 /* *************************** */
 /* product filter  */
 /* *************************** */
@@ -45,6 +49,10 @@
   color: #111;
   padding-right: 0.8rem;
 }
+.filter-label.error{
+  color: #e97171;
+  font-size: 1.5rem;
+}
 .in-num::-webkit-outer-spin-button,
 .in-num::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -62,11 +70,11 @@ input[type="number"] {
 }
 .in-num {
   margin-right: 1.6rem;
-  width: 3rem;
+  width: 4rem;
   height: 3rem;
   text-align: center;
-  padding: 0.8rem;
 }
+
 .in-num::placeholder {
   font-size: 1.6rem;
   color: #9f9f9f;

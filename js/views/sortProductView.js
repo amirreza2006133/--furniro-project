@@ -47,9 +47,21 @@ class SortProductView {
 
     const countItemsEl = this._parentEl.querySelector(".countIndex");
     countItemsEl.addEventListener("change", (e) => {
-      this._countItems = Number(e.target.value);
-      this._submitSort();
+      if (this._validatePageItemsCountInput(Number(e.target.value))) {
+        this._countItems = Number(e.target.value);
+        countItemsEl.previousElementSibling.textContent = "Show"
+        countItemsEl.previousElementSibling.classList.remove("error")
+        this._submitSort();
+      } else {
+        countItemsEl.previousElementSibling.textContent = `${countItemsEl.value} is not valid max 32 and min 8`
+        countItemsEl.previousElementSibling.classList.add("error")
+        countItemsEl.value = this._countItems;
+      }
     });
+  }
+
+  _validatePageItemsCountInput(value) {
+    return (value > 32 || value < 8) ? false : true;
   }
 
   _generateMarkup(countPagItems) {
