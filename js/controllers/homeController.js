@@ -1,14 +1,5 @@
 import { slides } from "../config";
-import {
-  state,
-  findProductById,
-  addProductToCart,
-  deleteProductFromCart,
-  getWishlist,
-  addProductToWishlist,
-  deleteProductFromWishlist,
-  getCartStorage,
-} from "../model";
+import { state, findProductById, addProductToCart, deleteProductFromCart, getWishlist, addProductToWishlist, deleteProductFromWishlist, getCartStorage } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
 import FooterView from "../views/footerView";
 import NotificationView from "../views/notificationView";
@@ -45,9 +36,7 @@ function deleteProductFromCartHandler(productId) {
 }
 
 function wishlistClickHandler(productId) {
-  const isProductInWishlist = getWishlist().some(
-    (product) => product.id === productId
-  );
+  const isProductInWishlist = getWishlist().some((product) => product.id === productId);
   const product = findProductById(productId);
 
   if (isProductInWishlist) {
@@ -66,18 +55,9 @@ function goToDetailsPage(productId) {
 }
 
 function init() {
-  CartPreviewView.addEventHandler(
-    controlCartPreview,
-    deleteProductFromCartHandler
-  );
+  CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
   ProductModalView.addEventHandler(addProductToCartHandler);
-  ProductListView.addEventHandler(
-    controlProductList,
-    controlWishlist,
-    controlModal,
-    wishlistClickHandler,
-    goToDetailsPage
-  );
+  ProductListView.addEventHandler(controlProductList, controlWishlist, controlModal, wishlistClickHandler, goToDetailsPage);
   FooterView.render();
   productsSliderView.render(slides);
 }

@@ -1,4 +1,5 @@
-import { addProductToCart, addProductToWishlist, deleteProductFromWishlist, findProductById, getWishlist, requestPaginationItems, requestSortProducts, state,} from "../model";
+import { addProductToCart, addProductToWishlist, deleteProductFromCart, deleteProductFromWishlist, findProductById, getCartStorage, getWishlist, requestPaginationItems, requestSortProducts, state,} from "../model";
+import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
 import PaginationView from "../views/paginationView";
 import ProductListView from "../views/productListView";
@@ -16,6 +17,10 @@ function controlModal(productId) {
 
 function controlProductList(gotoPage = 0, products = requestPaginationItems(state.sortedProducts, gotoPage), viewMode = state.productsViewMode) {
   ProductListView.render(products, getWishlist(), viewMode);
+}
+
+function controlCartPreview() {
+  CartPreviewView.render(getCartStorage());
 }
 
 function controlPagination(gotoPage = 0, products = state.sortedProducts) {
@@ -52,7 +57,14 @@ function wishlistClickHandler(productId) {
 
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
+  controlCartPreview();
   NotificationView.success("product added successfully");
+}
+
+function deleteProductFromCartHandler(productId) {
+  deleteProductFromCart(productId);
+  controlCartPreview();
+  NotificationView.info("product deleted successfully");
 }
 
 function goToDetailsPage(productId) {
@@ -60,6 +72,7 @@ function goToDetailsPage(productId) {
 }
 
 function init() {
+  CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
   ProductModalView.addEventHandler(addProductToCartHandler);
   ProductListView.addEventHandler( null, null, controlModal, wishlistClickHandler, goToDetailsPage);
   SortProductView.addEventHandler(controlSortProduct)

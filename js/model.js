@@ -121,3 +121,7 @@ export function requestSortProducts (sortBy) {
   if (sortBy === "default") state.sortedProducts = state.fullProducts;
   return state.sortedProducts;
 }
+
+export function goToDetailsPage(productId) {
+  window.location.assign(`product.html?id=${productId}`);
+}

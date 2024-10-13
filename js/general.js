@@ -1,11 +1,19 @@
-const Html = document.querySelector(".overflow");
-const CartOPenEL = document.querySelector(".main-btn-cart");
-const CloseEL = document.querySelector(".close-icon");
+import { deleteProductFromCart, getCartStorage } from "./model";
+import CartPreviewView from "./views/cartPreviewView";
+import NotificationView from "./views/notificationView";
 
-CartOPenEL.addEventListener("click", function () {
-  CartOPenEL.classList.toggle("cart-open");
-  //   Html.style.overflow = "hidden";
-});
-const yearEL = document.querySelector(".year");
-const currentYear = new Date().getFullYear();
-yearEL.textContent = currentYear;
+function controlCartPreview() {
+  CartPreviewView.render(getCartStorage());
+}
+
+function deleteProductFromCartHandler(productId) {
+  deleteProductFromCart(productId);
+  controlCartPreview();
+  NotificationView.info("product deleted successfully");
+}
+
+function init() {
+  CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
+}
+
+init();
