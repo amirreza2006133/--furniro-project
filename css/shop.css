@@ -108,6 +108,7 @@ input[type="number"] {
 .product-inline-img-box {
   position: relative;
   max-width: 173px;
+  min-width: 173px;
   overflow: hidden;
 }
 .product-inline-img {
@@ -183,9 +184,9 @@ input[type="number"] {
 .product-inline-tag {
   position: absolute;
   width: 100%;
-  padding-block: .1rem;
-  left: -20% !important;
-  top: 20% !important;
+  padding-block: .3rem;
+  left: -32%;
+  top: 12%;
   transform: rotate(-45deg);
   display: flex;
   align-items: center;
