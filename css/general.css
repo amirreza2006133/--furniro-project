@@ -809,20 +809,25 @@ i {
   width: 0;
 }
 
-.modal-content .modal-options .inputs.color input:is(:focus, :checked) + label {
+.modal-content .modal-options .inputs.color input:is(:focus, :checked) + label > span {
   border: 4px solid #898989;
 }
 
-.modal-content .modal-options .inputs.color label {
-  cursor: pointer;
-
+.modal-content .modal-options .inputs.color label { 
   display: inline-block;
-  border-radius: 50%;
   width: 32px;
   height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.modal-content .modal-options .inputs.size label {
+.modal-content .modal-options .inputs label:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px #0000007e;
+}
+
+.modal-content .modal-options .inputs.size label{
   width: 34px;
   height: 34px;
   cursor: pointer;
