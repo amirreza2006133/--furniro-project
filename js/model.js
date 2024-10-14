@@ -29,7 +29,7 @@ export function addProductToCart(product) {
   }
 
   const newProduct = {
-    id: product.id,
+    id: `${product.id}${product.size}${product.color}`,
     name: product.name,
     size: product.size,
     color: product.color,
@@ -44,7 +44,7 @@ export function addProductToCart(product) {
 }
 
 export function deleteProductFromCart(productId) {
-  state.cart = state.cart.filter((product) => product.id !== Number(productId));
+  state.cart = state.cart.filter((product) => product.id !== productId);
   saveCartStorage(state.cart);
 }
 
@@ -58,7 +58,7 @@ export function increaseProductQuantity(productId, increaseAmount = 1) {
 }
 
 export function findProductInCartById(productId) {
-  return state.cart.find((product) => product.id === Number(productId));
+  return state.cart.find((product) => product.id === productId);
 }
 
 export function addProductToWishlist(product) {

@@ -1,4 +1,4 @@
-import { deleteProductFromCart, findProductById, getCartStorage, state } from "../model";
+import { deleteProductFromCart, findProductInCartById, getCartStorage, state } from "../model";
 import CartView from "../views/cartView";
 import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
@@ -17,7 +17,7 @@ function deleteProductFromCartHandler(productId) {
 function init() {
   const cart = getCartStorage();
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
-  CartView.render(cart, findProductById, deleteProductFromCartHandler);
+  CartView.render(cart, findProductInCartById, deleteProductFromCartHandler);
 }
 
 init();
