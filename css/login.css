@@ -166,6 +166,7 @@ body {
   display: flex;
   gap: 0.4rem;
   align-items: center;
+  accent-color: #b88e2f;
 }
 .check-box input {
   display: none;
