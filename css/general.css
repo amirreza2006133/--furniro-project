@@ -24,13 +24,15 @@ i {
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding: 2.4rem 0 2.1rem 0;
+  gap: 12.8rem;
 }
 .nav-list {
   list-style: none;
   display: flex;
   gap: 8rem;
+  align-items: center;
 
   color: #333;
 }
@@ -261,6 +263,25 @@ i {
 .cart-open .shade {
   transform: translateX(0);
 }
+.responsive-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12.8rem;
+}
+.mobile-nav-menu {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+.mobile-nav-menu span {
+  font-size: 36px;
+}
+.mobile-nav-menu-icon {
+  height: 36px;
+  width: 36px;
+}
 
 /* *************************** */
 /* Header end */
@@ -482,7 +503,8 @@ i {
   position: relative;
 }
 
-.new::after, .off {
+.new::after,
+.off {
   content: "new";
   width: 50px;
   height: 50px;
@@ -501,7 +523,7 @@ i {
 .off {
   background-color: #e97171;
 }
-.off::after{
+.off::after {
   content: "%";
 }
 
@@ -809,11 +831,16 @@ i {
   width: 0;
 }
 
-.modal-content .modal-options .inputs.color input:is(:focus, :checked) + label > span {
+.modal-content
+  .modal-options
+  .inputs.color
+  input:is(:focus, :checked)
+  + label
+  > span {
   border: 4px solid #898989;
 }
 
-.modal-content .modal-options .inputs.color label { 
+.modal-content .modal-options .inputs.color label {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -822,12 +849,12 @@ i {
   transition: 0.2s;
 }
 
-.modal-content .modal-options .inputs label:hover{
+.modal-content .modal-options .inputs label:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 10px #0000007e;
 }
 
-.modal-content .modal-options .inputs.size label{
+.modal-content .modal-options .inputs.size label {
   width: 34px;
   height: 34px;
   cursor: pointer;
