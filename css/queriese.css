@@ -84,6 +84,9 @@
 /* below 1024px */
 /* *************************** */
 @media (max-width: 64em) {
+  body {
+    overflow-x: hidden;
+  }
   .mobile-nav-menu {
     display: block;
   }
