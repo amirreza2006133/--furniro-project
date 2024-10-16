@@ -26,7 +26,7 @@ i {
   align-items: center;
   justify-content: center;
   padding: 2.4rem 0 2.1rem 0;
-  gap: 12.8rem;
+  gap: 18rem;
 }
 .nav-list {
   list-style: none;
@@ -267,7 +267,7 @@ i {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12.8rem;
+  gap: 18rem;
 }
 .mobile-nav-menu {
   border: none;
