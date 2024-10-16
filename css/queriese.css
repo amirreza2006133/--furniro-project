@@ -107,9 +107,11 @@
     width: 100%;
     background-color: #fff;
     align-items: flex-start;
+    gap: 0;
   }
 
   .responsive-nav {
+    overflow: hidden;
     border-top: 1px solid rgb(221, 220, 220);
     gap: 3.2rem;
     position: absolute;
@@ -122,17 +124,22 @@
     align-items: center;
     padding: 2.4rem;
     justify-content: center;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
   }
   .show-mobile-nav .responsive-nav {
+    transform: translateX(0);
   }
   .nav-list {
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
   }
   .nav-list-item {
+    overflow: hidden;
     border-bottom: 1px solid rgb(221, 220, 220);
     display: block;
-    padding: 1.2rem 5vw;
+    padding: 1.2rem 20vw;
   }
 
   .nav-list-item:link,
