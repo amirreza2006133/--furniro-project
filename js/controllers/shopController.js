@@ -6,6 +6,7 @@ import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import ProductModalView from "../views/productModalView";
 import SortProductView from "../views/sortProductView";
+import HambergurMenuView from "../views/HambergurMenuView";
 
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
@@ -21,6 +22,10 @@ function controlProductList(gotoPage = 0, products = requestPaginationItems(stat
 
 function controlCartPreview() {
   CartPreviewView.render(getCartStorage());
+}
+
+function controlHambergurMenu() {
+  HambergurMenuView.render();
 }
 
 function controlPagination(gotoPage = 0, products = state.sortedProducts) {
@@ -77,6 +82,7 @@ function init() {
   ProductListView.addEventHandler( null, null, controlModal, wishlistClickHandler, goToDetailsPage);
   SortProductView.addEventHandler(controlSortProduct)
   PaginationView.addEventHandler(controlPagination);
+  HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 
 init();

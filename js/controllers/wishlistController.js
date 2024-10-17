@@ -2,9 +2,14 @@ import { deleteProductFromCart, deleteProductFromWishlist, getCartStorage, getWi
 import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
 import WishlistView from "../views/wishlistView";
+import HambergurMenuView from "../views/HambergurMenuView";
 
 function controlWishlist() {
   WishlistView.render(getWishlist());
+}
+
+function controlHambergurMenu() {
+  HambergurMenuView.render();
 }
 
 function controlCartPreview() {
@@ -26,6 +31,7 @@ function handleDeleteProductFromWishlist(productId) {
 function init() {
   WishlistView.addEventHandler(controlWishlist, handleDeleteProductFromWishlist);
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
+  HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 
 init();

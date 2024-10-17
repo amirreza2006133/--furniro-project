@@ -2,9 +2,14 @@ import { deleteProductFromCart, findProductInCartById, getCartStorage, state } f
 import CartView from "../views/cartView";
 import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
+import HambergurMenuView from "../views/HambergurMenuView";
 
 function controlCartPreview() {
   CartPreviewView.render(getCartStorage());
+}
+
+function controlHambergurMenu() {
+  HambergurMenuView.render();
 }
 
 function deleteProductFromCartHandler(productId) {
@@ -18,6 +23,7 @@ function init() {
   const cart = getCartStorage();
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
   CartView.render(cart, findProductInCartById, deleteProductFromCartHandler);
+  HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 
 init();
