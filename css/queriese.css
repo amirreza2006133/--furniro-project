@@ -98,37 +98,41 @@
   }
   .show-mobile-nav .mobile-nav-menu span {
     display: block;
+    transform: translateY(-11px);
   }
-
   .show-mobile-nav .mobile-nav-menu-icon {
     display: none;
   }
   .header {
-    padding: 3.2rem;
-    justify-content: space-between;
-    padding: 2.4rem;
+    --header-height: 100px;
     width: 100%;
+    height: var(--header-height);
+    padding-inline: 2.4rem;
+    justify-content: space-between;
     background-color: #fff;
-    align-items: flex-start;
-    gap: 0;
+    align-items: center;
   }
 
   .responsive-nav {
     overflow: hidden;
-    border-top: 1px solid rgb(221, 220, 220);
-    gap: 3.2rem;
     position: absolute;
-    top: 2.6%;
+    top: var(--header-height);
     left: 0;
     width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    background-color: #fff;
-    align-items: center;
+    height: 100dvh;
     padding: 2.4rem;
+    gap: 3.2rem;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
+    background-color: #fff;
+    border-top: 1px solid rgb(221, 220, 220);
+  }
+  .show-mobile-nav {
+    height: 100dvh;
+    overflow-y: hidden;
   }
   .show-mobile-nav .responsive-nav {
     transform: translateX(0);
@@ -137,6 +141,7 @@
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    gap: 3.2rem;
   }
   .nav-list-item {
     overflow: hidden;
@@ -144,7 +149,6 @@
     display: block;
     padding: 1.2rem 20vw;
   }
-
   .nav-list-item:link,
   .nav-list-item:visited {
     font-size: 2.4rem;
