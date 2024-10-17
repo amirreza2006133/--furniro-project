@@ -6,7 +6,7 @@ import NotificationView from "../views/notificationView";
 import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import productsSliderView from "../views/productsSliderView";
-
+import HambergurMenuView from "../views/HambergurMenuView";
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
@@ -21,6 +21,10 @@ function controlModal(productId) {
 
 function controlCartPreview() {
   CartPreviewView.render(getCartStorage());
+}
+
+function controlHambergurMenu() {
+  HambergurMenuView.render();
 }
 
 function addProductToCartHandler(newItem) {
@@ -60,6 +64,7 @@ function init() {
   ProductListView.addEventHandler(controlProductList, controlWishlist, controlModal, wishlistClickHandler, goToDetailsPage);
   FooterView.render();
   productsSliderView.render(slides);
+  HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 
 init();
