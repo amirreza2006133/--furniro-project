@@ -161,4 +161,7 @@
     border-radius: 15px;
     gap: 8rem;
   }
+  .cart {
+    width: 100vw;
+  }
 }
