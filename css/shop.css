@@ -49,7 +49,7 @@
   color: #111;
   padding-right: 0.8rem;
 }
-.filter-label.error{
+.filter-label.error {
   color: #e97171;
   font-size: 1.5rem;
 }
@@ -151,14 +151,14 @@ input[type="number"] {
   align-items: flex-end;
   width: 35%;
 }
-.hover-btn {
+.btn-inline {
   padding: 1.2rem !important;
   background-color: #b88e2f !important;
   color: #fff !important;
   border: #b88e2f 2px solid !important;
   border-radius: 5px;
 }
-.hover-btn:hover {
+.btn-inline:hover {
   background-color: #fff !important;
   color: #b88e2f !important;
 }
@@ -184,7 +184,7 @@ input[type="number"] {
 .product-inline-tag {
   position: absolute;
   width: 100%;
-  padding-block: .3rem;
+  padding-block: 0.3rem;
   left: -32%;
   top: 12%;
   transform: rotate(-45deg);
