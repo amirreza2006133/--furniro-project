@@ -129,6 +129,7 @@
     transition: all 0.5s ease-in-out;
     background-color: #fff;
     border-top: 1px solid rgb(221, 220, 220);
+    z-index: 99999999999999;
   }
   .show-mobile-nav {
     height: 100dvh;
