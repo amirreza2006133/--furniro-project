@@ -184,15 +184,15 @@ input[type="number"] {
 .product-inline-tag {
   position: absolute;
   width: 100%;
-  padding-block: 0.3rem;
+  padding-block: 0.1rem;
   left: -32%;
   top: 12%;
   transform: rotate(-45deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: 1.4rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: #fff;
 }
 
