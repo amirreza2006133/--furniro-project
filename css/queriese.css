@@ -105,14 +105,13 @@
   }
   .header {
     --header-height: 100px;
-    width: 100%;
+    gap: 0;
     height: var(--header-height);
     padding-inline: 2.4rem;
     justify-content: space-between;
     background-color: #fff;
     align-items: center;
   }
-
   .responsive-nav {
     overflow: hidden;
     position: absolute;
@@ -162,6 +161,8 @@
     gap: 8rem;
   }
   .cart {
+    z-index: 999999000000000000 !important;
+    top:0;
     width: 100vw;
   }
 }

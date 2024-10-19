@@ -22,6 +22,8 @@ i {
 /* Header */
 /* *************************** */
 .header {
+  width: 100%;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,17 +113,16 @@ i {
   background-color: inherit;
 }
 .cart {
-  transition: all 0.7s ease-in-out;
+  height: 100dvh;
+  width: 35vw;
+  padding: 3.2rem 2.4rem 3.2rem 1.2rem;
   z-index: 999999;
   position: fixed;
-  padding: 3.2rem 2.4rem 3.2rem 1.2rem;
-  height: 100vh;
-  width: 35vw;
   top: 0;
   right: 0;
   background-color: #fff;
   transform: translateX(100%);
-
+  transition: all 0.7s ease-in-out;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
   gap: 2rem;
@@ -236,7 +237,6 @@ i {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* gap: 1.2rem; */
 }
 .card-btn:link,
 .card-btn:visited {
@@ -257,10 +257,10 @@ i {
   color: #fff;
   background-color: #111;
 }
-.cart-open .cart {
+.cart-open {
   transform: translateX(0);
 }
-.cart-open .shade {
+.cart-open + .shade {
   transform: translateX(0);
 }
 .responsive-nav {

@@ -2,6 +2,7 @@ import { formatCurrency } from "../helper";
 
 class CartPreviewView {
   _parentEl = document.querySelector(".main-btn-cart");
+  _cartEl = document.querySelector(".cart");
   _productsListEl = document.querySelector(".cart-items-list");
   _openPreviewEl = document.querySelector(".open-cart-preview");
   _closePreviewEl = document.querySelector(".close-icon");
@@ -22,7 +23,7 @@ class CartPreviewView {
     window.addEventListener("load", render);
     this._openPreviewEl.addEventListener("click", this._openPreview.bind(this));
     this._closePreviewEl.addEventListener("click", this._closePreview.bind(this));
-    this._parentEl.addEventListener("click", (e) => {
+    this._cartEl.addEventListener("click", (e) => {
       if (e.target.classList.contains("cart-delete-product")) {
         const targetProductId = e.target.closest(".cart-item").dataset.id;
         deleteProductFromCartHandler(targetProductId);
@@ -44,11 +45,11 @@ class CartPreviewView {
   }
 
   _openPreview() {
-    this._parentEl.classList.add("cart-open");
+    this._cartEl.classList.add("cart-open");
   }
 
   _closePreview() {
-    this._parentEl.classList.remove("cart-open");
+    this._cartEl.classList.remove("cart-open");
   }
 
   _generateMarkup(cart) {
