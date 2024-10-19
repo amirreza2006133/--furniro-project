@@ -107,8 +107,8 @@ input[type="number"] {
 }
 .product-inline-img-box {
   position: relative;
-  max-width: 173px;
-  min-width: 173px;
+  max-width: 103px;
+  min-width: 103px;
   overflow: hidden;
 }
 .product-inline-img {
