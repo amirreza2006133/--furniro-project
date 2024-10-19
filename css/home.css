@@ -12,6 +12,7 @@
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: end;
+  background-attachment: fixed;
 }
 
 .hero {
@@ -201,7 +202,7 @@
   display: none;
 }
 
-.products-slider-pagination.de{
+.products-slider-pagination.de {
   padding-left: calc(404px + 15px + 12px);
 }
 
@@ -212,7 +213,7 @@
   gap: 25px;
 }
 
-.products-slider-pagination .dots li{
+.products-slider-pagination .dots li {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -246,11 +247,11 @@
     text-align: left;
   }
 
-  .products-slider-pagination.de{
+  .products-slider-pagination.de {
     display: none;
   }
 
-  .products-slider-pagination.mb{
+  .products-slider-pagination.mb {
     display: flex;
   }
 }
