@@ -936,6 +936,9 @@ i {
 .quantity-hover:hover.quantity-hover::after {
   opacity: 1;
 }
+.quantity-hover::selection {
+  background-color: transparent;
+}
 
 /* ******************************* */
 /* Notification Styles: */
