@@ -169,7 +169,7 @@ input[type="number"] {
   align-items: center;
   justify-content: space-around;
   width: 70%;
-  border-radius: 11px;
+  border-radius: 5px;
   padding: 0.4rem;
 }
 .icons-inline-container a {
