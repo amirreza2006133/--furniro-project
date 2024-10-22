@@ -46,16 +46,21 @@ class ProductListView {
     });
 
     productCardEls.forEach((card) => {
+      const wishlistIcon = card.querySelector(".wishlist-click-btn");
+      const wishlistLabel = wishlistIcon.nextElementSibling;
+
+      wishlistIcon.src = emptyHeartIcon;
+      wishlistIcon.classList.remove("liked");
+      wishlistLabel ? (wishlistLabel.textContent = "like") : "";
+
       const productId = Number(card.dataset.id);
+
       const isProductInWishList = wishlist.some(
         (product) => product.id === productId
       );
       if (!isProductInWishList) return;
-
+      
       // if product is in user's wishlist, change it's icon and label
-      const wishlistIcon = card.querySelector(".wishlist-click-btn");
-      const wishlistLabel = wishlistIcon.nextElementSibling;
-
       if (isProductInWishList) {
         wishlistIcon.src = filledHeartIcon;
         wishlistIcon.classList.add("liked");

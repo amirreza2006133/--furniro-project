@@ -7,6 +7,7 @@ import ProductListView from "../views/productListView";
 import ProductModalView from "../views/productModalView";
 import productsSliderView from "../views/productsSliderView";
 import HambergurMenuView from "../views/HambergurMenuView";
+
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
@@ -40,8 +41,6 @@ function deleteProductFromCartHandler(productId) {
 }
 
 function wishlistClickHandler(productId) {
-  console.log(productId);
-  
   const isProductInWishlist = getWishlist().some((product) => product.id === Number(productId));
   const product = findProductById(productId);
 
