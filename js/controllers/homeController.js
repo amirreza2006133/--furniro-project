@@ -40,7 +40,9 @@ function deleteProductFromCartHandler(productId) {
 }
 
 function wishlistClickHandler(productId) {
-  const isProductInWishlist = getWishlist().some((product) => product.id === productId);
+  console.log(productId);
+  
+  const isProductInWishlist = getWishlist().some((product) => product.id === Number(productId));
   const product = findProductById(productId);
 
   if (isProductInWishlist) {
