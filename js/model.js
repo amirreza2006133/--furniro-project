@@ -67,7 +67,9 @@ export function addProductToWishlist(product) {
 }
 
 export function deleteProductFromWishlist(productId) {
-  state.wishlist = state.wishlist.filter((product) => product.id !== Number(productId));
+  state.wishlist = state.wishlist.filter(
+    (product) => product.id !== Number(productId)
+  );
   saveWishlist();
 }
 
@@ -112,16 +114,28 @@ export function requestPaginationItems(array, index) {
   const endIndex = startIndex + state.countPaginationItems;
   const paginationItems = array.slice(startIndex, endIndex);
   state.currentIndex = index;
-  return paginationItems
+  return paginationItems;
 }
 
-export function requestSortProducts (sortBy) {
-  if (sortBy === "new") state.sortedProducts = state.fullProducts.filter(product => product.new);
-  if (sortBy === "off") state.sortedProducts = state.fullProducts.filter(product => product.discount);
+export function requestSortProducts(sortBy) {
+  if (sortBy === "new")
+    state.sortedProducts = state.fullProducts.filter((product) => product.new);
+  if (sortBy === "off")
+    state.sortedProducts = state.fullProducts.filter(
+      (product) => product.discount
+    );
   if (sortBy === "default") state.sortedProducts = state.fullProducts;
   return state.sortedProducts;
 }
 
 export function goToDetailsPage(productId) {
   window.location.assign(`product.html?id=${productId}`);
+}
+
+export function getProductsQueryResults(query) {
+  if (!query) return "Start searching ..."
+  
+  const results = [...state.fullProducts].filter((product) => product.name.toLowerCase().includes(query.toLowerCase()));
+  if (!results.length) return `No products found for "${query}" :(`;
+  return results
 }
