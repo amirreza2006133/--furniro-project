@@ -5,6 +5,12 @@
   .heading-box {
     padding: 3.2rem;
   }
+  .slider-section {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-template-rows: repeat(2, auto);
+  }
+
   .nav-list {
     gap: 6.4rem;
   }
