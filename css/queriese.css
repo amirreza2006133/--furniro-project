@@ -112,7 +112,14 @@
     background-color: #fff;
     align-items: center;
   }
+  .desktop-nav-pg {
+    display: none !important;
+  }
+  .desktop-header-icon {
+    display: none !important;
+  }
   .responsive-nav {
+    display: flex;
     overflow: hidden;
     position: absolute;
     top: var(--header-height);
@@ -162,7 +169,7 @@
   }
   .cart {
     z-index: 999999000000000000 !important;
-    top:0;
+    top: 0;
     width: 100vw;
   }
 }

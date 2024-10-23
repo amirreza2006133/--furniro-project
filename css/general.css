@@ -26,9 +26,8 @@ i {
   max-width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2.4rem 0 2.1rem 0;
-  gap: 18rem;
 }
 .nav-list {
   list-style: none;
@@ -264,10 +263,7 @@ i {
   transform: translateX(0);
 }
 .responsive-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18rem;
+  display: none;
 }
 .mobile-nav-menu {
   border: none;
