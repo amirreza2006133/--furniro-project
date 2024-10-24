@@ -5,6 +5,9 @@
   .heading-box {
     padding: 3.2rem;
   }
+  .main-product-cart {
+    padding-right: 3.8rem;
+  }
   .slider-section {
     grid-template-columns: 1fr;
     justify-items: center;
