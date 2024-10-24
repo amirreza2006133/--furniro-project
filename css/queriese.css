@@ -81,6 +81,12 @@
   .nav-list-item:active {
     font-size: 1.4rem;
   }
+  .inline-on {
+    font-size: 2rem;
+  }
+  .inline-off {
+    font-size: 1.3rem;
+  }
   .border-pad {
     padding: 8rem 4.8rem;
   }
