@@ -6,8 +6,8 @@
   background-image: url(../img/main.png);
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: bottom;
-  background-size: cover;
+  background-position-y: top;
+  background-size: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
