@@ -90,6 +90,17 @@
   .btn-inline {
     padding: 1.2rem 0.6rem !important;
   }
+  .article-discription {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+  .recent-post-title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .read-more {
+    font-size: 1.4rem;
+  }
   .border-pad {
     padding: 8rem 4.8rem;
   }
