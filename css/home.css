@@ -60,7 +60,6 @@
   /* padding-bottom: calc(15px + 14px); */
   padding-bottom: 58px;
   background-color: #fff3e3;
-
   display: grid;
   grid-template-columns: 400px 1fr;
   gap: 80px;
