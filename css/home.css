@@ -57,7 +57,6 @@
 .slider-section {
   padding: 2.4rem 5rem;
   padding-bottom: 0;
-  /* padding-bottom: calc(15px + 14px); */
   padding-bottom: 58px;
   background-color: #fff3e3;
   display: grid;
@@ -97,7 +96,7 @@
 }
 
 .products-slider-list-item:not(.swiper-slide-active) > .list-item-wrapper {
-  transform: scale(0.8);
+  transform: scale(0.99) translateY(-50px);
 }
 
 .products-slider-list-item:not(.swiper-slide-active)
@@ -107,14 +106,12 @@
 }
 
 .products-slider-list-item .background {
-  width: 404px;
-  height: 582px;
+  width: 100%;
 }
 
 .products-slider-list-item .list-item-wrapper {
   transition: 0.5s;
   position: relative;
-  width: fit-content;
   overflow: hidden;
 }
 
@@ -123,26 +120,26 @@
   background-color: #ffffffb8;
   backdrop-filter: blur(10px);
   z-index: 99;
-  bottom: 30px;
-  left: 30px;
-  border-left: 8px solid #b88e2f;
+  bottom: 15px;
+  left: 15px;
+  border-left: 6px solid #b88e2f;
   transition: 0.5s;
   display: flex;
   flex-direction: column;
   gap: 12px;
-
-  padding: 16px;
+  align-items: flex-start;
+  padding: 12px;
   text-transform: capitalize;
 }
 
 .products-slider-list-item .info span {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #616161;
 }
 .products-slider-list-item .info b {
   color: #3a3a3a;
-  font-size: 3.25rem;
+  font-size: 2.65rem;
 }
 
 .products-slider-navigation {
@@ -202,7 +199,7 @@
 }
 
 .products-slider-pagination.de {
-  padding-left: calc(404px + 15px + 12px);
+  padding-left: calc(100% / 2 + 2rem);
 }
 
 .products-slider-pagination .dots {
@@ -225,7 +222,13 @@
   outline-offset: 10px;
 }
 
-@media (width < 1024) {
+@media (width > 1510px) {
+  .products-slider-pagination.de {
+    padding-left: calc(100% / 3 + 2rem);
+  }  
+}
+
+@media (width < 1024px) {
   .slider-section {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
@@ -233,12 +236,6 @@
 
   .slider-container {
     justify-self: start;
-  }
-
-  .slider-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .slider-heading,

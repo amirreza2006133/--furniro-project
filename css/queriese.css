@@ -8,12 +8,6 @@
   .main-product-cart {
     padding-right: 3.8rem;
   }
-  .slider-section {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    grid-template-rows: repeat(2, auto);
-  }
-
   .nav-list {
     gap: 6.4rem;
   }
@@ -69,11 +63,6 @@
     flex-direction: column-reverse;
     top: 60%;
     left: 49%;
-  }
-  .slider-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: center;
   }
   .nav-list-item:link,
   .nav-list-item:visited,

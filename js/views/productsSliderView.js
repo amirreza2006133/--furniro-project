@@ -24,8 +24,11 @@ class ProductsSliderView {
       breakpoints: {
         768: {
           slidesPerView: 2,
-          spaceBetween: 0,
+          spaceBetween: 30,
         },
+        1510: {
+          slidesPerView: 3
+        }
       },
     });
   }
