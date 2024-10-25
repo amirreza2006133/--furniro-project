@@ -847,8 +847,8 @@ i {
 }
 
 .modal-content .modal-options .inputs label:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 10px #0000007e;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px #0000004f;
 }
 
 .modal-content .modal-options .inputs.size label {
@@ -861,6 +861,14 @@ i {
   background-color: #f9f1e7;
   border-radius: 5px;
   transition: all 0.2s ease-out;
+}
+
+.modal-content .modal-options .inputs.color input:is(:focus, :checked) + label {
+  border: 3px solid #8e8e8e;
+}
+
+.modal-content .modal-options .inputs.color input + label{
+  border: 1px solid #8e8e8e;
 }
 
 .modal-content .modal-options .inputs.size input:is(:focus, :checked) + label {
