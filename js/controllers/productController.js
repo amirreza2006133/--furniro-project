@@ -23,7 +23,7 @@ function controlProduct() {
   if (!id) return window.location.assign("home.html");
 
   const product = findProductById(id);
-  ProductView.reRender(product);
+  ProductView.render(product);
 }
 
 function controlTabbar() {
@@ -38,12 +38,13 @@ function deleteProductFromCartHandler(productId) {
 
 function addProductToCartHandler(newItem) {
   addProductToCart(newItem);
+  controlCartPreview();
   NotificationView.success("product added successfully");
 }
 
 function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
-  ProductView.render(controlProduct, addProductToCartHandler);
+  ProductView.addEventHandler(controlProduct, addProductToCartHandler);
   TabbarView.addEventHandler(controlTabbar);  
   HambergurMenuView.addEventHandler(controlHambergurMenu);
   FooterView.addEventHandler(controlFooter);

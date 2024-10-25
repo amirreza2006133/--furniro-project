@@ -2,32 +2,21 @@ import starsImage from "../../img/icons/starts.png";
 import facebookIcon from "../../img/facebook.svg";
 import linkedinIcon from "../../img/linkedin.svg";
 import twitterIcon from "../../img/twitter.svg";
-import { formatCurrency } from "../helper";
+import { calculateDiscount, formatCurrency } from "../helper";
 
 class ProductView {
   _parentEl = document.querySelector(".main-product-cart");
   _productQuantity = 1;
-  _addProductToCart;
-  _loadProduct;
+  _currentProduct;
 
-  render(loadProduct, addProductToCart) {
-    this._loadProduct = loadProduct;
-    this._addProductToCart = addProductToCart;
-    this._setupEventListeners();
-  }
-
-  reRender(product) {
+  render(product) {
+    this._currentProduct = product;
     const generatedMarkup = this._generateMarkup(product);
     this._parentEl.insertAdjacentHTML("beforeend", generatedMarkup);
   }
 
-  _setupEventListeners() {
-    window.addEventListener("load", this._loadProduct);
-    this._parentEl.addEventListener("click", (e) => {
-      // if (e.target.classList.contains()) {
-      // }
-    });
-
+  addEventHandler(render, addProductToCart) {
+    window.addEventListener("load", render);
     this._parentEl.addEventListener("click", (e) => {
       if (e.target.classList.contains("modal-close-btn")) this._closeModal();
       if (e.target.classList.contains("decrease-quantity-btn"))
@@ -36,7 +25,7 @@ class ProductView {
         this._changeQuantity(1);
     });
 
-    this._parentEl.addEventListener("submit", (e) => this._handleFormSubmit(e));
+    this._parentEl.addEventListener("submit", (e) => this._handleFormSubmit(e, addProductToCart));
   }
 
   _generateMarkup(product) {
@@ -79,9 +68,7 @@ class ProductView {
           <span class="product-price">
           ${
             product.discount
-              ? ` <span class="price-on"> ${formatCurrency(
-                  this._calculateDiscountedPrice(product)
-                )} </span>`
+              ? ` <span class="price-on"> ${calculateDiscount(product)} </span>`
               : `<span class="price-on">${formatCurrency(product.price)}</span>`
           }
 
@@ -190,13 +177,6 @@ class ProductView {
         </div>`;
   }
 
-  _calculateDiscountedPrice(product) {
-    let calculatedPrice =
-      product.price - (product.price * product.discount) / 100;
-    if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
-    return calculatedPrice;
-  }
-
   _changeQuantity(change) {
     this._productQuantity = Math.max(1, this._productQuantity + change);
     this._updateQuantityDisplay();
@@ -207,7 +187,7 @@ class ProductView {
     quantityInput.value = this._productQuantity;
   }
 
-  _handleFormSubmit(e) {
+  _handleFormSubmit(e, addProductToCart) {
     e.preventDefault();
     const formData = new FormData(e.target);
     const productDetails = {
@@ -217,9 +197,8 @@ class ProductView {
       quantity: this._productQuantity,
     };
 
-    this._addProductToCart(productDetails);
+    addProductToCart(productDetails);
     this._handleResetForm();
-    console.log(productDetails);
   }
 
   _handleResetForm() {
