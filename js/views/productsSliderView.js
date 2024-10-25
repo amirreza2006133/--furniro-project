@@ -4,9 +4,7 @@ class ProductsSliderView {
   _swiper;
   _parentEl = document.querySelector(".products-slider-list");
   _navigationEl = document.querySelector(".products-slider-navigation");
-  _paginationEls = document.querySelectorAll(
-    ".products-slider-pagination>.dots"
-  );
+  _paginationEls = document.querySelectorAll(".products-slider-pagination>.dots");
 
   render(slides) {
     const generatedMarkup = this._generateMarkup(slides);
@@ -14,6 +12,10 @@ class ProductsSliderView {
     this._renderSwiper();
     this._renderNavigation();
     this._renderPagination();
+  }
+
+  addEventHandler(render) {
+    window.addEventListener("load", render)
   }
 
   _renderSwiper() {
