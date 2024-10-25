@@ -8,21 +8,24 @@ function controlCartPreview() {
   CartPreviewView.render(getCartStorage());
 }
 
+function controlCart() {
+  CartView.render(getCartStorage())
+}
+
 function controlHambergurMenu() {
   HambergurMenuView.render();
 }
 
 function deleteProductFromCartHandler(productId) {
   deleteProductFromCart(productId);
-  CartView.reRender(state.cart);
+  controlCart();
   controlCartPreview();
   NotificationView.info("product deleted successfully");
 }
 
 function init() {
-  const cart = getCartStorage();
-  CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
-  CartView.render(cart, findProductInCartById, deleteProductFromCartHandler);
+  CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
+  CartView.addEventHandler(controlCart, deleteProductFromCartHandler)
   HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 

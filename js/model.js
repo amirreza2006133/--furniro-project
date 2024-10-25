@@ -27,7 +27,6 @@ export function addProductToCart(product) {
     increaseProductQuantity(product.id, product.quantity);
     return;
   }
-
   const newProduct = {
     id: `${product.id}${product.size}${product.color}`,
     name: product.name,
@@ -35,6 +34,7 @@ export function addProductToCart(product) {
     color: product.color,
     price: product.price - (product.price * product.discount) / 100,
     currency: product.currency,
+    totalPrice: (product.price - (product.price * product.discount) / 100) * product.quantity,
     quantity: product.quantity,
     imageUrl: product.imageUrl,
   };
