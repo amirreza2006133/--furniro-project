@@ -4,7 +4,12 @@ import ProductView from "../views/productView";
 import TabbarView from "../views/tabbarView";
 import CartPreviewView from "../views/cartPreviewView";
 import HambergurMenuView from "../views/HambergurMenuView";
+import FooterView from "../views/footerView";
 
+function controlFooter() {
+  FooterView.render();
+}
+ 
 function controlCartPreview() {
   CartPreviewView.render(getCartStorage());
 }
@@ -40,7 +45,8 @@ function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
   ProductView.render(controlProduct, addProductToCartHandler);
   TabbarView.addEventHandler(controlTabbar);  
-  HambergurMenuView.addEventHandler(controlHambergurMenu)
+  HambergurMenuView.addEventHandler(controlHambergurMenu);
+  FooterView.addEventHandler(controlFooter);
 }
 
 init();

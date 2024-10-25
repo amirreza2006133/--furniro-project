@@ -7,6 +7,11 @@ import ProductModalView from "../views/productModalView";
 import ProductModalView from "../views/productModalView";
 import SortProductView from "../views/sortProductView";
 import HambergurMenuView from "../views/HambergurMenuView";
+import FooterView from "../views/footerView";
+
+function controlFooter() {
+  FooterView.render();
+}
 
 function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
@@ -82,7 +87,8 @@ function init() {
   ProductListView.addEventHandler( null, null, controlModal, wishlistClickHandler, goToDetailsPage);
   SortProductView.addEventHandler(controlSortProduct)
   PaginationView.addEventHandler(controlPagination);
-  HambergurMenuView.addEventHandler(controlHambergurMenu)
+  HambergurMenuView.addEventHandler(controlHambergurMenu);
+  FooterView.addEventHandler(controlFooter);
 }
 
 init();

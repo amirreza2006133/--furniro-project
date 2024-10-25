@@ -12,6 +12,10 @@ function controlWishlist() {
   ProductListView.renderWishlist(getWishlist()); // Update the view
 }
 
+function controlFooter() {
+  FooterView.render();
+}
+
 function controlProductList() {
   ProductListView.render(state.products, getWishlist(), "box");
 }
@@ -63,7 +67,7 @@ function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
   ProductModalView.addEventHandler(addProductToCartHandler);
   ProductListView.addEventHandler(controlProductList, controlWishlist, controlModal, wishlistClickHandler, goToDetailsPage);
-  FooterView.render();
+  FooterView.addEventHandler(controlFooter);
   productsSliderView.render(slides);
   HambergurMenuView.addEventHandler(controlHambergurMenu)
 }

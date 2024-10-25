@@ -3,7 +3,12 @@ import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
 import WishlistView from "../views/wishlistView";
 import HambergurMenuView from "../views/HambergurMenuView";
+import FooterView from "../views/footerView";
 
+function controlFooter() {
+  FooterView.render();
+}
+ 
 function controlWishlist() {
   WishlistView.render(getWishlist());
 }
@@ -32,6 +37,7 @@ function init() {
   WishlistView.addEventHandler(controlWishlist, handleDeleteProductFromWishlist);
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
   HambergurMenuView.addEventHandler(controlHambergurMenu)
+  FooterView.addEventHandler(controlFooter);
 }
 
 init();

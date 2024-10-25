@@ -3,7 +3,12 @@ import SearchResultsView from "../views/searchResultsView"
 import CartPreviewView from "../views/cartPreviewView";
 import HambergurMenuView from "../views/HambergurMenuView";
 import NotificationView from "../views/notificationView";
+import FooterView from "../views/footerView";
 
+function controlFooter() {
+  FooterView.render();
+}
+ 
 function controlSearchResults(query) {
   SearchResultsView.render(getProductsQueryResults(query));
 }
@@ -24,8 +29,9 @@ function deleteProductFromCartHandler(productId) {
 
 function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
-  HambergurMenuView.addEventHandler(controlHambergurMenu)
+  HambergurMenuView.addEventHandler(controlHambergurMenu);
   SearchResultsView.addEventHandler(controlSearchResults, goToDetailsPage);
+  FooterView.addEventHandler(controlFooter);
 }
 
 init();
