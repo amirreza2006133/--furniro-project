@@ -1,5 +1,8 @@
-.wishlist {
+.wrapper{
   padding: 8rem;
+}
+
+.wishlist {
   list-style: none;
   color: #000;
 

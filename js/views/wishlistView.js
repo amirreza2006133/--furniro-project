@@ -5,10 +5,8 @@ class WishlistView {
   _messageEl = document.querySelector(".whishlist-message");
 
   render(wishlist) {
-    if (!wishlist.length) {
-      return this._showMessage("There is no products in your Wishlist");
-    }
-
+    this._parentEl.innerHTML = "";
+    if (!wishlist.length) this._showMessage("There is no products in your Wishlist");
     const generatedMarkup = this._generateMarkup(wishlist);
     this._parentEl.insertAdjacentHTML("afterbegin", generatedMarkup);
   }
