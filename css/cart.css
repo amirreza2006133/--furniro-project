@@ -12,9 +12,15 @@
   flex-direction: column;
   gap: 2.4rem;
 }
+.wrapper{
+  --row-height: 100px;
+  --count-max-rows: 4;
+  max-height: calc((var(--row-height) + (1.2rem * 2)) * var(--count-max-rows) + 1rem);
+  overflow-y: scroll;
+}
 .cart-img {
-  width: 80%;
-  height: 80%;
+  width: var(--row-height);
+  height: var(--row-height);
   border-radius: 7px;
   object-fit: cover;
 }
