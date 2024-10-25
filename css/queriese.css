@@ -5,6 +5,9 @@
   .heading-box {
     padding: 3.2rem;
   }
+  .main-product-cart {
+    padding-right: 3.8rem;
+  }
   .slider-section {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -16,7 +19,7 @@
   }
 
   .heading-primary {
-    font-size: 4.4rem;
+    font-size: 4.2rem;
   }
   .card-container {
     column-gap: 2.4rem;
@@ -76,6 +79,26 @@
   .nav-list-item:visited,
   .nav-list-item:hover,
   .nav-list-item:active {
+    font-size: 1.4rem;
+  }
+  .inline-on {
+    font-size: 2rem;
+  }
+  .inline-off {
+    font-size: 1.3rem;
+  }
+  .btn-inline {
+    padding: 1.2rem 0.6rem !important;
+  }
+  .article-discription {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+  .recent-post-title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+  .read-more {
     font-size: 1.4rem;
   }
   .border-pad {
