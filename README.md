@@ -51,7 +51,7 @@ To get a local copy of the project, follow these steps:
 To start the project locally, you can use Parcel:
 
   ```bash
-  npx parcel index.html
+  npx parcel ./*.html
   ```
 
 Open your browser and navigate to http://localhost:1234 to view the application.
