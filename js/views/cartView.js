@@ -1,4 +1,4 @@
-import { formatCurrency } from "../helper";
+import { calculateTotalPrice, formatCurrency } from "../helper";
 import trashIcon from "../../img/icons/trashcan.svg";
 
 class CartView {
@@ -8,7 +8,7 @@ class CartView {
 
   render(cart) {
     this._parentEl.innerHTML = "";
-    this._calculateTotalPrice(cart);
+    this._totalPriceEl.textContent = calculateTotalPrice(cart)
     if (!cart.length) this._showMessage("There is no product in cart");
     const generatedMarkup = this._generateMarkup(cart);
     this._parentEl.insertAdjacentHTML("beforeend", generatedMarkup);
@@ -47,13 +47,6 @@ class CartView {
     `
       )
       .join("");
-  }
-
-  _calculateTotalPrice(cart) {
-    const totalPrice = cart.reduce((prev, curr) => {
-      return prev + curr.price * curr.quantity;
-    }, 0);
-    this._totalPriceEl.textContent = `${formatCurrency(totalPrice)}`;
   }
 
   _showMessage(message) {

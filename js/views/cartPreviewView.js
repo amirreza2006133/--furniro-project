@@ -1,4 +1,4 @@
-import { formatCurrency } from "../helper";
+import { calculateTotalPrice, formatCurrency } from "../helper";
 
 class CartPreviewView {
   _parentEl = document.querySelector(".main-btn-cart");
@@ -12,11 +12,10 @@ class CartPreviewView {
   render(cart) {
     if (!cart.length) this._showMessage("There is no products in cart");
     else this._showMessage("")
-
-    const markup = this._generateMarkup(cart);
+    const generatedMarkup = this._generateMarkup(cart);
     this._elContentCleaner(this._productsListEl);
-    this._productsListEl.insertAdjacentHTML("afterbegin", markup);
-    this._calculateTotalPrice(cart);
+    this._productsListEl.insertAdjacentHTML("afterbegin", generatedMarkup);
+    this._totalPriceEl.textContent = calculateTotalPrice(cart);
   }
 
   addEventHandler(render, deleteProductFromCartHandler) {
@@ -35,13 +34,6 @@ class CartPreviewView {
 
   _showMessage(message) {
     this._messageEl.textContent = message;
-  }
-
-  _calculateTotalPrice(cart) {
-    const totalPrice = cart.reduce((prev, curr) => {
-      return prev + curr.price * curr.quantity;
-    }, 0);
-    this._totalPriceEl.textContent = `${formatCurrency(totalPrice)}`;
   }
 
   _openPreview() {

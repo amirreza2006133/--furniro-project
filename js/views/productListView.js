@@ -2,7 +2,7 @@ import emptyHeartIcon from "../../img/icons/heart-empty.svg";
 import filledHeartIcon from "../../img/icons/heart-filled.svg";
 import shareIcon from "../../img/icons/share.svg";
 import compareIcon from "../../img/icons/compare-svgrepo-com 1.png";
-import { formatCurrency } from "../helper";
+import { calculateDiscount, formatCurrency } from "../helper";
 
 class ProductListView {
   _parentElement = document.querySelector(".product-section");
@@ -124,9 +124,9 @@ class ProductListView {
               <p class="card-price">
                 ${
                   product.discount
-                    ? ` <span class="price-on"> ${formatCurrency(
-                        this._calculateDiscountedPrice(product)
-                      )} </span>`
+                    ? ` <span class="price-on"> ${
+                        calculateDiscount(product)
+                      } </span>`
                     : `<span class="price-on">${formatCurrency(
                         product.price
                       )}</span>`
@@ -166,9 +166,9 @@ class ProductListView {
             <div class="product-prices">
               ${
                 product.discount
-                  ? ` <span class="price-on inline-on"> ${formatCurrency(
-                      this._calculateDiscountedPrice(product)
-                    )} </span>`
+                  ? ` <span class="price-on inline-on"> ${
+                      calculateDiscount(product)
+                    } </span>`
                   : `<span class="price-on inline-on">${formatCurrency(
                       product.price
                     )}</span>`
@@ -197,13 +197,6 @@ class ProductListView {
       `
       )
       .join("");
-  }
-
-  _calculateDiscountedPrice(product) {
-    let calculatedPrice =
-      product.price - (product.price * product.discount) / 100;
-    if (calculatedPrice % 1 !== 0) calculatedPrice = calculatedPrice.toFixed(2);
-    return calculatedPrice;
   }
 }
 
