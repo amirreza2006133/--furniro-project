@@ -207,3 +207,7 @@ input[type="number"] {
 .inline-off::after {
   content: "%";
 }
+
+.disable {
+  opacity: .3;
+}

@@ -66,8 +66,8 @@ class SortProductView {
 
   _generateMarkup(countPagItems) {
     return `<div class="filter-icon">
-        <img class="view-mode box" data-viewMode="box" src="${boxIcon}" alt=" grid 2 icon" />
-        <img class="border-right view-mode inline" data-viewMode="inline" src="${inlineIcon}" alt=" pages icon" />
+        <img class="view-mode box ${this._viewMode === "box" ? "disable" : ""}" data-viewMode="box" src="${boxIcon}" alt=" grid 2 icon" />
+        <img class="border-right view-mode inline ${this._viewMode === "inline" ? "disable" : ""}" data-viewMode="inline" src="${inlineIcon}" alt=" pages icon" />
         <p class="show-filter pag-title"></p>
       </div>
   
