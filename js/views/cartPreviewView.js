@@ -4,7 +4,7 @@ class CartPreviewView {
   _parentEl = document.querySelector(".main-btn-cart");
   _cartEl = document.querySelector(".cart");
   _productsListEl = document.querySelector(".cart-items-list");
-  _openPreviewEl = document.querySelector(".open-cart-preview");
+  _openPreviewEl = document.querySelectorAll(".open-cart-preview");
   _closePreviewEl = document.querySelector(".close-icon");
   _totalPriceEl = document.querySelector(".cart-price");
   _messageEl = document.querySelector(".cart-preview-message");
@@ -20,7 +20,7 @@ class CartPreviewView {
 
   addEventHandler(render, deleteProductFromCartHandler) {
     window.addEventListener("load", render);
-    this._openPreviewEl.addEventListener("click", this._openPreview.bind(this));
+    this._openPreviewEl.forEach(btn => btn.addEventListener("click", this._openPreview.bind(this)));
     this._closePreviewEl.addEventListener("click", this._closePreview.bind(this));
     this._cartEl.addEventListener("click", (e) => {
       if (e.target.classList.contains("cart-delete-product")) {
