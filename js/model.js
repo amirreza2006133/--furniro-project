@@ -57,6 +57,12 @@ export function increaseProductQuantity(productId, increaseAmount = 1) {
   existingCartProduct.quantity += increaseAmount;
 }
 
+export function changePeoductQuantity(productId, amount) {
+  const existingCartProduct = findProductInCartById(productId);
+  existingCartProduct.quantity = Number(amount);
+  saveCartStorage(state.cart);
+}
+
 export function findProductInCartById(productId) {
   return state.cart.find((product) => product.id === productId);
 }

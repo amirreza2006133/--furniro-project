@@ -14,12 +14,18 @@ class CartView {
     this._parentEl.insertAdjacentHTML("beforeend", generatedMarkup);
   }
 
-  addEventHandler(render, deleteProductFromCartHandler) {
+  addEventHandler(render, deleteProductFromCartHandler, changePeoductQuantity) {
     window.addEventListener("load", render)
     this._parentEl.addEventListener("click", (e) => {
       const productId = e.target.closest(".second-row").dataset.id;
       if (e.target.classList.contains("trash-can")) deleteProductFromCartHandler(productId);
     });
+    this._parentEl.addEventListener("keyup", e => {
+      if (e.target.classList.contains("quantity-input")) {
+        const productId = e.target.closest(".second-row").dataset.id;
+        changePeoductQuantity(productId, e.target.value)
+      }
+    })
   }
 
   _generateMarkup(cart) {
@@ -33,7 +39,7 @@ class CartView {
             <p class="table-cart-details">${product.name}</p>
             <p class="table-cart-details">${formatCurrency(product.price)}</p>
             <div class="num-border">
-              <p class="table-cart-details border dark">${product.quantity}</p>
+              <input type="text" class="table-cart-details border dark quantity-input" value="${product.quantity}" />
             </div>
             <p class="table-cart-details dark">${formatCurrency(product.totalPrice)}</p>
             <img class="trash-can" src="${trashIcon}" alt="delete"/>

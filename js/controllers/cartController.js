@@ -1,4 +1,4 @@
-import { deleteProductFromCart, findProductInCartById, getCartStorage, state } from "../model";
+import { changePeoductQuantity, deleteProductFromCart, findProductInCartById, getCartStorage, state } from "../model";
 import CartView from "../views/cartView";
 import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
@@ -25,7 +25,7 @@ function deleteProductFromCartHandler(productId) {
 
 function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
-  CartView.addEventHandler(controlCart, deleteProductFromCartHandler)
+  CartView.addEventHandler(controlCart, deleteProductFromCartHandler, changePeoductQuantity)
   HambergurMenuView.addEventHandler(controlHambergurMenu)
 }
 
