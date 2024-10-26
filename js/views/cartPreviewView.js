@@ -8,6 +8,7 @@ class CartPreviewView {
   _closePreviewEl = document.querySelector(".close-icon");
   _totalPriceEl = document.querySelector(".cart-price");
   _messageEl = document.querySelector(".cart-preview-message");
+  _shadeEl = document.querySelector(".shade");
 
   render(cart) {
     if (!cart.length) this._showMessage("There is no products in cart");
@@ -27,9 +28,9 @@ class CartPreviewView {
         const targetProductId = e.target.closest(".cart-item").dataset.id;
         deleteProductFromCartHandler(targetProductId);
       }
-
-      if (e.target.closest(".shade")) this._closePreview();
     });
+    
+    this._shadeEl.addEventListener("click", () => this._closePreview())
   }
 
   _showMessage(message) {
