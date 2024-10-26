@@ -32,16 +32,19 @@ Furniro is a furniture shopping website designed to provide an elegant and user-
 To get a local copy of the project, follow these steps:
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/amirreza2006133/--furniro-project.git
-   ```
+
+```bash
+git clone https://github.com/amirreza2006133/--furniro-project.git
+```
 
 2. Navigate to the project directory:
+
   ```bash 
   cd --furniro-project
   ```
 
 3. Install dependencies:
+
   ```bash
   npm install
   ```
