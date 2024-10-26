@@ -18,6 +18,7 @@ class ProductModalView {
         this._changeQuantity(-1);
       if (e.target.classList.contains("increase-quantity-btn"))
         this._changeQuantity(1);
+      if (!e.target.closest(".modal-content")) this._closeModal();
     });
 
     this._modalElement.addEventListener("submit", (e) => {
