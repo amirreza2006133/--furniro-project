@@ -1,4 +1,4 @@
-import { deleteProductFromCart, deleteProductFromWishlist, getCartStorage, getWishlist } from "../model";
+import { deleteProductFromCart, deleteProductFromWishlist, getCartStorage, getWishlist, goToDetailsPage } from "../model";
 import CartPreviewView from "../views/cartPreviewView";
 import NotificationView from "../views/notificationView";
 import WishlistView from "../views/wishlistView";
@@ -34,7 +34,7 @@ function handleDeleteProductFromWishlist(productId) {
 }
 
 function init() {
-  WishlistView.addEventHandler(controlWishlist, handleDeleteProductFromWishlist);
+  WishlistView.addEventHandler(controlWishlist, handleDeleteProductFromWishlist, goToDetailsPage);
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler)
   HambergurMenuView.addEventHandler(controlHambergurMenu)
   FooterView.addEventHandler(controlFooter);
