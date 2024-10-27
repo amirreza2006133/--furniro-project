@@ -1,4 +1,4 @@
-import { formatCurrency } from "../helper";
+import { calculateDiscount, formatCurrency } from "../helper";
 
 class WishlistView {
   _parentEl = document.querySelector(".wishlist");
@@ -26,7 +26,23 @@ class WishlistView {
         <li class="item" data-id="${item.id}">
             <img class="thumb" src="${item.imageUrl}" alt="${item.name}">
             <b class="title">${item.name}</b>
-            <span class="price">${formatCurrency(item.price)}</span>
+            ${
+              item.discount
+                ? ` <span class="price-on inline-on"> ${
+                    calculateDiscount(item)
+                  } </span>`
+                : `<span class="price-on inline-on">${formatCurrency(
+                    item.price
+                  )}</span>`
+            }
+
+            ${
+              item.discount
+                ? `<span class="price-off" inline-off>${formatCurrency(
+                    item.price
+                  )} </span>`
+                : ""
+            }
             <button class="delete-product-from-wishlist-btn">✖</button>
         </li>`;
       })
