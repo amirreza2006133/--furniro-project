@@ -1,4 +1,4 @@
-import { formatCurrency } from "../helper";
+import { calculateDiscount, formatCurrency } from "../helper";
 import arrowIcon from "../../img/icons/arrow-to-right.svg";
 
 class searchResultsView {
@@ -33,7 +33,23 @@ class searchResultsView {
         <li class="search-result" data-id="${result.id}">
         <img class="thumb" src="${result.imageUrl}" alt="${result.name}">
         <b class="title">${result.name}</b>
-        <span class="price">${formatCurrency(result.price)}</span>
+        ${
+          result.discount
+            ? ` <span class="price-on inline-on"> ${
+                calculateDiscount(result)
+              } </span>`
+            : `<span class="price-on inline-on">${formatCurrency(
+                result.price
+              )}</span>`
+        }
+
+        ${
+          result.discount
+            ? `<span class="price-off" inline-off>${formatCurrency(
+                result.price
+              )} </span>`
+            : ""
+        }
         <button class="go-to-product-detail">View details <img src="${arrowIcon}" alt="=>" /></button>
       </li>    
     `
