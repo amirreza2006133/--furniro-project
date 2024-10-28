@@ -26,6 +26,7 @@
   align-items: start;
   gap: 3.2rem;
   padding: 4.8rem 6.4rem;
+  padding-left: 4.8rem;
 }
 .product-aside {
   display: grid;
@@ -38,12 +39,16 @@
   flex-direction: column;
   gap: 1rem;
   max-height: calc((112px * 4) + (1rem * 4));
-  overflow-y: scroll;
   overflow-x: hidden;
   cursor: pointer;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #b88e2f #fff;
+  direction: rtl;
 }
 
 .product-aside-img-box {
+  direction: ltr;
   background-color: #f9f1e7;
   border-radius: 11px;
   width: 112px;
@@ -162,9 +167,6 @@
 .review-img-flex img {
   width: 100%;
 }
-/*
- ////////delete this its written for test purpose only/////////
- */
 .show {
   color: #111;
   font-weight: 500;
