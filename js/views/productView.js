@@ -26,33 +26,33 @@ class ProductView {
     });
 
     this._parentEl.addEventListener("submit", (e) => this._handleFormSubmit(e, addProductToCart));
+    this._handleImageSelection();
+  }
+
+  _handleImageSelection() {
+    function changeImage(url) {
+      const mainImageEl = document.querySelector(".main-product-img");
+      mainImageEl.src = url;
+    }
+
+    this._parentEl.addEventListener("click", e => {
+      if (e.target.classList.contains("product-aside-img")) changeImage(e.target.src)
+    })
   }
 
   _generateMarkup(product) {
     return `
         <aside class="product-aside">
           <div class="side-img">
-            <div class="product-aside-img-box">
-              <img
-                class="product-aside-img"
-                src="${product.imageUrl}"
-                alt=" a sofa picture"
-              />
-            </div>
-            <div class="product-aside-img-box">
-              <img
-                class="product-aside-img"
-                src="${product.imageUrl}"
-                alt=" a sofa picture"
-              />
-            </div>
-            <div class="product-aside-img-box">
-              <img
-                class="product-aside-img"
-                src="${product.imageUrl}"
-                alt=" a sofa picture"
-              />
-            </div>
+            ${product.deatailImagesUrl.map(url => `
+              <div class="product-aside-img-box">
+                <img
+                  class="product-aside-img"
+                  src="${url}"
+                  alt=" a sofa picture"
+                />
+              </div>`
+            ).join("")}
           </div>
           <div class="main-product-img-holder">
             <img

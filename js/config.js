@@ -7,6 +7,11 @@ import PingkyImage from "url:../img/product/pingky.png";
 import MuggoImage from "url:../img/product/muggo.png";
 import pottyImage from "url:../img/product/potty.png";
 
+import detailImage1 from "url:../img/product/detail-chair.webp";
+import detailImage2 from "url:../img/product/detail-bed.webp";
+import detailImage3 from "url:../img/product/detail-bulb.jpg";
+import detailImage4 from "url:../img/product/detail-sofa.jpg";
+
 import sliderImage1 from "url:../img/slider/slide1.png";
 import sliderImage2 from "url:../img/slider/slide2.png";
 import sliderImage3 from "url:../img/slider/slide3.png";
@@ -116,6 +121,7 @@ export const fullProducts = [
     price: 250,
     discount: 30,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 2,
@@ -126,6 +132,7 @@ export const fullProducts = [
     price: 250,
     discount: "",
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 3,
@@ -136,6 +143,7 @@ export const fullProducts = [
     price: 1400,
     discount: 50,
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 4,
@@ -146,6 +154,7 @@ export const fullProducts = [
     price: 500,
     discount: "",
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4],
     new: true,
   },
   {
@@ -157,6 +166,7 @@ export const fullProducts = [
     price: 150,
     discount: "",
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4],
     new: true,
   },
   {
@@ -168,6 +178,7 @@ export const fullProducts = [
     price: 700,
     discount: "",
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 7,
@@ -178,6 +189,7 @@ export const fullProducts = [
     price: 100,
     discount: "",
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 8,
@@ -188,6 +200,7 @@ export const fullProducts = [
     price: 500,
     discount: 50,
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 9,
@@ -198,6 +211,7 @@ export const fullProducts = [
     price: 320,
     discount: 15,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 10,
@@ -208,6 +222,7 @@ export const fullProducts = [
     price: 750,
     discount: 20,
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 11,
@@ -218,6 +233,7 @@ export const fullProducts = [
     price: 1800,
     discount: 40,
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 12,
@@ -228,6 +244,7 @@ export const fullProducts = [
     price: 650,
     discount: "",
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 13,
@@ -238,6 +255,7 @@ export const fullProducts = [
     price: 200,
     discount: 5,
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 14,
@@ -248,6 +266,7 @@ export const fullProducts = [
     price: 1100,
     discount: 25,
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 15,
@@ -258,6 +277,7 @@ export const fullProducts = [
     price: 180,
     discount: "",
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 16,
@@ -268,6 +288,7 @@ export const fullProducts = [
     price: 450,
     discount: 30,
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 17,
@@ -278,6 +299,7 @@ export const fullProducts = [
     price: 1300,
     discount: 15,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 18,
@@ -288,6 +310,7 @@ export const fullProducts = [
     price: 300,
     discount: 10,
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 19,
@@ -298,6 +321,7 @@ export const fullProducts = [
     price: 850,
     discount: 20,
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 20,
@@ -308,6 +332,7 @@ export const fullProducts = [
     price: 550,
     discount: "",
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 21,
@@ -318,6 +343,7 @@ export const fullProducts = [
     price: 250,
     discount: 5,
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 22,
@@ -328,6 +354,7 @@ export const fullProducts = [
     price: 700,
     discount: 10,
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 23,
@@ -338,6 +365,7 @@ export const fullProducts = [
     price: 400,
     discount: "",
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 24,
@@ -348,6 +376,7 @@ export const fullProducts = [
     price: 1200,
     discount: 35,
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 25,
@@ -358,6 +387,7 @@ export const fullProducts = [
     price: 300,
     discount: 15,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 26,
@@ -368,6 +398,7 @@ export const fullProducts = [
     price: 220,
     discount: 10,
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 27,
@@ -378,6 +409,7 @@ export const fullProducts = [
     price: 1200,
     discount: 20,
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 28,
@@ -388,6 +420,7 @@ export const fullProducts = [
     price: 180,
     discount: "",
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 29,
@@ -398,6 +431,7 @@ export const fullProducts = [
     price: 600,
     discount: 15,
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 30,
@@ -408,6 +442,7 @@ export const fullProducts = [
     price: 1000,
     discount: 10,
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 31,
@@ -418,6 +453,7 @@ export const fullProducts = [
     price: 1500,
     discount: "",
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 32,
@@ -428,6 +464,7 @@ export const fullProducts = [
     price: 300,
     discount: 15,
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 33,
@@ -438,6 +475,7 @@ export const fullProducts = [
     price: 450,
     discount: 10,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 34,
@@ -448,6 +486,7 @@ export const fullProducts = [
     price: 250,
     discount: 5,
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 35,
@@ -458,6 +497,7 @@ export const fullProducts = [
     price: 500,
     discount: "",
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 36,
@@ -468,6 +508,7 @@ export const fullProducts = [
     price: 600,
     discount: "",
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 37,
@@ -478,6 +519,7 @@ export const fullProducts = [
     price: 450,
     discount: 20,
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 38,
@@ -488,6 +530,7 @@ export const fullProducts = [
     price: 1600,
     discount: "",
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 39,
@@ -498,6 +541,7 @@ export const fullProducts = [
     price: 1400,
     discount: 30,
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 40,
@@ -508,6 +552,7 @@ export const fullProducts = [
     price: 200,
     discount: "",
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 41,
@@ -518,6 +563,7 @@ export const fullProducts = [
     price: 600,
     discount: "",
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 42,
@@ -528,6 +574,7 @@ export const fullProducts = [
     price: 800,
     discount: 10,
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 43,
@@ -538,6 +585,7 @@ export const fullProducts = [
     price: 1200,
     discount: 15,
     imageUrl: lolitaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 44,
@@ -548,6 +596,7 @@ export const fullProducts = [
     price: 1100,
     discount: 25,
     imageUrl: RespiraImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 45,
@@ -558,6 +607,7 @@ export const fullProducts = [
     price: 220,
     discount: "",
     imageUrl: GrifoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 46,
@@ -568,6 +618,7 @@ export const fullProducts = [
     price: 1300,
     discount: 15,
     imageUrl: PingkyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 47,
@@ -578,6 +629,7 @@ export const fullProducts = [
     price: 300,
     discount: "",
     imageUrl: MuggoImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 48,
@@ -588,6 +640,7 @@ export const fullProducts = [
     price: 600,
     discount: 20,
     imageUrl: pottyImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 49,
@@ -598,6 +651,7 @@ export const fullProducts = [
     price: 800,
     discount: 10,
     imageUrl: syltherineImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
   {
     id: 50,
@@ -608,6 +662,7 @@ export const fullProducts = [
     price: 700,
     discount: "",
     imageUrl: leviosaImage,
+    deatailImagesUrl: [detailImage1, detailImage2, detailImage3, detailImage4]
   },
 ];
 
