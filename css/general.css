@@ -113,7 +113,7 @@ i {
 }
 .cart {
   height: 100dvh;
-  width: 35vw;
+  width: 40dvw;
   padding: 3.2rem 2.4rem 3.2rem 1.2rem;
   z-index: 999999;
   position: fixed;
@@ -170,7 +170,7 @@ i {
 .cart-item {
   display: grid;
   grid-template-columns: 9.6rem 1fr 2.4rem;
-  gap: 4.8rem;
+  gap: 1.6rem;
   align-items: center;
 }
 
@@ -181,6 +181,9 @@ i {
   object-position: center;
   border-radius: 8px;
   box-shadow: 5px 5px 10px #00000069;
+}
+.txt-lt {
+  font-size: 1.8rem;
 }
 
 .cart-item div {
@@ -867,7 +870,7 @@ i {
   border: 3px solid #8e8e8e;
 }
 
-.modal-content .modal-options .inputs.color input + label{
+.modal-content .modal-options .inputs.color input + label {
   border: 1px solid #8e8e8e;
 }
 
