@@ -224,4 +224,17 @@
   .slider-container {
     justify-self: center;
   }
+  /* //////////////////
+   advantage-section
+  ////////////////// */
+  .advantage-items {
+    gap: 0.6rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .adv-title {
+    font-size: 2rem;
+  }
 }
