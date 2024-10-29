@@ -6,7 +6,7 @@ a {
 }
 
 .blog-article {
-  margin: 5rem 6.4rem 5rem 6.4rem;
+  margin: 5rem 6.4rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
@@ -95,7 +95,6 @@ a {
   color: #111;
   font-weight: 500;
   letter-spacing: 0.5px;
-  margin-bottom: 4.8rem;
 }
 .categories {
   padding: 3.2;
@@ -124,7 +123,7 @@ a {
 .recent-text-box {
   display: flex;
   flex-direction: column;
-  padding: 0.8rem 0;
+  padding: 0rem 0;
 }
 .recent-text-box {
   font-size: 1.2rem;

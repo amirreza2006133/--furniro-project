@@ -237,4 +237,42 @@
   .adv-title {
     font-size: 2rem;
   }
+  /* //////////////////
+   blog
+  ////////////////// */
+  .blog-article {
+    grid-template-columns: 1fr;
+    margin: 4.8rem;
+  }
+
+  .article-sidebar {
+    grid-row: 1;
+    padding-left: 3.2rem;
+  }
+  .recent-posts-contanier {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .search-icon {
+    right: 3%;
+  }
+  .recent-post {
+    flex-direction: column;
+  }
+  .recent-post img {
+    height: 132px;
+    width: 132px;
+  }
+
+  .recent-text-box {
+    max-width: 20ch;
+  }
+
+  .recent-post-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .recent-date {
+    font-size: 1.4rem;
+  }
 }

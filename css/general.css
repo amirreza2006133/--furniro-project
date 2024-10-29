@@ -288,6 +288,9 @@ i {
 .range-section {
   margin-top: 6.4rem;
 }
+.margin-bt-md {
+  margin-bottom: 4.8rem;
+}
 .container {
   max-width: 123rem;
   margin: 0 auto;
