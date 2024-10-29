@@ -183,7 +183,7 @@ i {
   box-shadow: 5px 5px 10px #00000069;
 }
 .txt-lt {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .cart-item div {
@@ -194,7 +194,7 @@ i {
 
 .cart-item div p {
   display: flex;
-  font-size: 2rem;
+  font-size: 1.8rem;
   gap: 5px;
 }
 
@@ -203,7 +203,7 @@ i {
 }
 
 .cart-item div p .cart-item-price {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #b88e2f;
 }
 

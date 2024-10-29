@@ -159,7 +159,7 @@ export const fullProducts = [
   },
   {
     id: 5,
-    name: "Griffo Night Lamp",
+    name: "Griffo Lamp",
     description: "Elegant night lamp",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
@@ -171,7 +171,7 @@ export const fullProducts = [
   },
   {
     id: 6,
-    name: "Pingky Bed Set",
+    name: "Pingky ",
     description: "Cute kids' bed",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
@@ -193,7 +193,7 @@ export const fullProducts = [
   },
   {
     id: 8,
-    name: "Potty Minimalist Sofa",
+    name: "Potty Sofa",
     description: "Comfortable minimalist sofa",
     sizes: ["S", "M", "L"],
     colors: ["Red", "Green", "Blue"],
@@ -204,7 +204,7 @@ export const fullProducts = [
   },
   {
     id: 9,
-    name: "Orion Coffee Table",
+    name: "Orion Table",
     description: "Sleek modern table",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Brown"],
@@ -226,7 +226,7 @@ export const fullProducts = [
   },
   {
     id: 11,
-    name: "Aurora Dining Set",
+    name: "Aurora Set",
     description: "Luxurious dining set",
     sizes: ["S", "M", "L"],
     colors: ["Gray", "Beige", "White"],
@@ -248,7 +248,7 @@ export const fullProducts = [
   },
   {
     id: 13,
-    name: "Vega Floor Lamp",
+    name: "Vega Lamp",
     description: "Modern illuminating lamp",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Gold", "Silver"],
@@ -259,7 +259,7 @@ export const fullProducts = [
   },
   {
     id: 14,
-    name: "Nova Bed Frame",
+    name: "Nova Frame",
     description: "Sturdy stylish frame",
     sizes: ["S", "M", "L"],
     colors: ["Oak", "Walnut", "Black"],
@@ -270,7 +270,7 @@ export const fullProducts = [
   },
   {
     id: 15,
-    name: "Atlas Bar Stool",
+    name: "Bar Stool",
     description: "Modern adjustable stool",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Red", "Blue"],
@@ -303,7 +303,7 @@ export const fullProducts = [
   },
   {
     id: 18,
-    name: "Hermes Side Table",
+    name: "Side Table",
     description: "Stylish marble side table",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gold"],
@@ -314,7 +314,7 @@ export const fullProducts = [
   },
   {
     id: 19,
-    name: "Zephyr Lounge Chair",
+    name: "Lounge Chair",
     description: "Chic cozy chair",
     sizes: ["S", "M", "L"],
     colors: ["Blue", "Green", "Gray"],
@@ -325,7 +325,7 @@ export const fullProducts = [
   },
   {
     id: 20,
-    name: "Helios Ceiling Light",
+    name: "Ceiling Light",
     description: "Industrial ceiling light",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Brass", "Copper"],
@@ -347,7 +347,7 @@ export const fullProducts = [
   },
   {
     id: 22,
-    name: "Orpheus Cabinet",
+    name: "Cabinet",
     description: "Sleek storage cabinet",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Brown", "White"],
@@ -358,7 +358,7 @@ export const fullProducts = [
   },
   {
     id: 23,
-    name: "Aether Coffee Table",
+    name: "Aether Table",
     description: "Modern glass-top table",
     sizes: ["S", "M", "L"],
     colors: ["Clear", "Black", "White"],
@@ -380,7 +380,7 @@ export const fullProducts = [
   },
   {
     id: 25,
-    name: "Ganymede Bedside Table",
+    name: "Bedside Table",
     description: "Functional bedside table",
     sizes: ["S", "M", "L"],
     colors: ["White", "Black", "Gray"],
@@ -391,7 +391,7 @@ export const fullProducts = [
   },
   {
     id: 26,
-    name: "Jupiter Dining Chair",
+    name: "Jupiter Chair",
     description: "Stylish cushioned chair",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gray"],
@@ -424,7 +424,7 @@ export const fullProducts = [
   },
   {
     id: 29,
-    name: "Aurora TV Stand",
+    name: "TV Stand",
     description: "Sleek storage TV stand",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Walnut", "White"],
@@ -457,7 +457,7 @@ export const fullProducts = [
   },
   {
     id: 32,
-    name: "Venus Floor Lamp",
+    name: "Venus  Lamp",
     description: "Contemporary adjustable lamp",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gold"],
@@ -468,7 +468,7 @@ export const fullProducts = [
   },
   {
     id: 33,
-    name: "Mars Coffee Table",
+    name: "Mars Table",
     description: "Stylish wooden table",
     sizes: ["S", "M", "L"],
     colors: ["Walnut", "Black", "White"],
@@ -490,7 +490,7 @@ export const fullProducts = [
   },
   {
     id: 35,
-    name: "Themis Console Table",
+    name: "Themis Table",
     description: "Modern glass console",
     sizes: ["S", "M", "L"],
     colors: ["White", "Black", "Glass"],
@@ -501,7 +501,7 @@ export const fullProducts = [
   },
   {
     id: 36,
-    name: "Io Dining Set",
+    name: "Dining Set",
     description: "Compact round dining",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Wood"],
@@ -556,7 +556,7 @@ export const fullProducts = [
   },
   {
     id: 41,
-    name: "Hestia Coffee Table",
+    name: "Hestia Table",
     description: "Marble top table",
     sizes: ["S", "M", "L"],
     colors: ["White", "Black", "Gray"],
@@ -567,7 +567,7 @@ export const fullProducts = [
   },
   {
     id: 42,
-    name: "Persephone Lounge Chair",
+    name: " Lounge Chair",
     description: "Luxurious cushioned lounge",
     sizes: ["S", "M", "L"],
     colors: ["Blue", "Beige", "Gray"],
@@ -578,7 +578,7 @@ export const fullProducts = [
   },
   {
     id: 43,
-    name: "Olympus Dining Table",
+    name: "Olympus Table",
     description: "Large glass dining",
     sizes: ["S", "M", "L"],
     colors: ["Clear", "Black", "White"],
@@ -600,7 +600,7 @@ export const fullProducts = [
   },
   {
     id: 45,
-    name: "Kronos Bedside Table",
+    name: "Kronos  Table",
     description: "Sleek bedside table",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gray"],
@@ -622,7 +622,7 @@ export const fullProducts = [
   },
   {
     id: 47,
-    name: "Helios Floor Lamp",
+    name: "Helios Lamp",
     description: "Bright adjustable lamp",
     sizes: ["S", "M", "L"],
     colors: ["Black", "White", "Gold"],
