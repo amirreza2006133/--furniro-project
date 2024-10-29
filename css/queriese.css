@@ -209,6 +209,10 @@
   .card-container {
     grid-template-columns: repeat(3, 1fr);
   }
+  .card-inline-container {
+    grid-template-columns: 1fr;
+    padding-inline: 4.8rem;
+  }
 
   /* //////////////////
   slider-section
