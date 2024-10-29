@@ -38,7 +38,7 @@
 }
 
 /* // */
-.show-more-btn{
+.show-more-btn {
   margin-top: 3rem;
 }
 /* // */
@@ -232,7 +232,7 @@
 @media (width > 1510px) {
   .products-slider-pagination.de {
     padding-left: calc(100% / 3 + 2rem);
-  }  
+  }
 }
 
 @media (width < 1024px) {
