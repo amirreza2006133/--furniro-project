@@ -282,8 +282,7 @@ i {
 /* *************************** */
 /* Header end */
 /* *************************** */
-.range-section,
-.product-section {
+.range-section {
   margin-top: 6.4rem;
 }
 .container {
@@ -394,7 +393,7 @@ i {
 /* product section */
 /* *************************** */
 .product-section {
-  margin-bottom: 6.4rem;
+  margin-block: 3.4rem;
   padding: 2.4rem;
 }
 .card-container {
@@ -404,7 +403,6 @@ i {
   grid-template-columns: repeat(4, 1fr);
   column-gap: 3.2rem;
   row-gap: 4.8rem;
-  margin-bottom: 4.8rem;
 }
 
 .product-card {

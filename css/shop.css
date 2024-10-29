@@ -90,7 +90,7 @@ input[type="number"] {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3.2rem;
-  padding: 1.2rem;
+  padding-inline: 1.2rem;
 }
 .product-inline-card {
   border-bottom: #535353 solid 1px;
