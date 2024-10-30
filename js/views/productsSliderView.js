@@ -22,13 +22,18 @@ class ProductsSliderView {
     this._swiper = new Swiper(".products-slider", {
       slidesPerView: 1,
       loop: true,
-      spaceBetween: 0,
+      spaceBetween: 15,
       breakpoints: {
-        768: {
+        568: {
           slidesPerView: 2,
-          spaceBetween: 30,
         },
-        1510: {
+        922: {
+          slidesPerView: 3
+        },
+        1024: {
+          slidesPerView: 2
+        },
+        1568: {
           slidesPerView: 3
         }
       },
