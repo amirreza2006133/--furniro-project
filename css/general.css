@@ -28,6 +28,19 @@ i {
   align-items: center;
   justify-content: space-around;
   padding: 2.4rem 0 2.1rem 0;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 999999;
+  transition: .3s;
+}
+.test{
+  position: relative;
+  height: 95px;
+}
+.fade{
+  backdrop-filter: blur(10px);
+  background-color: #0000001c;
 }
 .nav-list {
   list-style: none;

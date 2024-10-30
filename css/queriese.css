@@ -133,7 +133,6 @@
     height: var(--header-height);
     padding-inline: 2.4rem;
     justify-content: space-between;
-    background-color: #fff;
     align-items: center;
   }
   .desktop-nav-pg {
