@@ -86,7 +86,7 @@ class ProductListView {
 
       const productId = e.target.closest(".pr-list-card")?.dataset.id;
       if (e.target.classList.contains("show-modal")) renderModal(productId);
-      if (e.target.classList.contains("gradiant")) goToDetailsPage(productId);
+      if (e.target.classList.contains("go-to-details-btn")) goToDetailsPage(productId);
       if (e.target.classList.contains("wishlist-click-btn"))
         wishlistClickHandler(productId);
     });
@@ -100,7 +100,7 @@ class ProductListView {
             <div class="${product.discount ? "off" : ""} ${
           product.new ? "new" : ""
         }">${product.discount || ""}</div>
-            <div class="gradiant">
+            <div class="gradiant go-to-details-btn">
               <a class="hover-btn show-modal" href="#"> Add to cart </a>
               <nav class="hover-nav">
                 <div class="hover-nav-item">
@@ -150,7 +150,7 @@ class ProductListView {
     return products
       .map(
         (product) => `
-      <div class="pr-list-card product-inline-card" data-id="${product.id}">
+      <div class="pr-list-card product-inline-card go-to-details-btn" data-id="${product.id}">
         <div class="product-inline-info">
         <div class="product-inline-img-box">
           <div class="product-inline-tag ${product.new ? "inline-new" : ""}${
