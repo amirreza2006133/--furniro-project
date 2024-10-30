@@ -18,13 +18,9 @@ export const state = {
 };
 
 export function addProductToCart(product) {
-  const existingCartProduct = findProductInCartById(product.id);
-  if (
-    existingCartProduct &&
-    existingCartProduct.size === product.size &&
-    existingCartProduct.color === product.color
-  ) {
-    increaseProductQuantity(product.id, product.quantity);
+  const existingCartProduct = findProductInCartById(`${product.id}${product.size}${product.color}`);
+  if (existingCartProduct){
+    increaseProductQuantity(`${product.id}${product.size}${product.color}`, product.quantity);
     return;
   }
   const newProduct = {
@@ -55,6 +51,7 @@ export function findProductById(id) {
 export function increaseProductQuantity(productId, increaseAmount = 1) {
   const existingCartProduct = findProductInCartById(productId);
   existingCartProduct.quantity += increaseAmount;
+  saveCartStorage(state.cart)
 }
 
 export function changePeoductQuantity(productId, amount) {
