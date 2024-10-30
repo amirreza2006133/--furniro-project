@@ -12,3 +12,6 @@ export const calculateTotalPrice = (cart) => {
 export const calculateDiscount = (product) => {
  return formatCurrency(product.price - (product.price * product.discount) / 100);
 }
+export const calculateNumDiscount = (product) => {
+ return product.price - (product.price * product.discount) / 100;
+}
