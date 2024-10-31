@@ -274,4 +274,30 @@
   .recent-date {
     font-size: 1.4rem;
   }
+  /* //////////////////
+  contac-page
+  ////////////////// */
+  .contact-section {
+    padding-inline: 3.8rem;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+    padding-top: 4.8rem;
+  }
+  .contact-info {
+    flex-direction: row;
+  }
+  .contact-info-item {
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .contact-info-details {
+    line-height: 1.7;
+  }
+  .br-none {
+    display: none;
+  }
 }
