@@ -52,6 +52,9 @@ body {
 .header {
   background-color: white;
 }
+.po-static {
+  position: relative !important;
+}
 .login-container {
   transition: all 0.7s ease-in-out;
   box-shadow: 0 1px 5px rgba(51, 51, 51, 0.11);
