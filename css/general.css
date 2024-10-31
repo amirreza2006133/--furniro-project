@@ -32,13 +32,13 @@ i {
   top: 0;
   background-color: #ffffff;
   z-index: 999999;
-  transition: .3s;
+  transition: 0.3s;
 }
-.test{
+.test {
   position: relative;
   height: 95px;
 }
-.fade{
+.fade {
   backdrop-filter: blur(10px);
   background-color: #0000001c;
 }
@@ -107,7 +107,7 @@ i {
   color: #937226;
 }
 .shade {
-  z-index: 999;
+  z-index: 9999999;
   position: fixed;
   left: 0;
   top: 0;
@@ -128,7 +128,7 @@ i {
   height: 100dvh;
   width: 40dvw;
   padding: 3.2rem 2.4rem 3.2rem 1.2rem;
-  z-index: 999999;
+  z-index: 99999999;
   position: fixed;
   top: 0;
   right: 0;
