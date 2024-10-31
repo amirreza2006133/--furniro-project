@@ -20,6 +20,7 @@
 }
 .transform .check-box input {
   display: inline;
+  cursor: pointer;
 }
 .transform .check-box span {
   display: block;

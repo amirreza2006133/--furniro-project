@@ -299,4 +299,10 @@
   .br-none {
     display: none;
   }
+  /* //////////////////
+  login-page
+  ////////////////// */
+  .login-section {
+    padding-inline: 3.8rem;
+  }
 }
