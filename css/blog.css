@@ -70,7 +70,7 @@ a {
 .article-sidebar {
   align-self: flex-start;
   position: sticky;
-  top: 3.2rem;
+  top: 12rem;
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
