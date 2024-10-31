@@ -39,8 +39,9 @@ i {
   height: 95px;
 }
 .fade {
-  backdrop-filter: blur(10px);
-  background-color: #0000001c;
+  background-color: #f1e8d5;
+  /* background-color: #fff3e3; */
+  border-bottom: 1px solid #dddcdc;
 }
 .nav-list {
   list-style: none;
