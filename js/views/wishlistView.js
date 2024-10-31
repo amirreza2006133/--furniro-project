@@ -16,7 +16,7 @@ class WishlistView {
     this._parentEl.addEventListener("click", e => {
       const productId = e.target.closest(".item")?.dataset.id;
       if (e.target.classList.contains("delete-product-from-wishlist-btn")) deleteProductFromCartHandler(productId);
-      if (e.target.closest(".item")) goToDetailsPage(productId);
+      if (e.target.closest(".item") && !e.target.classList.contains("delete-product-from-wishlist-btn")) goToDetailsPage(productId);
     })
   }
 
