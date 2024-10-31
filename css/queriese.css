@@ -161,7 +161,7 @@
     z-index: 99999999999999;
   }
   .show-mobile-nav {
-    height: 100dvh;
+    height: 100%;
     overflow-y: hidden;
   }
   .show-mobile-nav .responsive-nav {
