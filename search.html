@@ -23,40 +23,97 @@
     <script type="module" src="js/controllers/searchController.js"></script>
   </head>
   <body>
-    <header class="header">
-      <a class="logo" href="home.html">
-        <div class="logo-box">
-          <div class="logo-img-box">
-            <img class="logo-img" src="img/Frame 168.png" alt=" furniro logo" />
+    <div class="test">
+      <header class="header">
+        <a class="logo" href="home.html">
+          <div class="logo-box">
+            <div class="logo-img-box">
+              <img
+                class="logo-img"
+                src="img/Frame 168.png"
+                alt=" furniro logo"
+              />
+            </div>
+          </div>
+        </a>
+        <div class="responsive-nav">
+          <nav class="nav-pages">
+            <ul class="nav-list mobile-nav-list">
+              <li class="nav-list-li">
+                <a class="nav-list-item mobile-nav-list-item" href="home.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item mobile-nav-list-item" href="shop.html"
+                  >Shop</a
+                >
+              </li>
+              <li class="nav-list-li">
+                <a class="nav-list-item mobile-nav-list-item" href="blog.html"
+                  >blog</a
+                >
+              </li>
+              <li class="nav-list-li">
+                <a
+                  class="nav-list-item mobile-nav-list-item"
+                  href="contact.html"
+                  >contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="header-icon">
+            <ul class="header-icon-list">
+              <li>
+                <a href="login.html">
+                  <img
+                    src="img/icons/user-header.svg"
+                    alt="icon of a a user "
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="search.html">
+                  <img src="img/icons/header-search.svg" alt=" a search icon" />
+                </a>
+              </li>
+
+              <li>
+                <a href="wishlist.html">
+                  <img src="img/icons/header-heart.svg" alt=" a heart icon" />
+                </a>
+              </li>
+              <li>
+                <button class="main-btn-cart">
+                  <img
+                    class="open-cart-preview"
+                    src="img/icons/header-cart.svg"
+                    alt=" a cart icon"
+                  />
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
-      </a>
-      <div class="responsive-nav">
-        <nav class="nav-pages">
-          <ul class="nav-list mobile-nav-list">
+
+        <nav class="nav-pages desktop-nav-pg">
+          <ul class="nav-list">
             <li class="nav-list-li">
-              <a class="nav-list-item mobile-nav-list-item" href="home.html"
-                >Home</a
-              >
+              <a class="nav-list-item" href="home.html">Home</a>
             </li>
             <li class="nav-list-li">
-              <a class="nav-list-item mobile-nav-list-item" href="shop.html"
-                >Shop</a
-              >
+              <a class="nav-list-item" href="shop.html">Shop</a>
             </li>
             <li class="nav-list-li">
-              <a class="nav-list-item mobile-nav-list-item" href="blog.html"
-                >blog</a
-              >
+              <a class="nav-list-item" href="blog.html">blog</a>
             </li>
             <li class="nav-list-li">
-              <a class="nav-list-item mobile-nav-list-item" href="contact.html"
-                >contact</a
-              >
+              <a class="nav-list-item" href="contact.html">contact</a>
             </li>
           </ul>
         </nav>
-        <div class="header-icon">
+        <div class="header-icon desktop-header-icon">
           <ul class="header-icon-list">
             <li>
               <a href="login.html">
@@ -85,63 +142,17 @@
             </li>
           </ul>
         </div>
-      </div>
 
-      <nav class="nav-pages desktop-nav-pg">
-        <ul class="nav-list">
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="home.html">Home</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="shop.html">Shop</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="blog.html">blog</a>
-          </li>
-          <li class="nav-list-li">
-            <a class="nav-list-item" href="contact.html">contact</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="header-icon desktop-header-icon">
-        <ul class="header-icon-list">
-          <li>
-            <a href="login.html">
-              <img src="img/icons/user-header.svg" alt="icon of a a user " />
-            </a>
-          </li>
-          <li>
-            <a href="search.html">
-              <img src="img/icons/header-search.svg" alt=" a search icon" />
-            </a>
-          </li>
-
-          <li>
-            <a href="wishlist.html">
-              <img src="img/icons/header-heart.svg" alt=" a heart icon" />
-            </a>
-          </li>
-          <li>
-            <button class="main-btn-cart">
-              <img
-                class="open-cart-preview"
-                src="img/icons/header-cart.svg"
-                alt=" a cart icon"
-              />
-            </button>
-          </li>
-        </ul>
-      </div>
-
-      <button class="mobile-nav-menu">
-        <img
-          class="mobile-nav-menu-icon menu open-mb-menu"
-          src="img/icons/mobile nav menu.svg"
-          alt="mobline nav menu icon"
-        />
-        <span class="mobile-nav-menu-icon close close-mb-menu">✖</span>
-      </button>
-    </header>
+        <button class="mobile-nav-menu">
+          <img
+            class="mobile-nav-menu-icon menu open-mb-menu"
+            src="img/icons/mobile nav menu.svg"
+            alt="mobline nav menu icon"
+          />
+          <span class="mobile-nav-menu-icon close close-mb-menu">✖</span>
+        </button>
+      </header>
+    </div>
     <aside class="cart">
       <div class="cart-header">
         <h2 class="shop-title">Shopping Cart</h2>
