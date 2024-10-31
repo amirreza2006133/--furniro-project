@@ -1,5 +1,5 @@
 class HambergurMenuView {
-  _parentEl = document.body;
+  _parentEl = document.documentElement;
   _headerEl = document.querySelector(".header");
   _mainEl = document.querySelector(".menu-fade-flag");
 
