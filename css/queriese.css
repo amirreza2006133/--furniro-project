@@ -315,7 +315,10 @@
   .product-aside {
     display: flex;
     flex-direction: row-reverse;
-    gap: 0.8rem;
+    gap: 2rem;
+  }
+  .side-img {
+    direction: ltr;
   }
   .product-info {
     padding-right: 200px;
