@@ -63,6 +63,7 @@
     flex-direction: column-reverse;
     top: 60%;
     left: 49%;
+    gap: 1.2rem;
   }
   .nav-list-item:link,
   .nav-list-item:visited,
