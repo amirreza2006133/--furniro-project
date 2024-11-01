@@ -34,6 +34,7 @@ i {
   background-color: #ffffff;
   z-index: 999999;
   transition: 0.3s;
+  border-bottom: 1px solid #fff;
 }
 .test {
   position: relative;
@@ -41,7 +42,6 @@ i {
 }
 .fade {
   background-color: #f1e8d5;
-  /* background-color: #fff3e3; */
   border-bottom: 1px solid #dddcdc;
 }
 .nav-list {
