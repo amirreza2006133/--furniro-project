@@ -250,7 +250,6 @@
   }
   .recent-posts-contanier {
     flex-direction: row;
-    justify-content: space-between;
   }
   .search-icon {
     right: 3%;
