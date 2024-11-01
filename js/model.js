@@ -54,18 +54,21 @@ export function deleteProductFromCart(productId) {
 export function increaseProductQuantity(productId, increaseAmount = 1) {
   const existingCartProduct = findProductInCartById(productId);
   existingCartProduct.quantity += increaseAmount;
+  existingCartProduct.totalPrice = existingCartProduct.price * existingCartProduct.quantity;
   saveCartStorage();
 }
 
 export function decreaseProductQuantity(productId, decreaseAmount = 1) {
   const existingCartProduct = findProductInCartById(productId);
   existingCartProduct.quantity -= decreaseAmount;
+  existingCartProduct.totalPrice = existingCartProduct.price * existingCartProduct.quantity;
   saveCartStorage();
 }
 
 export function changePeoductQuantity(productId, amount) {
   const existingCartProduct = findProductInCartById(productId);
   existingCartProduct.quantity = Number(amount);
+  existingCartProduct.totalPrice = existingCartProduct.price * existingCartProduct.quantity;
   saveCartStorage();
 }
 

@@ -5,6 +5,7 @@ class CartView {
   _parentEl = document.querySelector(".wrapper");
   _totalPriceEl = document.querySelector(".aside-cart-price.gold");
   _messageEl = document.querySelector(".cart-message");
+  _changePeoductQuantityHandler;
 
   render(cart) {
     this._parentEl.innerHTML = "";
@@ -12,20 +13,32 @@ class CartView {
     if (!cart.length) this._showMessage("There is no product in cart");
     const generatedMarkup = this._generateMarkup(cart);
     this._parentEl.insertAdjacentHTML("beforeend", generatedMarkup);
+    this._setupChangePeoductQuantityHandler();
   }
 
   addEventHandler(render, deleteProductFromCartHandler, changePeoductQuantity) {
+    this._changePeoductQuantityHandler = changePeoductQuantity;
     window.addEventListener("load", render)
     this._parentEl.addEventListener("click", (e) => {
       const productId = e.target.closest(".second-row").dataset.id;
       if (e.target.classList.contains("trash-can")) deleteProductFromCartHandler(productId);
     });
-    this._parentEl.addEventListener("keyup", e => {
-      if (e.target.classList.contains("quantity-input")) {
-        const productId = e.target.closest(".second-row").dataset.id;
-        changePeoductQuantity(productId, e.target.value)
-      }
-    })
+  }
+
+  _setupChangePeoductQuantityHandler() {
+    this._parentEl.querySelectorAll(".quantity-input")
+      .forEach(el => {
+        let previousValue = el.value; // Store the initial value
+        el.addEventListener("focus", e => previousValue = e.target.value); // Update previousValue on focus
+        el.addEventListener("blur", e => {
+          if (e.target.classList.contains("quantity-input")) {
+            const productId = e.target.closest(".second-row").dataset.id;
+            const newValue = e.target.value;
+            if (newValue === previousValue) return;
+            else this._changePeoductQuantityHandler(productId, newValue);
+          }
+        });
+      });
   }
 
   _generateMarkup(cart) {

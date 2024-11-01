@@ -28,9 +28,19 @@ function deleteProductFromCartHandler(productId) {
   NotificationView.info("product deleted successfully");
 }
 
+function changePeoductQuantityHandler(productId, amount) {
+  if (Number(amount) === 0) NotificationView.info(`quantity can not be zero`);
+  else {
+    changePeoductQuantity(productId, amount)
+    NotificationView.info(`quantity changed to ${amount} successfully`);
+  }
+  controlCart();
+  controlCartPreview();
+}
+
 function init() {
   CartPreviewView.addEventHandler(controlCartPreview, deleteProductFromCartHandler);
-  CartView.addEventHandler(controlCart, deleteProductFromCartHandler, changePeoductQuantity);
+  CartView.addEventHandler(controlCart, deleteProductFromCartHandler, changePeoductQuantityHandler);
   HambergurMenuView.addEventHandler(controlHambergurMenu);
   FooterView.addEventHandler(controlFooter);
 }
