@@ -305,4 +305,19 @@
   .login-section {
     padding-inline: 3.8rem;
   }
+  /* //////////////////
+  product-page
+  ////////////////// */
+  .main-product-cart {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .product-aside {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.8rem;
+  }
+  .product-info {
+    padding-right: 200px;
+  }
 }
