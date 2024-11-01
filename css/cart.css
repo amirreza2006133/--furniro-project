@@ -3,7 +3,7 @@
 }
 .cart-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 75% 25%;
   align-items: flex-start;
   gap: 3.2rem;
 }
@@ -54,7 +54,7 @@
 }
 .second-row {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 12%);
   align-items: center;
   gap: 3.2rem;
   padding: 1.2rem 0.8rem;
@@ -75,7 +75,7 @@
   padding: 2.4rem 0.8rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 12%);
   gap: 3.2rem;
 
   font-size: 1.6rem;
