@@ -212,6 +212,17 @@
     grid-template-columns: 1fr;
     padding-inline: 4.8rem;
   }
+  /* //////////////////
+   filter-section
+  ////////////////// */
+  .product-fliters {
+    position: relative;
+  }
+  .filter-label.error {
+    position: absolute;
+    top: 76%;
+    right: 6%;
+  }
 
   /* //////////////////
   slider-section
@@ -401,5 +412,16 @@
   .card-container {
     grid-template-columns: repeat(2, 1fr);
     padding: 1.2rem;
+  }
+  /* //////////////////
+   filter-section
+  ////////////////// */
+  .product-fliters {
+    position: relative;
+  }
+  .filter-label.error {
+    position: absolute;
+    top: 76%;
+    right: 6%;
   }
 }
