@@ -437,4 +437,28 @@
     width: 85dvw;
     padding-left: 3.2rem !important;
   }
+  /* //////////////////
+   contact-page
+  ////////////////// */
+  .contact-section {
+    align-items: normal;
+    /* padding-inline: 1rem !important; */
+  }
+  .contact-info-item {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+  }
+  .contact-info {
+    flex-direction: column;
+  }
+  .contact-info-heading {
+    font-size: 2.8rem;
+  }
+  .contact-info-details {
+    font-size: 2rem;
+  }
+  .contact-btn-holder {
+    text-align: center;
+  }
 }
