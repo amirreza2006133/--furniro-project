@@ -427,4 +427,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
+  /* //////////////////
+   blog-page
+  ////////////////// */
+  .main-article {
+    grid-column: 1;
+  }
+  .articles {
+    width: 85dvw;
+    padding-left: 3.2rem !important;
+  }
 }
