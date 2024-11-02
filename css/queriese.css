@@ -388,3 +388,18 @@
     text-align: center;
   }
 }
+/* *************************** */
+/* below 768px */
+/* *************************** */
+@media (max-width: 48em) {
+  html {
+    font-size: 53%;
+  }
+  /* //////////////////
+   product-section
+  ////////////////// */
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.2rem;
+  }
+}
