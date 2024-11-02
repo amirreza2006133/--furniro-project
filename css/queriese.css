@@ -420,4 +420,11 @@
     position: relative;
     padding-inline: 2.4rem;
   }
+  /* //////////////////
+   advantage-section
+  ////////////////// */
+  .advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
