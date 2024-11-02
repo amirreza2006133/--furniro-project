@@ -358,4 +358,33 @@
   .btn-checout {
     margin-top: 0 !important;
   }
+  /* //////////////////
+  Footer
+  ////////////////// */
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.4rem;
+  }
+  .footer-list {
+    align-items: center;
+  }
+  .news-letter {
+    align-items: center;
+    grid-column: 3;
+  }
+  .input {
+    text-align: center;
+    display: inline-block;
+  }
+  .logo-address {
+    text-align: center;
+    align-items: center;
+    grid-row: 2;
+    grid-column: 1/-1;
+    gap: 1.8rem;
+  }
+  .email {
+    margin-bottom: 3.2rem;
+    text-align: center;
+  }
 }
