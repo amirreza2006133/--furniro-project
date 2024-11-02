@@ -418,10 +418,6 @@
   ////////////////// */
   .product-fliters {
     position: relative;
-  }
-  .filter-label.error {
-    position: absolute;
-    top: 76%;
-    right: 6%;
+    padding-inline: 2.4rem;
   }
 }
