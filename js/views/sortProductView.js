@@ -1,4 +1,4 @@
-import { COUNT_PAGINATION_ITEMS } from "../config";
+import { COUNT_PAGINATION_ITEMS, MAX_COUNT_PAGINATION_ITEMS } from "../config";
 import boxIcon from "../../img/icons/grid.svg";
 import inlineIcon from "../../img/icons/pages.svg";
 
@@ -47,41 +47,35 @@ class SortProductView {
 
     const countItemsEl = this._parentEl.querySelector(".countIndex");
     countItemsEl.addEventListener("change", (e) => {
-      if (this._validatePageItemsCountInput(Number(e.target.value))) {
-        this._countItems = Number(e.target.value);
-        countItemsEl.previousElementSibling.textContent = "Show"
-        countItemsEl.previousElementSibling.classList.remove("error")
-        this._submitSort();
-      } else {
-        countItemsEl.previousElementSibling.textContent = `${countItemsEl.value} is not valid max 32 and min 8`
-        countItemsEl.previousElementSibling.classList.add("error")
-        countItemsEl.value = this._countItems;
-      }
+      this._countItems = Number(e.target.value);
+      this._submitSort();
     });
-  }
-
-  _validatePageItemsCountInput(value) {
-    return (value > 100 || value < 8) ? false : true;
   }
 
   _generateMarkup(countPagItems) {
     return `<div class="filter-icon">
-        <img class="view-mode box ${this._viewMode === "box" ? "disable" : ""}" data-viewMode="box" src="${boxIcon}" alt=" grid 2 icon" />
-        <img class="border-right view-mode inline ${this._viewMode === "inline" ? "disable" : ""}" data-viewMode="inline" src="${inlineIcon}" alt=" pages icon" />
+        <img class="view-mode box ${this._viewMode === "box" ? "disable" : ""}" data-viewMode="box" src="${boxIcon}" alt="grid 2 icon" />
+        <img class="border-right view-mode inline ${this._viewMode === "inline" ? "disable" : ""}" data-viewMode="inline" src="${inlineIcon}" alt="pages icon" />
         <p class="show-filter pag-title"></p>
       </div>
   
       <div class="filters-input">
-        <label class="filter-label" for="number"> Show</label>
-        <input type="number" class="in-num countIndex" id="number" max="32" min="1" value="${countPagItems}"/>
+        <label class="filter-label" for="number">Show</label>
+        <select class="in-num countIndex" name="number" id="number">
+          ${Array.from({ length: MAX_COUNT_PAGINATION_ITEMS - COUNT_PAGINATION_ITEMS + 1 }, (_, i) => i + COUNT_PAGINATION_ITEMS)
+            .map(i => `<option value="${i}" ${i === countPagItems ? "selected" : ""}>${i}</option>`)
+            .join("")
+          }
+        </select>
         <label class="filter-label" for="select">Sort by</label>
-          <select class="input-select input-sortBy" id="select">
-            <option value="default" ${this._sortBy === 'default' ? 'selected' : ''}>Default</option>
-            <option value="off" ${this._sortBy === 'off' ? 'selected' : ''}>Off</option>
-            <option value="new" ${this._sortBy === 'new' ? 'selected' : ''}>New</option>
-          </select>
+        <select class="input-select input-sortBy" id="select">
+          <option value="default" ${this._sortBy === 'default' ? 'selected' : ''}>Default</option>
+          <option value="off" ${this._sortBy === 'off' ? 'selected' : ''}>Off</option>
+          <option value="new" ${this._sortBy === 'new' ? 'selected' : ''}>New</option>
+        </select>
       </div>`;
   }
+  
 }
 
 export default new SortProductView();
