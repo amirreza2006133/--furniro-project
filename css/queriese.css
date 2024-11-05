@@ -464,7 +464,7 @@
   /* //////////////////
    login-page
   ////////////////// */
-  body {
+  .login-body {
     background-image: url("../img/icons/sign\ in.png");
     background-position-x: 17%;
   }
