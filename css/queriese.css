@@ -285,7 +285,7 @@
     font-size: 1.4rem;
   }
   /* //////////////////
-  contac-page
+  contact-page
   ////////////////// */
   .contact-section {
     padding-inline: 3.8rem;
@@ -486,5 +486,12 @@
   }
   .login-form {
     border: rgb(221, 220, 220) 2px solid;
+  }
+  /* //////////////////
+   cart-page
+  ////////////////// */
+  .row-one .second-row {
+    grid-template-columns: repeat(6, 16%);
+    gap: 2rem;
   }
 }
