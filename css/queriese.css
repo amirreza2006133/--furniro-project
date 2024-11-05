@@ -461,4 +461,30 @@
   .contact-btn-holder {
     text-align: center;
   }
+  /* //////////////////
+   login-page
+  ////////////////// */
+  body {
+    background-image: url("../img/icons/sign\ in.png");
+    background-position-x: 17%;
+  }
+  .login-container {
+    grid-template-columns: 1fr;
+    backdrop-filter: blur(4px);
+  }
+  .transform .login-img-box {
+    transform: translateX(0);
+  }
+  .login-img-box {
+    display: none;
+  }
+  .transform .form-holder {
+    transform: translateX(0);
+  }
+  .form-holder {
+    background: none;
+  }
+  .login-form {
+    border: rgb(221, 220, 220) 2px solid;
+  }
 }
