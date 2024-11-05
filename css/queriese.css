@@ -494,4 +494,10 @@
     grid-template-columns: repeat(6, 16%);
     gap: 2rem;
   }
+  /* //////////////////
+   Footer
+  ////////////////// */
+  .border-pad {
+    padding-inline: 3.2rem;
+  }
 }
