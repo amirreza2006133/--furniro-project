@@ -25,7 +25,6 @@ export const LANG = "en-US";
 
 export let COUNT_PAGINATION_ITEMS = 8;
 export let COUNT_PAGINATION_BUTTONS = 3;
-export const MAX_COUNT_PAGINATION_ITEMS = 24;
 
 export const products = [
   {

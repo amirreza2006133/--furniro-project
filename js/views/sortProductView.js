@@ -1,4 +1,4 @@
-import { COUNT_PAGINATION_ITEMS, MAX_COUNT_PAGINATION_ITEMS } from "../config";
+import { COUNT_PAGINATION_ITEMS } from "../config";
 import boxIcon from "../../img/icons/grid.svg";
 import inlineIcon from "../../img/icons/pages.svg";
 
@@ -53,6 +53,13 @@ class SortProductView {
   }
 
   _generateMarkup(countPagItems) {
+    let generatedPageCountSelectMarkup;
+
+    for (let i = 1; i <= 5; i++) {
+      const value = Math.pow(2, i); // This will give you 2, 4, 8, 16, 32
+      generatedPageCountSelectMarkup += `<option value="${value}" ${value === countPagItems ? "selected" : ""}>${value}</option>`;
+    }
+
     return `<div class="filter-icon">
         <img class="view-mode box ${this._viewMode === "box" ? "disable" : ""}" data-viewMode="box" src="${boxIcon}" alt="grid 2 icon" />
         <img class="border-right view-mode inline ${this._viewMode === "inline" ? "disable" : ""}" data-viewMode="inline" src="${inlineIcon}" alt="pages icon" />
@@ -62,10 +69,7 @@ class SortProductView {
       <div class="filters-input">
         <label class="filter-label" for="number">Show</label>
         <select class="in-num countIndex" name="number" id="number">
-          ${Array.from({ length: MAX_COUNT_PAGINATION_ITEMS - COUNT_PAGINATION_ITEMS + 1 }, (_, i) => i + COUNT_PAGINATION_ITEMS)
-            .map(i => `<option value="${i}" ${i === countPagItems ? "selected" : ""}>${i}</option>`)
-            .join("")
-          }
+          ${generatedPageCountSelectMarkup}
         </select>
         <label class="filter-label" for="select">Sort by</label>
         <select class="input-select input-sortBy" id="select">
