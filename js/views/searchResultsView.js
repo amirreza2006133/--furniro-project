@@ -31,27 +31,16 @@ class searchResultsView {
       .map(
         (result) => `
         <li class="search-result" data-id="${result.id}">
-        <img class="thumb" src="${result.imageUrl}" alt="${result.name}">
-        <b class="title">${result.name}</b>
-        ${
-          result.discount
-            ? ` <span class="price-on inline-on"> ${
-                calculateDiscount(result)
-              } </span>`
-            : `<span class="price-on inline-on">${formatCurrency(
-                result.price
-              )}</span>`
-        }
-
-        ${
-          result.discount
-            ? `<span class="price-off" inline-off>${formatCurrency(
-                result.price
-              )} </span>`
-            : ""
-        }
-        <button class="go-to-product-detail">View details <img src="${arrowIcon}" alt="=>" /></button>
-      </li>    
+          <img class="thumb" src="${result.imageUrl}" alt="${result.name}">
+          <div class="holder">
+            <b class="title">${result.name}</b>
+            <div class="price">
+              ${result.discount ? `<span class="price price-on"> ${calculateDiscount(result)}</span>` : `<span class="price-on inline-on">${formatCurrency(result.price)}</span>`}
+              ${result.discount? `<span class="price-off">${formatCurrency(result.price)} </span>`: ""}
+            </div>
+          </div>
+          <button class="go-to-product-detail">details <img src="${arrowIcon}" alt="=>" /></button>
+        </li>    
     `
       )
       .join("");
