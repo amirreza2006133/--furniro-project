@@ -26,24 +26,13 @@ class WishlistView {
         return `
         <li class="item" data-id="${item.id}">
             <img class="thumb" src="${item.imageUrl}" alt="${item.name}">
-            <b class="title">${item.name}</b>
-            ${
-              item.discount
-                ? ` <span class="price-on inline-on"> ${
-                    calculateDiscount(item)
-                  } </span>`
-                : `<span class="price-on inline-on">${formatCurrency(
-                    item.price
-                  )}</span>`
-            }
-
-            ${
-              item.discount
-                ? `<span class="price-off" inline-off>${formatCurrency(
-                    item.price
-                  )} </span>`
-                : ""
-            }
+            <div class="holder">
+              <b class="title">${item.name}</b>
+              <div class="holder-price">
+                ${item.discount ? ` <span class="price price-on"> ${calculateDiscount(item)} </span>` : `<span class="price-on inline-on">${formatCurrency(item.price)}</span>`}
+                ${item.discount ? `<span class="price-off">${formatCurrency(item.price)} </span>` : ""}
+              </div>
+            </div>
             <button class="delete-product-from-wishlist-btn">✖</button>
         </li>`;
       })
