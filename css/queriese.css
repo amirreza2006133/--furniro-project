@@ -525,7 +525,8 @@
   /* //////////////////
    cart-page
   ////////////////// */
-  .row-one .second-row {
+  .row-one,
+  .second-row {
     grid-template-columns: repeat(6, 16%);
     gap: 2rem;
   }
@@ -624,6 +625,17 @@
   }
   .contact-info-details {
     font-size: 1.8rem;
+  }
+  /* //////////////////
+   cort-page
+  ////////////////// */
+  .cart-img {
+    height: 70px;
+    width: 70px;
+  }
+  .row-one,
+  .second-row {
+    grid-template-columns: repeat(6, 15%);
   }
 }
 /* *************************** */
