@@ -568,4 +568,13 @@
     padding-block: 1.4rem;
     padding-inline: 2rem;
   }
+  /* //////////////////
+   product-section
+  ////////////////// */
+  .product-section {
+    margin-block: 1.2rem;
+  }
+  .card-inline-container {
+    padding-inline: 0;
+  }
 }
