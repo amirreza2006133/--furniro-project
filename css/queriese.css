@@ -436,12 +436,19 @@
   /* //////////////////
    blog-page
   ////////////////// */
+  .blog-article {
+    margin: 0;
+    justify-items: center;
+    padding: 4.8rem;
+  }
   .main-article {
     grid-column: 1;
   }
   .articles {
     width: 85dvw;
-    padding-left: 3.2rem !important;
+  }
+  .article-sidebar {
+    padding-left: 0;
   }
   /* //////////////////
    contact-page
@@ -583,5 +590,21 @@
   .advantages-grid {
     grid-template-columns: repeat(2, 1fr);
     row-gap: 2rem;
+  }
+  /* //////////////////
+   blog-page
+  ////////////////// */
+  .blog-article {
+    padding-inline: 2.4rem;
+  }
+  .article-sidebar {
+    width: 85dvw;
+  }
+  .recent-posts-contanier {
+    gap: 1.2rem;
+  }
+  .recent-post img {
+    width: 80px;
+    height: 80px;
   }
 }
