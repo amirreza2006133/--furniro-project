@@ -626,3 +626,14 @@
     font-size: 1.8rem;
   }
 }
+/* *************************** */
+/*Extra Small Mobile (Portrait): 320px – 480px */
+/* *************************** */
+@media (max-width: 30em) {
+  /* //////////////////
+   login-page
+  ////////////////// */
+  .form-holder {
+    padding-inline: 2.4rem;
+  }
+}
