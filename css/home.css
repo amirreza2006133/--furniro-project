@@ -349,3 +349,24 @@
 .ninth {
   grid-area: 6 / 10 / 8 / 12;
 }
+/* *************************** */
+/* adjusting carts with view port */
+/* *************************** */
+@media (max-width: 64em) {
+  .pr-list-card:nth-child(7) {
+    display: none !important;
+  }
+
+  .pr-list-card:nth-child(8) {
+    display: none;
+  }
+}
+@media (max-width: 48em) {
+  .pr-list-card:nth-child(5) {
+    display: none !important;
+  }
+
+  .pr-list-card:nth-child(6) {
+    display: none;
+  }
+}
