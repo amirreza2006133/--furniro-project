@@ -54,7 +54,7 @@
 }
 .second-row {
   display: grid;
-  grid-template-columns: repeat(6, 12%);
+  grid-template-columns: repeat(6, 15%);
   align-items: center;
   gap: 3.2rem;
   padding: 1.2rem 0.8rem;
@@ -75,7 +75,7 @@
   padding: 2.4rem 0.8rem;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 12%);
+  grid-template-columns: repeat(6, 15%);
   gap: 3.2rem;
 
   font-size: 1.6rem;
@@ -148,4 +148,18 @@
   font-size: 2.4rem;
   color: #9f9f99;
   text-align: center;
+}
+@media (max-width: 22em) {
+  .trash-can {
+    width: 20px;
+    height: 20px;
+  }
+  .cart-img {
+    height: 35px;
+    width: 35px;
+  }
+  .row-one,
+  .second-row {
+    grid-template-columns: 37px repeat(4, 12%) 1px !important;
+  }
 }

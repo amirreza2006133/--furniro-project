@@ -648,4 +648,24 @@
   .form-holder {
     padding-inline: 2.4rem;
   }
+  /* //////////////////
+   cort-page
+  ////////////////// */
+  .trash-can {
+    width: 20px;
+    height: 20px;
+  }
+  .cart-img {
+    height: 50px;
+    width: 50px;
+  }
+  .row-one,
+  .second-row {
+    grid-template-columns: 40px repeat(4, 15%) 1px;
+  }
+  .aside-cart {
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-inline: 1.2rem;
+  }
 }
