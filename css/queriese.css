@@ -607,4 +607,22 @@
     width: 80px;
     height: 80px;
   }
+  /* //////////////////
+   contact-page
+  ////////////////// */
+  .contact-discription {
+    text-align: left;
+  }
+  .contact-heading {
+    font-size: 3.2rem;
+  }
+  .contact-info-item {
+    flex-direction: column;
+  }
+  .contact-info-heading {
+    font-size: 2.4rem;
+  }
+  .contact-info-details {
+    font-size: 1.8rem;
+  }
 }
