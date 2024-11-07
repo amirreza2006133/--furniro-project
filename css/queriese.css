@@ -476,7 +476,8 @@
   }
   .login-container {
     grid-template-columns: 1fr;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(16px);
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .transform .login-img-box {
     transform: translateX(0);
@@ -492,6 +493,27 @@
   }
   .login-form {
     border: rgb(221, 220, 220) 2px solid;
+  }
+  .out-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: -1rem;
+  }
+  .check-box span {
+    color: #222;
+  }
+  .login-sub,
+  .login-sub-log {
+    color: #222;
+  }
+  .login-link {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 0.6rem;
+    display: inline-block;
   }
   /* //////////////////
    cart-page
