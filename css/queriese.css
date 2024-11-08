@@ -544,6 +544,9 @@
   html {
     font-size: 50%;
   }
+  .sec-sub {
+    line-height: 1.7;
+  }
   /* //////////////////
    filter-section
   ////////////////// */
@@ -669,6 +672,23 @@
   }
   .home-btn {
     align-self: flex-start;
+  }
+  /* //////////////////
+   range-section
+  ////////////////// */
+  .range-section {
+    margin-top: 0;
+    padding-inline: 1.4rem;
+  }
+  .range-holder {
+    margin-bottom: 1.2rem;
+  }
+  .range-grid {
+    gap: 3.2rem;
+    padding: 1.4rem;
+  }
+  .range-img {
+    margin-bottom: 1.2rem;
   }
   /* //////////////////
    login-page
