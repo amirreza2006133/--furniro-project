@@ -643,6 +643,18 @@
 /* *************************** */
 @media (max-width: 30em) {
   /* //////////////////
+   header
+  ////////////////// */
+  .test {
+    height: 85px;
+  }
+  .header {
+    --header-height: 90px;
+  }
+  .logo-img {
+    height: 35px;
+  }
+  /* //////////////////
    login-page
   ////////////////// */
   .form-holder {
