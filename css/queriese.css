@@ -654,6 +654,22 @@
   .logo-img {
     height: 35px;
   }
+
+  /* //////////////////
+   hero-section
+  ////////////////// */
+  .hero-section {
+    padding: 6.4rem 3.2rem;
+  }
+  .heading-box {
+    display: flex;
+    flex-direction: column;
+    width: 75ch;
+    padding: 2rem;
+  }
+  .home-btn {
+    align-self: flex-start;
+  }
   /* //////////////////
    login-page
   ////////////////// */
@@ -679,5 +695,21 @@
     flex-direction: column;
     gap: 1.2rem;
     padding-inline: 1.2rem;
+  }
+}
+@media (max-width: 25em) {
+  /* //////////////////
+   hero-section
+  ////////////////// */
+  .hero-section {
+    padding: 6.4rem 3.2rem;
+  }
+  .heading-box {
+    width: 58ch;
+    display: flex;
+    flex-direction: column;
+  }
+  .home-btn {
+    align-self: auto;
   }
 }
