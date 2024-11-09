@@ -427,6 +427,12 @@
     padding-inline: 2.4rem;
   }
   /* //////////////////
+   gallery-section
+  ////////////////// */
+  .gallery-container {
+    height: 65dvh;
+  }
+  /* //////////////////
    advantage-section
   ////////////////// */
   .advantages-grid {
