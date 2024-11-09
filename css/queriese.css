@@ -849,3 +849,6 @@
     padding-inline: 2.4rem !important;
   }
 }
+.search {
+  width: 35rem;
+}
