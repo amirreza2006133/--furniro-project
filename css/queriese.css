@@ -793,6 +793,12 @@
   .product-inline-tag {
     left: -30%;
   }
+  /* //////////////////
+   pagination
+  ////////////////// */
+  .pagination-list {
+    gap: 1rem;
+  }
 
   /* //////////////////
    Footer
