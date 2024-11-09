@@ -599,6 +599,27 @@
     padding-inline: 0;
   }
   /* //////////////////
+   product-page
+  ////////////////// */
+  .product-aside {
+    flex-direction: column-reverse;
+  }
+  .side-img {
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .product-info {
+    padding-right: 62px;
+  }
+  .side-img {
+    width: auto;
+  }
+  .product-aside-img-box {
+    width: 89px;
+    height: 89px;
+  }
+  /* //////////////////
    advantage-section
   ////////////////// */
   .advantages-grid {
