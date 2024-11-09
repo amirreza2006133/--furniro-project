@@ -844,3 +844,8 @@
     align-self: auto;
   }
 }
+@media (max-width: 22em) {
+  .hover-btn {
+    padding-inline: 2.4rem !important;
+  }
+}
