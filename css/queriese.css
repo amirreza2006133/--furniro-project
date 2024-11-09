@@ -404,6 +404,10 @@
     margin-bottom: 3.2rem;
     text-align: center;
   }
+  .border-pad {
+    padding-right: 7rem;
+    padding-left: 0;
+  }
 }
 /* *************************** */
 /* below 768px ( Small Tablets (Portrait)) */
@@ -646,6 +650,15 @@
   .second-row {
     grid-template-columns: repeat(6, 15%);
   }
+  /* //////////////////
+   Footer
+  ////////////////// */
+  .footer-container {
+    gap: 0.4rem;
+  }
+  .border-pad {
+    padding-top: 4.8rem;
+  }
 }
 /* *************************** */
 /*Extra Small Mobile (Portrait): 320px – 480px */
@@ -678,6 +691,12 @@
   }
   .home-btn {
     align-self: flex-start;
+  }
+  /* //////////////////
+   gallery-section
+  ////////////////// */
+  .gallery-container {
+    height: 55dvh;
   }
   /* //////////////////
    range-section
@@ -741,6 +760,33 @@
   .new::after {
     width: 36px;
     height: 36px;
+  }
+  /* //////////////////
+   Footer
+  ////////////////// */
+  .logo-address {
+    grid-column: 1/-1;
+    grid-row: 3;
+  }
+  .news-letter {
+    grid-column: 1/-1;
+    grid-row: 2;
+    gap: 3.2rem;
+  }
+  .email {
+    margin-bottom: 2.4rem;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 4.8rem;
+  }
+  .footer-list {
+    align-items: flex-start;
+    gap: 3.2rem;
+  }
+  .logo-address {
+    margin-top: 2rem;
   }
 }
 @media (max-width: 25em) {
