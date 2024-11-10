@@ -94,13 +94,16 @@ input[type="number"] {
   align-items: stretch;
   justify-content: space-between;
 }
-.product-inline-card:not(:last-child)::after {
+.product-inline-card::after {
   content: "";
   position: absolute;
   bottom: -3.2rem;
   width: 100%;
   height: 0.1rem;
   background-color: #505050;
+}
+.product-inline-card:nth-last-child(-n+2)::after {
+  background-color: transparent;
 }
 .product-inline-info {
   display: flex;
