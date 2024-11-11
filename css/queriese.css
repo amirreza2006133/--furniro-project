@@ -884,6 +884,15 @@
 .modal-content .modal-controls {
   justify-content: flex-start;
 }
+.Review-section {
+  padding-inline: 0;
+}
+.Review-heading {
+  font-size: 2rem;
+}
+.Review-section-p {
+  padding-inline: 0;
+}
 /* //////////////////
    Footer
   ////////////////// */
