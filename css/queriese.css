@@ -823,6 +823,23 @@
   .pagination-list {
     gap: 1rem;
   }
+  /* //////////////////
+   search-page
+  ////////////////// */
+  .search {
+    width: 35rem;
+  }
+  .search-results {
+    padding: 4.8rem 2rem;
+  }
+  .thumb {
+    width: 60px;
+    height: 60px;
+  }
+  .search-result {
+    gap: 1.4rem;
+    padding: 16px;
+  }
 
   /* //////////////////
    Footer
@@ -872,7 +889,4 @@
   .hover-btn {
     padding-inline: 2.4rem !important;
   }
-}
-.search {
-  width: 35rem;
 }
