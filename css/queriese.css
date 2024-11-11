@@ -849,7 +849,13 @@
   .wishlist .item {
     padding: 16px;
   }
-
+  /* //////////////////
+   PRODUCT-PAGE
+     ////////////////// */
+  .product-path {
+    padding: 3.2rem;
+    gap: 1.2rem;
+  }
   /* //////////////////
    Footer
   ////////////////// */
