@@ -899,3 +899,8 @@
     padding-inline: 2.4rem !important;
   }
 }
+@media (max-width: 23em) {
+  .btn-inline {
+    padding-inline: 0 !important;
+  }
+}
