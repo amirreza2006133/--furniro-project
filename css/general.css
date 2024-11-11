@@ -932,10 +932,13 @@ i {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
+.modal-controls input[type="submit"] {
+  color: #111 !important;
+  background-color: #fff !important;
+}
 .modal-controls input[type="submit"]:hover {
-  background-color: #111;
-  color: #fff;
+  background-color: #111 !important;
+  color: #fff !important;
 }
 .modal-close span:hover {
   background-color: #fff;
